@@ -1,0 +1,62 @@
+@import "../_mixins/mixins";
+
+%smallest-size {
+	@include fluid-type(8px, 12px, $min_width, $max_width, px);
+}
+
+%small-size {
+	
+}
+
+%std-size {
+	@include fluid-type(14px, 18px, $min_width, $max_width, px);
+}
+
+%medium-size {
+
+}
+
+// Links sizes
+%link-size {
+	@include fluid-type(12px, 20px, $min_width, $max_width, px);
+}
+
+// Headers sizes
+%header-size {
+	@include fluid-type(42px, 58px, $min_width, $max_width, px);
+}
+%subheader-size {
+	@include fluid-type(78px, 88px, $min_width, $max_width, px);
+}
+%extraheader-size {
+	@include fluid-type(54px, 86px, $min_width, $max_width, px);
+}
+
+
+%subtitle-size {
+	@include fluid-type(22px, 36px, $min_width, $max_width, px);
+}
+
+// Banner sizes
+%banner-size {
+	@include fluid-type(64px, 225px, $min_width, $max_width, px);
+}
+%banner-marquee {
+	@include fluid-type(18px, 24px, $min_width, $max_width, px);
+}
+%banner-small {
+	@include fluid-type(16px, 26px, $min_width, $max_width, px);
+}
+
+// Brand sizes
+%brand-name {
+	@include fluid-type(18px, 30px, $min_width, $max_width, px);
+}
+%brand-text {
+	@include fluid-type(12px, 28px, $min_width, $max_width, px);
+}
+
+// Marquee sizes
+%marquee-text {
+	@include fluid-type(24px, 48px, $min_width, $max_width, px);
+}

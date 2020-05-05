@@ -1,0 +1,45 @@
+// Size
+$min_width: 320px;
+$max_width: 1200px;
+
+// fonts
+$default-font: Avenir, Helvetica, Arial, sans-serif;
+
+// typography styles
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+$blackbold: 900;
+
+//breakpoints
+$break-sm: 576px;
+$break-md: 768px;
+$break-lg: 992px;
+
+// backgrounds
+$dark-bg: #262624;
+$light-bg: #E4EDF2;
+
+// colors
+$main-color: #fff;
+$accent-color: #0F4C81;
+$info-color: #D5242C;
+$extra-color: #8F241F;
+
+// typography colors
+$white-text: #ffffff;
+$black-text: #000000;
+$light-text: #96C0CC;
+$dark-text: #5F6262;
+
+
+// // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+// $grid-gutter-width: 30px;
+// $grid-columns: 12;
+// $grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+// $container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+// $gutter: $grid-gutter-width;
