@@ -7,7 +7,7 @@
     <div class="quiz-fields">
       <transition name="fade" mode="out-in">
         <fieldset v-if="getCounter < isStepsLength" :key="getCounter">
-          <component :is="currentScreenComponent"></component>
+          <component :is="currentScreen"></component>
         </fieldset>
       </transition>
     </div>
@@ -24,7 +24,7 @@ export default {
     "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
     "input-text-and-select": () => import("@/parts/InputTextAndSelect"),
-    "select-and-text": () => import("@/parts/InputSelectAndText")
+    "input-select-and-text": () => import("@/parts/InputSelectAndText")
   },
   props: {
     response: {
@@ -42,17 +42,18 @@ export default {
       userData: state => state.userData
     }),
     ...mapGetters(["getCounter", "isStepsLength", "getNowItemsType"]),
-    currentScreenComponent() {
-      if (this.getNowItemsType === "card") {
-        return "cards-screen";
-      } else if (this.getNowItemsType === "request") {
-        return "request-screen";
-      } else if (this.getNowItemsType === "text-and-select") {
-        return "input-text-and-select";
-      } else if (this.getNowItemsType === "select-and-text") {
-        return "select-and-text";
-      } else {
-        return "radios-screen";
+    currentScreen() {
+      switch (this.getNowItemsType) {
+        case "card":
+          return "cards-screen";
+        case "request":
+          return "request-screen";
+        case "text-and-select":
+          return "input-text-and-select";
+        case "select-and-text":
+          return "input-select-and-text";
+        default:
+          return "radios-screen";
       }
     }
   }

@@ -62,7 +62,7 @@ export default {
       sendingText: "Отправить заявку",
       prevBtnClasses: "quiz-button_prev quiz-smalltext",
       nextBtnClasses: "quiz-button_next quiz-smalltext",
-      disabledClass: "button-disabled"
+      disabledClass: "button-disabled",
     };
   },
   methods: {
@@ -82,7 +82,7 @@ export default {
         // console.log('[QUIZ_NAV] Аргументы должны быть строкой!')
       }
     },
-    ...mapActions(["nextCount", "prevCount"])
+    ...mapActions(["nextCount", "prevCount"]),
   },
   computed: {
     ...mapGetters([
@@ -90,13 +90,56 @@ export default {
       "getCounter",
       "isStepsLength",
       "getUser",
-      "getObjectData"
-    ])
-  }
+      "getObjectData",
+    ]),
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+#quiz_nav {
+  width: 100%;
+  padding: 5px auto;
+  margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-button_next,
+.quiz-button_prev {
+  width: 40%;
+  padding: 15px 5px;
+  margin: 5px 10px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  transition: all 0.3s ease;
+  svg {
+    margin: 0 5px;
+    width: 12px;
+    height: 8px;
+  }
+}
+
+.quiz-button_prev {
+  background: #888888;
+  &:hover {
+    box-shadow: 0px 0px 15px -3px #888888;
+  }
+}
+
+.quiz-button_next {
+  background: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%);
+  &:hover {
+    box-shadow: 0px 0px 15px -3px #d5242c;
+  }
+}
+
+.button-disabled {
+  opacity: 0.25;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.45s ease-out;
