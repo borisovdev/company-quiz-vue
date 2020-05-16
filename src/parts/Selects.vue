@@ -71,21 +71,10 @@ export default {
       "getNowItemsFirstOptions",
       "getNowItemsSecondOptions",
     ]),
-    updateChecked: {
-      get() {
-        return this.$store.state.userData;
-      },
-      set(v) {
-        this.$store.commit("UPDATE_CHECKED", v);
-      },
-    },
   },
   methods: {
-    updateMessage(evt) {
-      this.$store.commit("SET_FREE_MESSAGE", evt.target.value);
-    },
     newChecked(evt) {
-      this.$store.commit("ADD_CITY_DATA", evt.target.value);
+      this.$store.commit("UPDATE_CITY_DATA", evt.target.value);
     },
   },
 };

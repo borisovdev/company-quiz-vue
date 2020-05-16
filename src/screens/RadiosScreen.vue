@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   data() {
@@ -24,14 +24,17 @@ export default {
     "radio-input": () => import("@/parts/RadioInput"),
     "free-answer": () => import("@/parts/FreeAnswer")
   },
+  methods: {
+    ...mapActions(["updateChecked"])
+  },
   computed: {
-    ...mapGetters(["getNowItems"]),
+    ...mapGetters(["getUserData", "getNowItems"]),
     newRadioAction: {
       get() {
-        return this.$store.state.userData;
+        return this.getUserData;
       },
       set(value) {
-        this.$store.commit("UPDATE_CHECKED", value);
+        this.updateChecked(value);
       }
     }
   }

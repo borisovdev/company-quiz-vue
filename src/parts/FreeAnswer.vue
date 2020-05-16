@@ -4,14 +4,14 @@
     <input
       type="text"
       :value="getFreeMessage"
-      @input="updateMessage"
+      @change="updateFreeMessage"
       :class="inputTheme"
     />
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
@@ -21,9 +21,7 @@ export default {
     };
   },
   methods: {
-    updateMessage(evt) {
-      this.$store.commit("SET_FREE_MESSAGE", evt.target.value);
-    }
+    ...mapActions(["updateFreeMessage"])
   },
   computed: {
     ...mapGetters(["getFreeMessage"])

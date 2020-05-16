@@ -25,26 +25,21 @@ export default {
     "checkbox-card": () => import("@/parts/CheckboxCard"),
     "free-answer": () => import("@/parts/FreeAnswer")
   },
+  methods: {
+    ...mapActions(["updateChecked"])
+  },
   computed: {
     ...mapGetters([
-      "getCounter",
-      "isStepsLength",
-      "getNowItems",
-      "getUserData",
-      "getObjectData"
+      "getNowItems"
     ]),
     newCheckedAction: {
       get() {
-        // console.log(this.$store.state.userData);
         return this.$store.state.userData;
       },
       set(value) {
-        this.$store.commit("UPDATE_CHECKED", value);
+        this.updateChecked(value);
       }
     }
-  },
-  methods: {
-    ...mapActions(["updateChecked"])
   }
 };
 </script>

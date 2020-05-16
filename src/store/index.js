@@ -40,6 +40,9 @@ export default new Vuex.Store({
     dataSended: false,
   },
   mutations: {
+    TRUE_DATA_STATUS(state) {
+      state.dataSended = true;
+    },
     NEXT_COUNT(state) {
       state.counter + 1 < state.steps.length ? state.counter++ : false;
       Vue.set(state.objectData, state.counter - 1, {});
@@ -66,13 +69,13 @@ export default new Vuex.Store({
       state.userData = state.objectData[`${state.counter}`]["chosen"];
       state.freeMessage = state.objectData[`${state.counter}`]["wrote"];
     },
-    UPDATE_MESSAGE(state, message) {
+    UPDATE_FREE_MESSAGE(state, message) {
       state.freeMessage = message;
     },
     UPDATE_CHECKED(state, list) {
       state.userData = list;
     },
-    ADD_CITY_DATA(state, value) {
+    UPDATE_CITY_DATA(state, value) {
       let index;
       state.userData.find((element, idx) => {
         if (element.slice(0, 14) === value.slice(0, 14)) {
@@ -97,33 +100,16 @@ export default new Vuex.Store({
     SET_STEPS(state, steps) {
       state.steps = steps;
     },
-    SET_FREE_MESSAGE(state, msg) {
-      state.freeMessage = msg;
-    },
-    SET_USER_NAME(state, value) {
-      state.user.name = value;
-    },
-    SET_USER_PHONE(state, value) {
-      state.user.phone = value;
-    },
-    SET_USER_EMAIL(state, value) {
-      state.user.email = value;
-    },
-    TRUE_DATA_STATUS(state) {
-      state.dataSended = true;
-    },
   },
   getters: {
     getMain: (state) => state.main,
+    getSteps: (state) => state.steps,
     getBrand: (state) => state.brand,
     getManager: (state) => state.manager,
     getInfo: (state) => state.info,
     getCounter: (state) => state.counter,
     getDataStatus: (state) => state.dataSended,
-    getUserData: (state) =>
-      state.userData.filter((item, idx) => {
-        return idx === state.counter;
-      }),
+    getUserData: state => state.userData,
     getObjectData: (state) => state.objectData,
     getFreeMessage: (state) => state.freeMessage,
     getUser: (state) => state.user,
@@ -131,7 +117,10 @@ export default new Vuex.Store({
     isNowStep: (state) => {
       return state.counter + 1;
     },
-    getSteps: (state) => state.steps,
+    getNowUserData: (state) =>
+      state.userData.filter((item, idx) => {
+        return idx === state.counter;
+      }),
     getNowStep: (state) =>
       state.steps.filter((item, idx) => {
         return idx === state.counter;
@@ -166,11 +155,11 @@ export default new Vuex.Store({
     prevCount({ commit }) {
       commit("PREV_COUNT");
     },
-    updateMessage({ commit }) {
-      commit("UPDATE_MESSAGE");
+    updateFreeMessage({ commit }, event) {
+      commit("UPDATE_FREE_MESSAGE", event.target.value);
     },
-    updateChecked({ commit }) {
-      commit("UPDATE_CHECKED");
+    updateChecked({ commit }, payload) {
+      commit("UPDATE_CHECKED", payload);
     },
     initMain({ commit }, payload) {
       axios.get(payload).then((response) => {

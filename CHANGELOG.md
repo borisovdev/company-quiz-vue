@@ -1,5 +1,13 @@
 # Changelog
 
+## Beta 0.2.2
+### Added 
+- Геттер хранилища getUserData
+### Changed
+- Метод getUserData переименован в getNowUserData
+- Изменены некоторые методы работы с хранилищем vuex
+
+
 ## Beta 0.2.1
 ### Added
 - Логика добавления городов в компоненте Selects

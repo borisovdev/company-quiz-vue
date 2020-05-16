@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     updateMessage(evt) {
-      this.$store.commit("SET_FREE_MESSAGE", evt.target.value);
+      this.$store.commit("UPDATE_FREE_MESSAGE", evt.target.value);
     },
     updateChecked(evt) {
       this.$store.commit("UPDATE_CHECKED", evt.target.value);
