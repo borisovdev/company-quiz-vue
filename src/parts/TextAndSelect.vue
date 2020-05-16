@@ -12,7 +12,8 @@
     <div class="col-4 d-flex justify-content-end align-items-center">
       <select
         :value="value"
-        v-model.lazy="updateChecked"
+        v-model.lazy="selectedValue"
+        @change="updateChecked"
         class="quiz-input_values"
         style="width: 100%;"
       >
@@ -44,23 +45,19 @@ export default {
       title: "Ваш вариант ответа",
       layoutClasses: "col-8",
       inputTheme: "quiz-input_light",
+      selectedValue: "Выберите значение"
     };
   },
   methods: {
     updateMessage(evt) {
       this.$store.commit("SET_FREE_MESSAGE", evt.target.value);
     },
+    updateChecked(evt) {
+      this.$store.commit("UPDATE_CHECKED", evt.target.value);
+    }
   },
   computed: {
     ...mapGetters(["getNowItems"]),
-    updateChecked: {
-      get() {
-        return this.$store.state.userData;
-      },
-      set(v) {
-        this.$store.commit("UPDATE_CHECKED", v);
-      },
-    },
   },
 };
 </script>

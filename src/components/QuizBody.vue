@@ -1,7 +1,7 @@
 <template>
   <div id="quiz_form">
-    <!-- <notify-bar>{{ $store.state.objectData }}</notify-bar>
-    <notify-bar>{{ $store.state.userData }}</notify-bar> -->
+    <notify-bar>{{ $store.state.objectData }}</notify-bar>
+    <notify-bar>{{ $store.state.userData }}</notify-bar>
     <!-- <notify-bar>{{ response }}</notify-bar>
     <notify-bar>{{ reject }}</notify-bar> -->
     <div class="quiz-fields">
@@ -23,8 +23,8 @@ export default {
     "cards-screen": () => import("@/screens/CardsScreen"),
     "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
-    "input-text-and-select": () => import("@/parts/InputTextAndSelect"),
-    "input-select-and-text": () => import("@/parts/InputSelectAndText")
+    "text-and-select": () => import("@/parts/TextAndSelect"),
+    "selects": () => import("@/parts/Selects")
   },
   props: {
     response: {
@@ -49,9 +49,9 @@ export default {
         case "request":
           return "request-screen";
         case "text-and-select":
-          return "input-text-and-select";
-        case "select-and-text":
-          return "input-select-and-text";
+          return "text-and-select";
+        case "selects":
+          return "selects";
         default:
           return "radios-screen";
       }

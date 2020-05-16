@@ -13,11 +13,16 @@
         <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
           item.label
         }}</label>
-        <select v-model.lazy="updateChecked" id="" :class="selectTheme">
+        <select
+          v-model.lazy="dispathCity"
+          @change="newChecked"
+          id=""
+          :class="selectTheme"
+        >
           <option
             v-for="option in getNowItemsFirstOptions"
             :key="option.id"
-            :value="option.value"
+            :value="item.keyValue + ' ' + option.value"
             >{{ option.value }}</option
           >
         </select>
@@ -30,11 +35,16 @@
         <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
           item.label
         }}</label>
-        <select @change="updateMessage" id="" :class="selectTheme">
+        <select
+          v-model.lazy="deliveryCity"
+          @change="newChecked"
+          id=""
+          :class="selectTheme"
+        >
           <option
             v-for="option in getNowItemsSecondOptions"
             :key="option.id"
-            :value="option.value"
+            :value="item.keyValue + ' ' + option.value"
             >{{ option.value }}</option
           >
         </select>
@@ -51,6 +61,8 @@ export default {
       selectTheme: "quiz-input_values-fullwidth",
       labelTheme: "quiz-smalltext",
       layout: "col-12",
+      deliveryCity: "Город доставки: Выберите значение",
+      dispathCity: "Город отправки: Выберите значение",
     };
   },
   computed: {
@@ -71,6 +83,9 @@ export default {
   methods: {
     updateMessage(evt) {
       this.$store.commit("SET_FREE_MESSAGE", evt.target.value);
+    },
+    newChecked(evt) {
+      this.$store.commit("ADD_CITY_DATA", evt.target.value);
     },
   },
 };

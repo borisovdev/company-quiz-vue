@@ -47,12 +47,12 @@ export default new Vuex.Store({
         state.objectData[`${state.counter - 1}`],
         "title",
         state.steps[`${state.counter - 1}`].title
-      ),
-        Vue.set(
-          state.objectData[`${state.counter - 1}`],
-          "chosen",
-          state.userData
-        );
+      );
+      Vue.set(
+        state.objectData[`${state.counter - 1}`],
+        "chosen",
+        state.userData
+      );
       Vue.set(
         state.objectData[`${state.counter - 1}`],
         "wrote",
@@ -71,6 +71,19 @@ export default new Vuex.Store({
     },
     UPDATE_CHECKED(state, list) {
       state.userData = list;
+    },
+    ADD_CITY_DATA(state, value) {
+      let index;
+      state.userData.find((element, idx) => {
+        if (element.slice(0, 14) === value.slice(0, 14)) {
+          index = idx;
+          return true;
+        } else {
+          return false;
+        }
+      })
+        ? state.userData.splice(index, 1, value)
+        : state.userData.push(value);
     },
     SET_QUIZ_MAIN(state, main) {
       state.main.brand.name = main.brand.name;

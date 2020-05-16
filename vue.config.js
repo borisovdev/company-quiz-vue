@@ -2,7 +2,7 @@ module.exports = {
   devServer: {
     proxy: {
       "^/api/": {
-        target: "http://test.workplace/",
+        target: "test.workplace",
         changeOrigin: true
       }
     }
