@@ -1,5 +1,14 @@
 # Changelog
 
+## Beta 0.2.3
+### Added
+- Навигация на следующий шаг квиза с помощью клавиатуры
+
+### Changed
+- Передача данных в компонент NotifyBar
+- В хранилище возвращены мутации UPDATE_USER_NAME, UPDATE_USER_PHONE, UPDATE_USER_EMAIL
+
+
 ## Beta 0.2.2
 ### Added 
 - Геттер хранилища getUserData

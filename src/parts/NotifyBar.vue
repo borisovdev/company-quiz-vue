@@ -1,11 +1,15 @@
 <template>
   <div class="notifications-quiz">
-    <code><slot></slot></code>
+    <code
+      ><slot>{{ content }}</slot></code
+    >
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["content"]
+};
 </script>
 
 <style lang="scss" scoped>

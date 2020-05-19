@@ -88,6 +88,15 @@ export default new Vuex.Store({
         ? state.userData.splice(index, 1, value)
         : state.userData.push(value);
     },
+    UPDATE_USER_NAME(state, value) {
+      state.user.name = value;
+    },
+    UPDATE_USER_PHONE(state, value) {
+      state.user.phone = value;
+    },
+    UPDATE_USER_EMAIL(state, value) {
+      state.user.email = value;
+    },
     SET_QUIZ_MAIN(state, main) {
       state.main.brand.name = main.brand.name;
       state.main.brand.tagline = main.brand.tagline;

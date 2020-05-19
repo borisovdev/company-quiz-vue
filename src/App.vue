@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @keydown.enter.prevent="onPressEnter">
     <section class="quiz-section">
       <div class="container">
         <div class="row">
@@ -31,7 +31,7 @@ import QuizHeader from "./components/QuizHeader";
 import QuizBody from "./components/QuizBody";
 import QuizNav from "./components/QuizNav";
 import QuizSidebar from "./components/QuizSidebar";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   store,
@@ -39,7 +39,7 @@ export default {
   props: {
     dataAction: {
       type: String,
-      default: "/api/send_data.php",
+      default: "/api/MailEngine.php",
     },
     dataSource: {
       type: String,
@@ -63,6 +63,7 @@ export default {
     QuizSidebar,
   },
   methods: {
+    ...mapActions(["nextCount", "prevCount"]),
     sendDataToScenario() {
       const params = {
         method: "POST",
@@ -85,6 +86,13 @@ export default {
         .catch((reject) => {
           this.serverReject = reject;
         });
+    },
+    onPressEnter() {
+      this.nextCount();
+    },
+    onPressEsc() {
+      console.log("esc pressed");
+      this.prevCount();
     },
   },
   computed: {

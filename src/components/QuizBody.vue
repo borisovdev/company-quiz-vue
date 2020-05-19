@@ -1,7 +1,7 @@
 <template>
   <div id="quiz_form">
-    <notify-bar>{{ $store.state.objectData }}</notify-bar>
-    <notify-bar>{{ $store.state.userData }}</notify-bar>
+    <notify-bar :content="$store.state.objectData"></notify-bar>
+    <notify-bar :content="$store.state.userData"></notify-bar>
     <!-- <notify-bar>{{ response }}</notify-bar>
     <notify-bar>{{ reject }}</notify-bar> -->
     <div class="quiz-fields">
