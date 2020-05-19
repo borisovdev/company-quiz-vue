@@ -35,7 +35,9 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+// import { mapGetters } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   props: {
@@ -47,12 +49,14 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    ...mapActions(["initMain"])
+  },
   computed: {
     ...mapGetters(["getMain", "getBrand", "getManager", "getInfo"]),
   },
   created() {
-    this.$store.dispatch("initMain", this.dataMain);
+    this.initMain(this.dataMain);
   },
 };
 </script>

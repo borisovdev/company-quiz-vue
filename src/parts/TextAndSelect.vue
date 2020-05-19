@@ -4,7 +4,7 @@
     <div :class="layoutClasses">
       <input
         type="number"
-        @input="updateMessage"
+        @change="updateFreeMessage"
         :class="inputTheme"
         placeholder="Введите значение"
       />
@@ -13,7 +13,7 @@
       <select
         :value="value"
         v-model.lazy="selectedValue"
-        @change="updateChecked"
+        @change="DOMUpdateChecked"
         class="quiz-input_values"
         style="width: 100%;"
       >
@@ -30,7 +30,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   props: {
     options: Object,
@@ -49,11 +50,9 @@ export default {
     };
   },
   methods: {
-    updateMessage(evt) {
-      this.$store.commit("UPDATE_FREE_MESSAGE", evt.target.value);
-    },
-    updateChecked(evt) {
-      this.$store.commit("UPDATE_CHECKED", evt.target.value);
+    ...mapActions(["updateFreeMessage", "updateChecked"]),
+    DOMUpdateChecked(evt) {
+      this.updateChecked(evt.target.value);
     }
   },
   computed: {

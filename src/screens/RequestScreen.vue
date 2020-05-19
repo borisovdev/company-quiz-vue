@@ -52,7 +52,7 @@
           <input
             type="email"
             v-model.lazy="username"
-            @change="$store.commit('UPDATE_USER_NAME', username)"
+            @change="updateUserName(username)"
             :class="inputTheme"
             placeholder="Ваш Email"
             required
@@ -60,7 +60,7 @@
           <input
             type="text"
             v-model.lazy="userphone"
-            @change="$store.commit('UPDATE_USER_PHONE', userphone)"
+            @change="updateUserPhone(userphone)"
             :class="inputTheme"
             placeholder="Ваше имя"
             required
@@ -68,7 +68,7 @@
           <input
             type="tel"
             v-model.lazy="useremail"
-            @change="$store.commit('UPDATE_USER_EMAIL', useremail)"
+            @change="updateUserEmail(useremail)"
             :class="inputTheme"
             placeholder="Номер телефона"
             required
@@ -80,7 +80,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
@@ -95,6 +96,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(["updateUserName", "updateUserPhone", "updateUserEmail"]),
     actionAccordion(evt) {
       evt.target.nextElementSibling.classList.toggle("hidden-accordeon");
     },

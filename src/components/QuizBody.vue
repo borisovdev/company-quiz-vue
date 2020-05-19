@@ -1,9 +1,9 @@
 <template>
   <div id="quiz_form">
-    <notify-bar :content="$store.state.objectData"></notify-bar>
-    <notify-bar :content="$store.state.userData"></notify-bar>
-    <!-- <notify-bar>{{ response }}</notify-bar>
-    <notify-bar>{{ reject }}</notify-bar> -->
+    <notify-bar :content="getObjectData"></notify-bar>
+    <notify-bar :content="getUserData"></notify-bar>
+    <!-- <notify-bar :content="response"></notify-bar>
+    <notify-bar :content="reject"></notify-bar> -->
     <div class="quiz-fields">
       <transition name="fade" mode="out-in">
         <fieldset v-if="getCounter < isStepsLength" :key="getCounter">
@@ -15,7 +15,8 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapState, mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   components: {
@@ -24,24 +25,30 @@ export default {
     "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
     "text-and-select": () => import("@/parts/TextAndSelect"),
-    "selects": () => import("@/parts/Selects")
+    selects: () => import("@/parts/Selects"),
   },
   props: {
     response: {
       type: String,
-      default: ""
+      default: "",
     },
     reject: {
       type: String,
-      default: ""
-    }
+      default: "",
+    },
   },
   methods: {},
   computed: {
     ...mapState({
-      userData: state => state.userData
+      userData: (state) => state.userData,
     }),
-    ...mapGetters(["getCounter", "isStepsLength", "getNowItemsType"]),
+    ...mapGetters([
+      "getCounter",
+      "isStepsLength",
+      "getNowItemsType",
+      "getObjectData",
+      "getUserData",
+    ]),
     currentScreen() {
       switch (this.getNowItemsType) {
         case "card":
@@ -55,8 +62,8 @@ export default {
         default:
           return "radios-screen";
       }
-    }
-  }
+    },
+  },
 };
 </script>
 

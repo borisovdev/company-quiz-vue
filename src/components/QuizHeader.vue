@@ -16,8 +16,9 @@
 
 <script>
 // import TweenLite from "gsap/TweenLite";
-import { mapGetters } from "vuex";
 import Progress from "./Progress";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   data() {

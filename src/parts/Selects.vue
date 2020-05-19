@@ -54,7 +54,8 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
@@ -73,8 +74,9 @@ export default {
     ]),
   },
   methods: {
+    ...mapActions(["updateCityData"]),
     newChecked(evt) {
-      this.$store.commit("UPDATE_CITY_DATA", evt.target.value);
+      this.updateCityData(evt.target.value);
     },
   },
 };

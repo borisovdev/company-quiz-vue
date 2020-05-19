@@ -1,6 +1,6 @@
 <template>
   <transition name="fade" mode="out-in">
-    <div v-if="$store.state.dataSended"></div>
+    <div v-if="getDataStatus"></div>
     <div v-else id="quiz_nav">
       <button
         :class="[prevBtnClasses, turnOff(disabledClass, 'prev')]"
@@ -52,7 +52,8 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   data() {
@@ -88,6 +89,7 @@ export default {
     ...mapGetters([
       "isNowStep",
       "getCounter",
+      "getDataStatus",
       "isStepsLength",
       "getUser",
       "getObjectData",

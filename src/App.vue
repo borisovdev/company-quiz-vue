@@ -31,7 +31,8 @@ import QuizHeader from "./components/QuizHeader";
 import QuizBody from "./components/QuizBody";
 import QuizNav from "./components/QuizNav";
 import QuizSidebar from "./components/QuizSidebar";
-import { mapGetters, mapActions } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   store,
@@ -63,7 +64,12 @@ export default {
     QuizSidebar,
   },
   methods: {
-    ...mapActions(["nextCount", "prevCount"]),
+    ...mapActions([
+      "nextCount",
+      "prevCount",
+      "initSteps",
+      "changeDataStatusToTrue",
+    ]),
     sendDataToScenario() {
       const params = {
         method: "POST",
@@ -80,7 +86,7 @@ export default {
         .then((response) => {
           this.serverResponse = response;
           if (response.data === "success") {
-            this.$store.commit("TRUE_DATA_STATUS");
+            this.changeDataStatusToTrue();
           }
         })
         .catch((reject) => {
@@ -99,7 +105,7 @@ export default {
     ...mapGetters(["getUser", "getObjectData"]),
   },
   created() {
-    this.$store.dispatch("initSteps", this.dataSource);
+    this.initSteps(this.dataSource);
   },
 };
 </script>

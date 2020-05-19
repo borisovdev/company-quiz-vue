@@ -13,33 +13,32 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   data() {
     return {
-      layout: "col-6 col-sm-6 col-lg-4"
+      layout: "col-6 col-sm-6 col-lg-4",
     };
   },
   components: {
     "checkbox-card": () => import("@/parts/CheckboxCard"),
-    "free-answer": () => import("@/parts/FreeAnswer")
+    "free-answer": () => import("@/parts/FreeAnswer"),
   },
   methods: {
-    ...mapActions(["updateChecked"])
+    ...mapActions(["updateChecked"]),
   },
   computed: {
-    ...mapGetters([
-      "getNowItems"
-    ]),
+    ...mapGetters(["getNowItems", "getUserData"]),
     newCheckedAction: {
       get() {
-        return this.$store.state.userData;
+        return this.getUserData;
       },
       set(value) {
         this.updateChecked(value);
-      }
-    }
-  }
+      },
+    },
+  },
 };
 </script>
