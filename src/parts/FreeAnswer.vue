@@ -1,16 +1,21 @@
 <template>
-  <div :class="layoutClasses">
+  <div :class="[layoutClasses]">
     <label class="quiz-smalltext">{{ title }}</label>
     <input
       type="text"
-      :value="getFreeMessage"
-      @change="updateFreeMessage"
-      :class="inputTheme"
+      :value="getText"
+      @change="setText"
+      :class="[inputTheme, { 'form--error': $v.text.$error }]"
     />
+    <div class="error-validate" v-if="!$v.text.minLength">
+      Поле должно содержать не менее
+      {{ $v.text.$params.minLength.min }} символов
+    </div>
   </div>
 </template>
 
 <script>
+import { minLength } from "vuelidate/lib/validators";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
@@ -18,14 +23,38 @@ export default {
     return {
       title: "Ваш вариант ответа",
       layoutClasses: "col-12",
-      inputTheme: "quiz-input_light"
+      inputTheme: "quiz-input_light".toString(),
+      text: "",
     };
   },
+  validations: {
+    text: {
+      minLength: minLength(4),
+    },
+  },
   methods: {
-    ...mapActions(["updateFreeMessage"])
+    ...mapActions(["updateFreeMessage"]),
+    setText(event) {
+      this.updateFreeMessage(event);
+      this.text = event.target.value;
+      this.$v.text.$touch();
+    },
   },
   computed: {
-    ...mapGetters(["getFreeMessage"])
-  }
+    ...mapGetters(["getFreeMessage"]),
+    getText() {
+      return this.getFreeMessage;
+    },
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.form--error {
+  border-color: red;
+}
+.error-validate {
+  color: red;
+  font-size: 10px;
+}
+</style>

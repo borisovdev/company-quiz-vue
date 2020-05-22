@@ -1,5 +1,11 @@
 <template>
   <div class="row">
+    <pre class="col-12 display-validation">
+      {{ $v }}
+    </pre>
+    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
+      Выберите вариант
+    </div>
     <div :class="layout" v-for="item in getNowItems" :key="item.id">
       <radio-input
         :value="item.name"
@@ -12,6 +18,7 @@
 </template>
 
 <script>
+import { required, minLength } from "vuelidate/lib/validators";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
@@ -20,6 +27,12 @@ export default {
     return {
       layout: "col-12"
     };
+  },
+  validations: {
+    getUserData: {
+      required,
+      minLength: minLength(1),
+    },
   },
   components: {
     "radio-input": () => import("@/parts/RadioInput"),
@@ -41,3 +54,13 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.error-validation {
+  color: red;
+  font-size: 10px;
+}
+.display-validation {
+  font-size: 10px;
+}
+</style>

@@ -28,14 +28,14 @@ const moduleQuiz = {
     objectData: {
       0: {
         title: "",
-        chosen: "",
-        wrote: "",
+        chosen: null,
+        wrote: null,
       },
     },
     counter: 0,
     userData: [],
     freeMessage: "",
-    dataSended: false,
+    dataSended: false
   },
   mutations: {
     TRUE_DATA_STATUS(state) {
@@ -76,6 +76,7 @@ const moduleQuiz = {
     UPDATE_CITY_DATA(state, value) {
       let index;
       state.userData.find((element, idx) => {
+        // Проверяем часть строки, в которой содержится тип доставки
         if (element.slice(0, 14) === value.slice(0, 14)) {
           index = idx;
           return true;

@@ -25,14 +25,18 @@
 </template>
 
 <script>
-import axios from "axios";
+import Vue from "vue";
+import Vuelidate from "vuelidate";
 import store from "./store";
+import axios from "axios";
 import QuizHeader from "./components/QuizHeader";
 import QuizBody from "./components/QuizBody";
 import QuizNav from "./components/QuizNav";
 import QuizSidebar from "./components/QuizSidebar";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
+
+Vue.use(Vuelidate);
 
 export default {
   store,

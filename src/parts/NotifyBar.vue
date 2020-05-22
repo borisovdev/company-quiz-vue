@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .notifications-quiz {
+  font-size: 10px;
   padding: 0 10px;
   background: #488de8;
   color: white;
