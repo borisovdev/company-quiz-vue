@@ -7,35 +7,36 @@ const moduleQuiz = {
     main: {
       brand: {
         name: "",
-        tagline: "",
+        tagline: ""
       },
       manager: {
         avatar: "",
         name: "",
-        position: "",
+        position: ""
       },
       info: {
         maintext: "",
-        desctext: "",
-      },
+        desctext: ""
+      }
     },
     steps: [],
     user: {
       name: "",
       phone: "",
-      email: "",
+      email: ""
     },
     objectData: {
       0: {
         title: "",
         chosen: null,
-        wrote: null,
-      },
+        wrote: null
+      }
     },
     counter: 0,
     userData: [],
     freeMessage: "",
-    dataSended: false
+    dataSended: false,
+    validationStatus: "INVALID"
   },
   mutations: {
     TRUE_DATA_STATUS(state) {
@@ -108,29 +109,36 @@ const moduleQuiz = {
     SET_STEPS(state, steps) {
       state.steps = steps;
     },
+    VALIDATION_STATUS_TRUE(state) {
+      state.validationStatus = "VALID";
+    },
+    VALIDATION_STATUS_FALSE(state) {
+      state.validationStatus = "INVALID";
+    }
   },
 
   getters: {
-    getMain: (state) => state.main,
-    getSteps: (state) => state.steps,
-    getBrand: (state) => state.brand,
-    getManager: (state) => state.manager,
-    getInfo: (state) => state.info,
-    getCounter: (state) => state.counter,
-    getDataStatus: (state) => state.dataSended,
+    getMain: state => state.main,
+    getSteps: state => state.steps,
+    getBrand: state => state.brand,
+    getManager: state => state.manager,
+    getInfo: state => state.info,
+    getCounter: state => state.counter,
+    getDataStatus: state => state.dataSended,
     getUserData: state => state.userData,
-    getObjectData: (state) => state.objectData,
-    getFreeMessage: (state) => state.freeMessage,
-    getUser: (state) => state.user,
-    isStepsLength: (state) => state.steps.length,
-    isNowStep: (state) => {
+    getObjectData: state => state.objectData,
+    getFreeMessage: state => state.freeMessage,
+    getUser: state => state.user,
+    getValidationStatus: state => state.validationStatus,
+    isStepsLength: state => state.steps.length,
+    isNowStep: state => {
       return state.counter + 1;
     },
-    getNowUserData: (state) =>
+    getNowUserData: state =>
       state.userData.filter((item, idx) => {
         return idx === state.counter;
       }),
-    getNowStep: (state) =>
+    getNowStep: state =>
       state.steps.filter((item, idx) => {
         return idx === state.counter;
       }),
@@ -155,7 +163,7 @@ const moduleQuiz = {
       for (let i = 0; i < getters.getNowStep.length; i++) {
         return getters.getNowStep[i].items_type;
       }
-    },
+    }
   },
 
   actions: {
@@ -186,16 +194,22 @@ const moduleQuiz = {
     changeDataStatusToTrue({ commit }) {
       commit("TRUE_DATA_STATUS");
     },
+    validationStatusTrue({ commit }) {
+      commit("VALIDATION_STATUS_TRUE");
+    },
+    validationStatusFalse({ commit }) {
+      commit("VALIDATION_STATUS_FALSE");
+    },
     initMain({ commit }, payload) {
-      axios.get(payload).then((response) => {
+      axios.get(payload).then(response => {
         commit("SET_QUIZ_MAIN", response.data.main);
       });
     },
     initSteps({ commit }, payload) {
-      axios.get(payload).then((response) => {
+      axios.get(payload).then(response => {
         commit("SET_STEPS", response.data.steps);
       });
-    },
+    }
   }
 };
 

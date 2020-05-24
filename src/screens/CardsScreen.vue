@@ -2,6 +2,8 @@
   <div class="row">
     <pre class="col-12 display-validation">
       {{ $v }}
+      {{ getValidationStatus }}
+      {{ $v.$invalid }}
     </pre>
     <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
       Вы должны выбрать не менее
@@ -27,33 +29,46 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
-      layout: "col-6 col-sm-6 col-lg-4",
+      layout: "col-6 col-sm-6 col-lg-4"
+      // checkStatus: this.$v.$invalid
     };
   },
   components: {
     "checkbox-card": () => import("@/parts/CheckboxCard"),
-    "free-answer": () => import("@/parts/FreeAnswer"),
+    "free-answer": () => import("@/parts/FreeAnswer")
   },
   validations: {
     getUserData: {
       required,
-      minLength: minLength(1),
-    },
+      minLength: minLength(1)
+    }
   },
   methods: {
-    ...mapActions(["updateChecked"]),
+    ...mapActions([
+      "updateChecked",
+      "validationStatusTrue",
+      "validationStatusFalse"
+    ])
   },
   computed: {
-    ...mapGetters(["getNowItems", "getUserData"]),
+    ...mapGetters(["getNowItems", "getUserData", "getValidationStatus"]),
     newCheckedAction: {
       get() {
         return this.getUserData;
       },
       set(value) {
         this.updateChecked(value);
-      },
-    },
+      }
+    }
   },
+  beforeUpdate() {
+    console.log("update");
+    if (this.$v.$invalid) {
+      this.validationStatusFalse();
+    } else {
+      this.validationStatusTrue();
+    }
+  }
 };
 </script>
 
