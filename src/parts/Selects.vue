@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
+      Вы должны выбрать не менее
+      {{ $v.getUserData.$params.minLength.min }} вариантов
+    </div>
     <div
       v-for="item in getNowItems"
       :key="item.id"
@@ -54,8 +58,11 @@
 </template>
 
 <script>
+import { mixinValidationStatus } from "../assets/mixins";
 import { createNamespacedHelpers } from "vuex";
+import { required, minLength } from "vuelidate/lib/validators";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
+
 export default {
   data() {
     return {
@@ -63,21 +70,39 @@ export default {
       labelTheme: "quiz-smalltext",
       layout: "col-12",
       deliveryCity: "Город доставки: Выберите значение",
-      dispathCity: "Город отправки: Выберите значение",
+      dispathCity: "Город отправки: Выберите значение"
     };
+  },
+  mixins: [mixinValidationStatus],
+  methods: {
+    ...mapActions([
+      "updateCityData",
+      "validationStatusTrue",
+      "validationStatusFalse"
+    ]),
+    newChecked(evt) {
+      this.updateCityData(evt.target.value);
+    }
   },
   computed: {
     ...mapGetters([
+      "getUserData",
       "getNowItems",
       "getNowItemsFirstOptions",
-      "getNowItemsSecondOptions",
-    ]),
+      "getNowItemsSecondOptions"
+    ])
   },
-  methods: {
-    ...mapActions(["updateCityData"]),
-    newChecked(evt) {
-      this.updateCityData(evt.target.value);
-    },
+  validations: {
+    getUserData: {
+      required,
+      minLength: minLength(2)
+    }
   },
+  created() {
+    this.changeValidationStatus();
+  },
+  beforeUpdate() {
+    this.changeValidationStatus();
+  }
 };
 </script>

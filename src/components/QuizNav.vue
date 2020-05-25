@@ -2,14 +2,25 @@
   <transition name="fade" mode="out-in">
     <div v-if="getDataStatus"></div>
     <div v-else id="quiz_nav">
+      <!--      <div class="quiz__nav-notify">-->
+      <!--        {{ getValidationStatus }}-->
+      <!--      </div>-->
       <div
         :class="[
           'quiz__nav-notify',
-          { 'validation-error': getValidationStatus === 'INVALID' }
+          { 'error-validation': getValidationStatus === 'INVALID' }
         ]"
         v-if="getValidationStatus === 'INVALID'"
       >
         {{ validationMsg }}
+      </div>
+      <div
+        :class="['quiz__nav-skip']"
+        v-if="!requiredStep && Number(isNowStep) !== Number(isStepsLength)"
+      >
+        <button :class="['quiz__btn-skip']" @click.prevent="nextCount">
+          Пропустить вопрос
+        </button>
       </div>
       <div class="quiz__control">
         <button
@@ -78,6 +89,12 @@ export default {
       validationMsg: ""
     };
   },
+  props: {
+    requiredStep: {
+      type: Boolean,
+      default: false
+    }
+  },
   methods: {
     nextStep() {
       if (this.getValidationStatus === "INVALID") {
@@ -129,9 +146,25 @@ export default {
   align-items: flex-start;
 }
 
-.validation-error {
+.quiz__nav-skip {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.quiz__btn-skip {
+  padding: 13px 20px;
+  border: none;
+  background: transparent;
+  color: $dark-text;
   font-size: 14px;
-  color: $info-color;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  &:hover {
+    letter-spacing: 0.1em;
+  }
 }
 
 .quiz__control {
@@ -165,14 +198,14 @@ export default {
 .quiz-button_prev {
   background: #888888;
   &:hover {
-    box-shadow: 0px 0px 15px -3px #888888;
+    box-shadow: 0 0 15px -3px #888888;
   }
 }
 
 .quiz-button_next {
   background: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%);
   &:hover {
-    box-shadow: 0px 0px 15px -3px #d5242c;
+    box-shadow: 0 0 15px -3px #d5242c;
   }
 }
 

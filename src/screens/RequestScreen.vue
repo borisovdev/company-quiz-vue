@@ -50,19 +50,19 @@
         <div>
           <span>Представьтесь, чтобы мы могли связаться с Вами</span>
           <input
-            type="email"
-            v-model.lazy="username"
-            @change="updateUserName(username)"
-            :class="inputTheme"
-            placeholder="Ваш Email"
-            required
-          />
-          <input
             type="text"
             v-model.lazy="userphone"
             @change="updateUserPhone(userphone)"
             :class="inputTheme"
-            placeholder="Ваше имя"
+            placeholder="Ваше имя *"
+            required
+          />
+          <input
+            type="email"
+            v-model.lazy="username"
+            @change="updateUserName(username)"
+            :class="inputTheme"
+            placeholder="Ваш Email *"
             required
           />
           <input
@@ -70,8 +70,7 @@
             v-model.lazy="useremail"
             @change="updateUserEmail(useremail)"
             :class="inputTheme"
-            placeholder="Номер телефона"
-            required
+            placeholder="Мессенджер или номер телефона"
           />
         </div>
       </div>
@@ -92,18 +91,18 @@ export default {
       inputTheme: "quiz-input_light",
       username: "",
       userphone: "",
-      useremail: "",
+      useremail: ""
     };
   },
   methods: {
     ...mapActions(["updateUserName", "updateUserPhone", "updateUserEmail"]),
     actionAccordion(evt) {
       evt.target.nextElementSibling.classList.toggle("hidden-accordeon");
-    },
+    }
   },
   computed: {
-    ...mapGetters(["getObjectData", "getDataStatus"]),
-  },
+    ...mapGetters(["getObjectData", "getDataStatus"])
+  }
 };
 </script>
 
@@ -119,7 +118,7 @@ export default {
 }
 
 .hidden-accordeon {
-  height: 0px;
+  height: 0;
 }
 
 .list-chosen {
@@ -146,7 +145,7 @@ export default {
 .title-chosen {
   width: 100%;
   color: $info-color;
-  padding: 8px auto;
+  padding: 8px 0;
   position: relative;
   cursor: pointer;
   &:hover {

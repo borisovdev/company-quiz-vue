@@ -12,7 +12,7 @@
                     :response="serverResponse"
                     :reject="serverReject"
                   ></quiz-body>
-                  <quiz-nav></quiz-nav>
+                  <quiz-nav :requiredStep="getNowStep[0].required"></quiz-nav>
                 </div>
                 <quiz-sidebar :data-main="dataMain"></quiz-sidebar>
               </div>
@@ -43,57 +43,54 @@ export default {
   name: "App",
   props: {
     dataAction: {
-      type: String,
-      default: "/api/MailEngine.php",
+      default: "/api/MailEngine.php"
     },
     dataSource: {
-      type: String,
-      default: "/static/data/steps.json",
+      default: "/static/data/steps.json"
     },
     dataMain: {
-      type: String,
-      default: "/static/data/quiz_main.json",
-    },
+      default: "/static/data/quiz_main.json"
+    }
   },
   data() {
     return {
       serverResponse: "",
-      serverReject: "",
+      serverReject: ""
     };
   },
   components: {
     QuizHeader,
     QuizBody,
     QuizNav,
-    QuizSidebar,
+    QuizSidebar
   },
   methods: {
     ...mapActions([
       "nextCount",
       "prevCount",
       "initSteps",
-      "changeDataStatusToTrue",
+      "changeDataStatusToTrue"
     ]),
     sendDataToScenario() {
       const params = {
         method: "POST",
         url: this.dataAction,
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         data: {
           userFullinfo: this.getUser,
-          quizData: this.getObjectData,
-        },
+          quizData: this.getObjectData
+        }
       };
       axios(params)
-        .then((response) => {
+        .then(response => {
           this.serverResponse = response;
           if (response.data === "success") {
             this.changeDataStatusToTrue();
           }
         })
-        .catch((reject) => {
+        .catch(reject => {
           this.serverReject = reject;
         });
     },
@@ -103,14 +100,14 @@ export default {
     onPressEsc() {
       console.log("esc pressed");
       this.prevCount();
-    },
+    }
   },
   computed: {
-    ...mapGetters(["getUser", "getObjectData"]),
+    ...mapGetters(["getUser", "getObjectData", "getNowStep"])
   },
   created() {
     this.initSteps(this.dataSource);
-  },
+  }
 };
 </script>
 
@@ -132,14 +129,30 @@ export default {
   //padding: 30px;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 0px 15px -2px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
+}
+
+.quiz-section {
+  margin: 15px 0 20px;
 }
 
 .quiz_area {
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #efefef;
+}
+
+// Validations
+.error-validation {
+  color: red;
+  font-size: 12px;
+}
+.display-validation {
+  font-size: 12px;
+}
+.form--error {
+  border-color: red;
 }
 
 // Typograpohy
@@ -192,9 +205,9 @@ export default {
   color: #000000;
   border: 1px solid rgba(15, 28, 45, 0.1);
   border-radius: 5px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   &:focus {
-    box-shadow: 0px 1px 1px rgba(133, 200, 79, 0.25);
+    box-shadow: 0 1px 1px rgba(133, 200, 79, 0.25);
   }
 }
 
@@ -210,7 +223,7 @@ export default {
   color: #000000;
   border: 1px solid rgba(15, 28, 45, 0.2);
   border-radius: 5px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .quiz-input_mini {
@@ -221,7 +234,7 @@ export default {
   color: #000000;
   border: 1px solid rgba(15, 28, 45, 0.1);
   border-radius: 5px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .quiz-input_values {
@@ -232,7 +245,7 @@ export default {
   color: #000000;
   border: 1px solid rgba(15, 28, 45, 0.1);
   border-radius: 5px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .quiz-input_values-fullwidth {
   width: 100%;
@@ -242,7 +255,7 @@ export default {
   color: #000000;
   border: 1px solid rgba(15, 28, 45, 0.1);
   border-radius: 5px;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
 .quiz-label-text {

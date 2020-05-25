@@ -1,8 +1,5 @@
 <template>
   <div class="row">
-    <pre class="col-12 display-validation">
-      {{ $v }}
-    </pre>
     <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
       Выберите вариант
     </div>
@@ -18,6 +15,7 @@
 </template>
 
 <script>
+import { mixinValidationStatus } from "../assets/mixins";
 import { required, minLength } from "vuelidate/lib/validators";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
@@ -28,18 +26,23 @@ export default {
       layout: "col-12"
     };
   },
+  mixins: [mixinValidationStatus],
   validations: {
     getUserData: {
       required,
-      minLength: minLength(1),
-    },
+      minLength: minLength(1)
+    }
   },
   components: {
     "radio-input": () => import("@/parts/RadioInput"),
     "free-answer": () => import("@/parts/FreeAnswer")
   },
   methods: {
-    ...mapActions(["updateChecked"])
+    ...mapActions([
+      "updateChecked",
+      "validationStatusFalse",
+      "validationStatusTrue"
+    ])
   },
   computed: {
     ...mapGetters(["getUserData", "getNowItems"]),
@@ -51,16 +54,12 @@ export default {
         this.updateChecked(value);
       }
     }
+  },
+  created() {
+    this.changeValidationStatus();
+  },
+  beforeUpdate() {
+    this.changeValidationStatus();
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.error-validation {
-  color: red;
-  font-size: 10px;
-}
-.display-validation {
-  font-size: 10px;
-}
-</style>

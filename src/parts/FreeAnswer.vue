@@ -24,13 +24,13 @@ export default {
       title: "Ваш вариант ответа",
       layoutClasses: "col-12",
       inputTheme: "quiz-input_light".toString(),
-      text: "",
+      text: ""
     };
   },
   validations: {
     text: {
-      minLength: minLength(4),
-    },
+      minLength: minLength(4)
+    }
   },
   methods: {
     ...mapActions(["updateFreeMessage"]),
@@ -38,23 +38,13 @@ export default {
       this.updateFreeMessage(event);
       this.text = event.target.value;
       this.$v.text.$touch();
-    },
+    }
   },
   computed: {
     ...mapGetters(["getFreeMessage"]),
     getText() {
       return this.getFreeMessage;
-    },
-  },
+    }
+  }
 };
 </script>
-
-<style lang="scss" scoped>
-.form--error {
-  border-color: red;
-}
-.error-validate {
-  color: red;
-  font-size: 10px;
-}
-</style>

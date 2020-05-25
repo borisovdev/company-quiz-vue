@@ -1,5 +1,14 @@
 <template>
   <div class="row">
+    <div
+      :class="['error-validation', 'col-12']"
+      v-if="$v.getFreeMessage.$invalid"
+    >
+      Введите значение
+    </div>
+    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
+      Выберите вариант
+    </div>
     <label for="" class=" col-12 quiz-smalltext">{{ title }}</label>
     <div :class="layoutClasses">
       <input
@@ -30,16 +39,19 @@
 </template>
 
 <script>
+import { required, minLength } from "vuelidate/lib/validators";
+import { mixinValidationStatus } from "../assets/mixins";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
+
 export default {
   props: {
     options: Object,
-    value: String,
+    value: String
   },
   model: {
     prop: "modelValue",
-    event: "change",
+    event: "change"
   },
   data() {
     return {
@@ -49,14 +61,33 @@ export default {
       selectedValue: "Выберите значение"
     };
   },
+  mixins: [mixinValidationStatus],
   methods: {
-    ...mapActions(["updateFreeMessage", "updateChecked"]),
+    ...mapActions([
+      "updateFreeMessage",
+      "updateChecked",
+      "validationStatusTrue",
+      "validationStatusFalse"
+    ]),
     DOMUpdateChecked(evt) {
       this.updateChecked(evt.target.value);
     }
   },
   computed: {
-    ...mapGetters(["getNowItems"]),
+    ...mapGetters(["getNowItems", "getUserData", "getFreeMessage"])
   },
+  validations: {
+    getUserData: {
+      required,
+      minLength: minLength(1)
+    },
+    getFreeMessage: {
+      required,
+      minLength: minLength(1)
+    }
+  },
+  beforeUpdate() {
+    this.changeValidationStatus();
+  }
 };
 </script>

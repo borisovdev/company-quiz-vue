@@ -1,7 +1,7 @@
 <template>
   <div id="quiz_form">
-    <notify-bar :content="getObjectData"></notify-bar>
-    <notify-bar :content="getUserData"></notify-bar>
+    <!--    <notify-bar :content="getObjectData"></notify-bar>-->
+    <!--    <notify-bar :content="getUserData"></notify-bar>-->
     <!-- <notify-bar :content="response"></notify-bar>
     <notify-bar :content="reject"></notify-bar> -->
     <div class="quiz-fields">
@@ -25,29 +25,29 @@ export default {
     "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
     "text-and-select": () => import("@/parts/TextAndSelect"),
-    selects: () => import("@/parts/Selects"),
+    selects: () => import("@/parts/Selects")
   },
   props: {
     response: {
       type: String,
-      default: "",
+      default: ""
     },
     reject: {
       type: String,
-      default: "",
-    },
+      default: ""
+    }
   },
   methods: {},
   computed: {
     ...mapState({
-      userData: (state) => state.userData,
+      userData: state => state.userData
     }),
     ...mapGetters([
       "getCounter",
       "isStepsLength",
       "getNowItemsType",
       "getObjectData",
-      "getUserData",
+      "getUserData"
     ]),
     currentScreen() {
       switch (this.getNowItemsType) {
@@ -62,8 +62,8 @@ export default {
         default:
           return "radios-screen";
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
