@@ -1,5 +1,5 @@
 <template>
-  <div id="app" @keydown.enter.prevent="onPressEnter">
+  <div id="app">
     <section class="quiz-section">
       <div class="container">
         <div class="row">
@@ -46,10 +46,10 @@ export default {
       default: "/api/MailEngine.php"
     },
     dataSource: {
-      default: "/static/data/steps.json"
+      default: "/static/quiz_steps.json"
     },
     dataMain: {
-      default: "/static/data/quiz_main.json"
+      default: "/static/quiz_main.json"
     }
   },
   data() {
@@ -94,13 +94,6 @@ export default {
           this.serverReject = reject;
         });
     },
-    onPressEnter() {
-      this.nextCount();
-    },
-    onPressEsc() {
-      console.log("esc pressed");
-      this.prevCount();
-    }
   },
   computed: {
     ...mapGetters(["getUser", "getObjectData", "getNowStep"])

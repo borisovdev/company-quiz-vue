@@ -95,13 +95,21 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["updateUserName", "updateUserPhone", "updateUserEmail"]),
+    ...mapActions([
+      "updateUserName",
+      "updateUserPhone",
+      "updateUserEmail",
+      "validationStatusTrue"
+    ]),
     actionAccordion(evt) {
       evt.target.nextElementSibling.classList.toggle("hidden-accordeon");
     }
   },
   computed: {
     ...mapGetters(["getObjectData", "getDataStatus"])
+  },
+  created() {
+    this.validationStatusTrue();
   }
 };
 </script>
