@@ -79,6 +79,7 @@ export default {
 <style lang="scss" scoped>
 .quiz-card {
   width: 100%;
+  height: 140px;
   margin: 15px auto;
   position: relative;
   // overflow: hidden;
@@ -121,7 +122,7 @@ export default {
 
 @media (max-width: 576px) {
   .quiz-card {
-    height: 140px;
+    height: 120px;
     width: 100%;
     margin: 7px auto;
     overflow: hidden;

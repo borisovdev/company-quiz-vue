@@ -130,9 +130,7 @@ export default {
   margin: 15px 0 20px;
 }
 
-.quiz_area {
-  padding-top: 20px;
-  padding-bottom: 20px;
+.quiz-area {
   background-color: #efefef;
 }
 

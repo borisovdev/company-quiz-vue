@@ -51,24 +51,24 @@
           <span>Представьтесь, чтобы мы могли связаться с Вами</span>
           <input
             type="text"
-            v-model.lazy="userphone"
-            @change="updateUserPhone(userphone)"
+            v-model.lazy="username"
+            @change="updateUserName(username)"
             :class="inputTheme"
             placeholder="Ваше имя *"
             required
           />
           <input
             type="email"
-            v-model.lazy="username"
-            @change="updateUserName(username)"
+            v-model.lazy="useremail"
+            @change="updateUserEmail(useremail)"
             :class="inputTheme"
             placeholder="Ваш Email *"
             required
           />
           <input
             type="tel"
-            v-model.lazy="useremail"
-            @change="updateUserEmail(useremail)"
+            v-model.lazy="userphone"
+            @change="updateUserPhone(userphone)"
             :class="inputTheme"
             placeholder="Мессенджер или номер телефона"
           />

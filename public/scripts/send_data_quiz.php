@@ -18,7 +18,7 @@ function send_company_quiz_mail() {
   $from          = "postmaster@map-line.ru";
   $to_admin      = "burninghills@yandex.ru";
   $subject = "Новая заявка с Квиза";
-  $message = set_message($json);
+  $message = set_message_html($json);
 
   // Служебные заголовки
   $headers       = "From: $from" . PHP_EOL .
@@ -76,4 +76,66 @@ function converted_headers($headers) {
 
 function set_message($info) {
   return user_fullinfo($info) . PHP_EOL . user_fulldata($info);
+}
+
+function user_fullinfo_html($info) {
+    $content = '';
+    foreach($info["userFullinfo"] as $key => $value) {
+        $content .= '<tr>';
+        $content .= '<td width="300" style="padding: 5px 10px;">' . $key . '</td>';
+        $content .= '<td width="300" style="padding: 5px 10px;">' . $value . '</td>';
+        $content .= '</tr>';
+    }
+
+    return $content;
+}
+
+function user_fulldata_html($info) {
+    $content = '';
+    foreach($info["quizData"] as $key => $value) {
+        $content .= '<tr>';
+        foreach($value as $item_key => $item_value) {
+            if (is_array($item_value)) {
+                $content .= '<tr>';
+                $content .= '<td width="300" style="padding: 5px 10px;">' . $item_key . '</td>';
+                $content .= '<td width="300" style="padding: 5px 10px;">' . implode(",", $item_value) . '</td>';
+                $content .= '</tr>';
+            } else {
+                $content .= '<tr>';
+                $content .= '<td width="300" style="padding: 5px 10px;">' . $item_key . '</td>';
+                $content .= '<td width="300" style="padding: 5px 10px;">' . $item_value . '</td>';
+                $content .= '</tr>';
+            }
+        }
+        $content .= '</tr>';
+    }
+
+    return $content;
+}
+
+function set_message_html($info) {
+    return '
+        <table style="width: 602px; border: 1px solid black; border-collapse: collapse; table-layout: fixed; display: table;">
+        <thead>
+        <tr>
+            <th style="padding: 25px 0 25px 10px; text-align: left;" width="300">Mapline Logistics</th>
+            <th style="padding: 25px 10px 25px 0; text-align: right;" width="300">Company Quiz</th>
+        </tr>
+        </thead>
+        <tbody style="width: 100%;">
+        <tr>
+            <th style="text-align: left; padding: 5px 0 10px 10px;" width="300">Пользователь:</th>
+        </tr>
+        ' .
+            user_fullinfo_html($info)
+        . '
+        <tr>
+            <th style="padding: 10px 0 10px 10px; text-align: left;" width="300">Данные:</th>
+        </tr>
+        ' .
+            user_fulldata_html($info)
+        . '
+        </tbody>
+    </table>
+    ';
 }
