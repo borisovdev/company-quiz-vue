@@ -26,9 +26,9 @@
 
 <script>
 import Vue from "vue";
-import Vuelidate from "vuelidate";
 import store from "./store";
 import axios from "axios";
+import Vuelidate from "vuelidate";
 import QuizHeader from "./components/QuizHeader";
 import QuizBody from "./components/QuizBody";
 import QuizNav from "./components/QuizNav";
@@ -43,7 +43,7 @@ export default {
   name: "App",
   props: {
     dataAction: {
-      default: "/api/MailEngine.php"
+      default: "/api/QuizMail.php"
     },
     dataSource: {
       default: "/static/quiz_steps.json"
