@@ -1,10 +1,7 @@
 <template>
   <transition name="fade" mode="out-in">
     <div v-if="getDataStatus"></div>
-    <div v-else id="quiz_nav">
-      <!--      <div class="quiz__nav-notify">-->
-      <!--        {{ getValidationStatus }}-->
-      <!--      </div>-->
+    <div v-else id="quiz_nav" class="quiz-grid__nav">
       <div
         :class="[
           'quiz__nav-notify',
@@ -136,6 +133,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.quiz-grid__nav {
+  grid-area: quiz-nav;
+}
+
 #quiz_nav {
   width: 100%;
   padding: 5px 0;

@@ -1,5 +1,5 @@
 <template>
-  <aside class="quiz_sidebar col-12 col-md-4">
+  <aside class="quiz-grid__sidebar quiz_sidebar">
     <header class="quiz_manager">
       <div class="manager__avatar">
         <img :src="getMain.manager.avatar" alt="manager-avatar" />
@@ -62,6 +62,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.quiz-grid__sidebar {
+  padding: 0 10px;
+  grid-area: quiz-sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .quiz_sidebar {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -70,6 +79,7 @@ export default {
 }
 
 .quiz_manager {
+  width: 100%;
   flex: 0 0 auto;
   display: flex;
   justify-content: space-around;
@@ -95,10 +105,12 @@ export default {
 }
 
 .quiz_info {
+  width: 100%;
   flex: 1 0 auto;
 }
 
 .quiz_footer {
+  width: 100%;
   flex: 0 0 auto;
   display: flex;
   justify-content: space-around;

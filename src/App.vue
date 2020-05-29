@@ -1,25 +1,21 @@
 <template>
   <div id="app">
     <section class="quiz-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <form @submit.prevent="sendDataToScenario" id="quiz">
-              <div class="row">
-                <div class="quiz-area col-12 col-md-8">
-                  <quiz-header></quiz-header>
-                  <quiz-body
-                    :response="serverResponse"
-                    :reject="serverReject"
-                  ></quiz-body>
-                  <quiz-nav :requiredStep="getNowStep[0].required"></quiz-nav>
-                </div>
-                <quiz-sidebar :data-main="dataMain"></quiz-sidebar>
-              </div>
-            </form>
-          </div>
+      <form
+        @submit.prevent="sendDataToScenario"
+        id="quiz"
+        class="quiz-container"
+      >
+        <div class="quiz-grid quiz-area">
+          <quiz-header></quiz-header>
+          <quiz-body
+            :response="serverResponse"
+            :reject="serverReject"
+          ></quiz-body>
+          <quiz-nav :requiredStep="getNowStep[0].required"></quiz-nav>
+          <quiz-sidebar :data-main="dataMain"></quiz-sidebar>
         </div>
-      </div>
+      </form>
     </section>
   </div>
 </template>
@@ -93,7 +89,7 @@ export default {
         .catch(reject => {
           this.serverReject = reject;
         });
-    },
+    }
   },
   computed: {
     ...mapGetters(["getUser", "getObjectData", "getNowStep"])
@@ -105,8 +101,64 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./assets/scss/bootstrap-grid.scss";
 @import "./assets/scss/normalize.scss";
+
+// Layout
+.quiz-grid {
+  width: 100%;
+  padding: 10px 15px;
+  display: grid;
+  grid-template-areas:
+    "quiz-header quiz-sidebar"
+    "quiz-body quiz-sidebar"
+    "quiz-nav quiz-sidebar";
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 10px;
+  @include media-max($break-md) {
+    grid-template-areas:
+      "quiz-header"
+      "quiz-body"
+      "quiz-nav"
+      "quiz-sidebar";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+.quiz-subgrid-body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+}
+.quiz-subgrid-body__cards {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  grid-auto-columns: 1fr;
+  grid-gap: 10px;
+  @include media-max($break-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.quiz-subgrid-body__radios {
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  grid-auto-rows: 1fr;
+  grid-gap: 10px;
+}
+.quiz-subgrid-body__double {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+  place-items: end end;
+  @include media-max($break-sm) {
+    grid-template-columns: 1fr;
+  }
+}
 
 // Main
 #app {
@@ -119,7 +171,7 @@ export default {
 
 #quiz {
   background-color: transparent;
-  //padding: 30px;
+  display: flex;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.5);
@@ -127,6 +179,7 @@ export default {
 }
 
 .quiz-section {
+  padding: 0 7px;
   margin: 15px 0 20px;
 }
 
@@ -180,17 +233,17 @@ export default {
 }
 
 .quiz-separator {
-  width: 100%;
+  width: 60%;
   height: 1px;
-  background-color: $dark-bg;
+  background-color: white;
   margin: 15px 0;
 }
 
 // Inputs
 .quiz-input_light {
   width: 100%;
-  padding: 8px 10px;
-  margin: 10px 0;
+  padding: 8px 0;
+  margin: 10px 0 0;
   overflow: hidden;
   background-color: #ffffff;
   color: #000000;
@@ -204,8 +257,8 @@ export default {
 
 .quiz-input_select {
   width: 100%;
-  padding: 7px 15px;
-  margin: 7px 0;
+  padding: 7px 0;
+  margin: 5px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;

@@ -1,5 +1,5 @@
 <template>
-  <div id="quiz_form">
+  <div id="quiz_form" class="quiz-grid__body">
     <!--    <notify-bar :content="getObjectData"></notify-bar>-->
     <!--    <notify-bar :content="getUserData"></notify-bar>-->
     <!-- <notify-bar :content="response"></notify-bar>
@@ -68,6 +68,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.quiz-grid__body {
+  grid-area: quiz-body;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.45s ease-out;

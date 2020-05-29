@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       title: "Ваш вариант ответа",
-      layoutClasses: "col-12",
+      layoutClasses: "container__input",
       inputTheme: "quiz-input_light".toString(),
       text: ""
     };
@@ -48,3 +48,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.container__input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+</style>

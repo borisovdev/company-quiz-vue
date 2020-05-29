@@ -1,57 +1,60 @@
 <template>
   <div>
-    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
-      Вы должны выбрать не менее
-      {{ $v.getUserData.$params.minLength.min }} вариантов
-    </div>
-    <div
-      v-for="item in getNowItems"
-      :key="item.id"
-      :class="layout"
-      style="margin: 15px 0;"
-    >
-      <div
-        v-if="item.id === 0"
-        class="d-flex flex-column justify-content-start align-items-start"
-      >
-        <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
-          item.label
-        }}</label>
-        <select
-          v-model.lazy="dispathCity"
-          @change="newChecked"
-          id=""
-          :class="selectTheme"
-        >
-          <option
-            v-for="option in getNowItemsFirstOptions"
-            :key="option.id"
-            :value="item.keyValue + ' ' + option.value"
-            >{{ option.value }}</option
-          >
-        </select>
+    <div>
+      <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
+        Вы должны выбрать не менее
+        {{ $v.getUserData.$params.minLength.min }} вариантов
       </div>
+    </div>
+    <div class="quiz-subgrid-body__radios">
       <div
-        v-else
-        class="d-flex flex-column justify-content-start align-items-start"
+        v-for="item in getNowItems"
+        :key="item.id"
+        :class="layout"
         style="margin: 15px 0;"
       >
-        <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
-          item.label
-        }}</label>
-        <select
-          v-model.lazy="deliveryCity"
-          @change="newChecked"
-          id=""
-          :class="selectTheme"
+        <div
+          v-if="item.id === 0"
+          class="container__select"
         >
-          <option
-            v-for="option in getNowItemsSecondOptions"
-            :key="option.id"
-            :value="item.keyValue + ' ' + option.value"
-            >{{ option.value }}</option
+          <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
+            item.label
+          }}</label>
+          <select
+            v-model.lazy="dispathCity"
+            @change="newChecked"
+            :class="selectTheme"
           >
-        </select>
+            <option
+              v-for="option in getNowItemsFirstOptions"
+              :key="option.id"
+              :value="item.keyValue + ' ' + option.value"
+              >{{ option.value }}</option
+            >
+          </select>
+        </div>
+        <div
+          v-else
+          class="container__select"
+          style="margin: 15px 0;"
+        >
+          <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
+            item.label
+          }}</label>
+          <select
+            v-model.lazy="deliveryCity"
+            @change="newChecked"
+            id=""
+            :class="selectTheme"
+          >
+            <option
+              v-for="option in getNowItemsSecondOptions"
+              :key="option.id"
+              :value="item.keyValue + ' ' + option.value"
+              >{{ option.value }}</option
+            >
+          </select>
+        </div>
       </div>
     </div>
   </div>
@@ -68,7 +71,7 @@ export default {
     return {
       selectTheme: "quiz-input_values-fullwidth",
       labelTheme: "quiz-smalltext",
-      layout: "col-12",
+      layout: "",
       deliveryCity: "Город доставки: Выберите значение",
       dispathCity: "Город отправки: Выберите значение"
     };
@@ -106,3 +109,12 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.container__select {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+</style>

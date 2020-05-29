@@ -1,39 +1,42 @@
 <template>
-  <div class="row">
-    <div
-      :class="['error-validation', 'col-12']"
-      v-if="$v.getFreeMessage.$invalid"
-    >
-      Введите значение
-    </div>
-    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
-      Выберите вариант
-    </div>
-    <label for="" class=" col-12 quiz-smalltext">{{ title }}</label>
-    <div :class="layoutClasses">
-      <input
-        type="number"
-        @change="updateFreeMessage"
-        :class="inputTheme"
-        placeholder="Введите значение"
-      />
-    </div>
-    <div class="col-4 d-flex justify-content-end align-items-center">
-      <select
-        :value="value"
-        v-model.lazy="selectedValue"
-        @change="DOMUpdateChecked"
-        class="quiz-input_values"
-        style="width: 100%;"
+  <div class="quiz-subgrid-body">
+    <div>
+      <div
+        :class="['error-validation']"
+        v-if="$v.getFreeMessage.$invalid"
       >
-        <option
-          v-for="item in getNowItems"
-          :value="item.value"
-          :key="item.id"
-          :selected="item.id === 0"
-          >{{ item.text }}</option
+        Введите значение
+      </div>
+      <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
+        Выберите вариант
+      </div>
+    </div>
+    <div class="quiz-subgrid-body__double">
+      <div :class="layoutClasses">
+        <label class="quiz-smalltext">{{ title }}</label>
+        <input
+          type="number"
+          @change="updateFreeMessage"
+          :class="inputTheme"
+          placeholder="Введите значение"
+        />
+      </div>
+      <div class="container__select">
+        <select
+          :value="value"
+          v-model.lazy="selectedValue"
+          @change="DOMUpdateChecked"
+          class="quiz-input_values"
+          style="width: 100%;"
         >
-      </select>
+          <option
+            v-for="item in getNowItems"
+            :value="item.value"
+            :key="item.id"
+            :selected="item.id === 0"
+          >{{ item.text }}</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -56,7 +59,7 @@ export default {
   data() {
     return {
       title: "Ваш вариант ответа",
-      layoutClasses: "col-8",
+      layoutClasses: "container__input",
       inputTheme: "quiz-input_light",
       selectedValue: "Выберите значение"
     };
@@ -86,8 +89,24 @@ export default {
       minLength: minLength(1)
     }
   },
+  created() {
+    this.changeValidationStatus();
+  },
   beforeUpdate() {
     this.changeValidationStatus();
   }
 };
 </script>
+
+<style lang="scss" scoped>
+.container__input {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.container__select {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+</style>

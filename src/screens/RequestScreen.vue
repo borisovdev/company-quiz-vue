@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="quiz-subgrid-body">
     <transition name="fade" mode="out-in">
       <div v-if="getDataStatus" :class="layout">
         <p :class="successClass">
@@ -14,7 +14,6 @@
               class="icon-accordeon"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
               x="0px"
               y="0px"
               viewBox="0 0 492.004 492.004"
@@ -47,7 +46,7 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="container__input">
           <span>Представьтесь, чтобы мы могли связаться с Вами</span>
           <input
             type="text"
@@ -87,7 +86,7 @@ export default {
       successClass: "text-success",
       successMsg:
         "Спасибо за ваш выбор! В ближайшее время с вами свяжется наш менеджер!",
-      layout: "col-12",
+      layout: "",
       inputTheme: "quiz-input_light",
       username: "",
       userphone: "",
@@ -115,6 +114,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container__input {
+  display: flex;
+  flex-direction: column;
+}
 .fade-enter,
 .fade-leave-to {
   opacity: 0;

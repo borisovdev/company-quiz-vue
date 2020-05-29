@@ -1,16 +1,18 @@
 <template>
-  <div class="row">
-    <div :class="['error-validation', 'col-12']" v-if="$v.getUserData.$invalid">
+  <div class="quiz-subgrid-body">
+    <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
       Вы должны выбрать не менее
       {{ $v.getUserData.$params.minLength.min }} вариантов
     </div>
-    <div :class="layout" v-for="item in getNowItems" :key="item.id">
-      <checkbox-card
-        :value="item.name"
-        v-model.lazy="newCheckedAction"
-        :image="item.image"
-        :name="item.name"
-      ></checkbox-card>
+    <div class="quiz-subgrid-body__cards">
+      <div :class="cardsLayout" v-for="item in getNowItems" :key="item.id">
+        <checkbox-card
+          :value="item.name"
+          v-model.lazy="newCheckedAction"
+          :image="item.image"
+          :name="item.name"
+        ></checkbox-card>
+      </div>
     </div>
     <free-answer></free-answer>
   </div>
@@ -25,7 +27,7 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
-      layout: "col-6 col-sm-6 col-lg-4"
+      cardsLayout: "quiz-subgrid-body__item"
     };
   },
   mixins: [mixinValidationStatus],

@@ -1,5 +1,12 @@
 # Changelog
 
+## Beta 0.3.0
+### Changed
+- bootstrap-grid заменена на css grid
+- мелкие исправления
+### Removed
+- bootstrap-grid.scss
+
 ## Beta 0.2.9
 ### Added
 - Базовое html сообщение в скрипт для wordpress 

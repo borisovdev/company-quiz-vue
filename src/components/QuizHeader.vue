@@ -1,5 +1,5 @@
 <template>
-  <header class="quiz_header">
+  <header class="quiz-grid__header quiz_header">
     <transition name="fade" mode="out-in">
       <p v-for="step in getNowStep" :key="step.id" class="quiz-headtext">
         {{ step.title }}
@@ -34,6 +34,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.quiz-grid__header {
+  grid-area: quiz-header;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.25s linear;
