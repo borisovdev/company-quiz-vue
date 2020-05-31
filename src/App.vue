@@ -3,6 +3,7 @@
     <section class="quiz-section">
       <form
         @submit.prevent="sendDataToScenario"
+        ref="formContainer"
         id="quiz"
         class="quiz-container"
       >
@@ -39,7 +40,7 @@ export default {
   name: "App",
   props: {
     dataAction: {
-      default: "/api/QuizMail.php"
+      default: "/api/MailEngine.php"
     },
     dataSource: {
       default: "/static/quiz_steps.json"
@@ -65,7 +66,8 @@ export default {
       "nextCount",
       "prevCount",
       "initSteps",
-      "changeDataStatusToTrue"
+      "changeDataStatusToTrue",
+      "changeSendProgressStatus"
     ]),
     sendDataToScenario() {
       const params = {
@@ -77,11 +79,15 @@ export default {
         data: {
           userFullinfo: this.getUser,
           quizData: this.getObjectData
+        },
+        onUploadProgress: () => {
+          this.changeSendProgressStatus(true);
         }
       };
       axios(params)
         .then(response => {
           this.serverResponse = response;
+          this.changeSendProgressStatus(false);
           if (response.data === "success") {
             this.changeDataStatusToTrue();
           }
@@ -92,7 +98,12 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(["getUser", "getObjectData", "getNowStep"])
+    ...mapGetters([
+      "getUser",
+      "getObjectData",
+      "getNowStep",
+      "getSendProgressStatus"
+    ])
   },
   created() {
     this.initSteps(this.dataSource);

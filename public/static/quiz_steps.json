@@ -1,11 +1,19 @@
 {
   "steps": [
     {
+      "id": 0,
+      "title": "Какой груз Вам нужно привезти?",
+      "desc": "Выберите подходящий вариант или укажите свой",
+      "legend": "Здесь находиться уникальное описание вопроса",
+      "required": false,
+      "items_type": "text"
+    },
+    {
       "id": "1",
       "title": "Какой груз Вам нужно привезти?",
       "desc": "Выберите подходящий вариант или укажите свой",
       "legend": "Здесь находиться уникальное описание вопроса",
-      "required": true,
+      "required": false,
       "items_type": "card",
       "items": [
         {
@@ -35,16 +43,6 @@
         },
         {
           "id": "6",
-          "name": "Шестой вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
-        },
-        {
-          "id": "7",
-          "name": "Шестой вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
-        },
-        {
-          "id": "8",
           "name": "Шестой вариант",
           "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
         }

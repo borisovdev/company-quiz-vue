@@ -25,6 +25,7 @@ export default {
     "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
     "text-and-select": () => import("@/parts/TextAndSelect"),
+    "text-simple": () => import("@/parts/TextSimple"),
     selects: () => import("@/parts/Selects")
   },
   props: {
@@ -59,6 +60,8 @@ export default {
           return "text-and-select";
         case "selects":
           return "selects";
+        case "text":
+          return "text-simple";
         default:
           return "radios-screen";
       }

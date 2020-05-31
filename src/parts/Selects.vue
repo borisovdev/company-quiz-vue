@@ -62,8 +62,8 @@
 
 <script>
 import { mixinValidationStatus } from "../assets/mixins";
-import { createNamespacedHelpers } from "vuex";
 import { required, minLength } from "vuelidate/lib/validators";
+import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {

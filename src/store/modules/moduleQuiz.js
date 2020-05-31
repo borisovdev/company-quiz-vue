@@ -36,11 +36,15 @@ const moduleQuiz = {
     userData: [],
     freeMessage: "",
     dataSended: false,
+    sendOnProgress: false,
     validationStatus: "INVALID"
   },
   mutations: {
     TRUE_DATA_STATUS(state) {
       state.dataSended = true;
+    },
+    CHANGE_SEND_PROGRESS_STATUS(state, payload) {
+      state.sendOnProgress = Boolean(payload);
     },
     NEXT_COUNT(state) {
       state.counter + 1 < state.steps.length ? state.counter++ : false;
@@ -131,6 +135,7 @@ const moduleQuiz = {
     getUser: state => state.user,
     getValidationStatus: state => state.validationStatus,
     isStepsLength: state => state.steps.length,
+    getSendProgressStatus: state => state.sendOnProgress,
     isNowStep: state => {
       return state.counter + 1;
     },
@@ -193,6 +198,9 @@ const moduleQuiz = {
     },
     changeDataStatusToTrue({ commit }) {
       commit("TRUE_DATA_STATUS");
+    },
+    changeSendProgressStatus({ commit }, payload) {
+      commit("CHANGE_SEND_PROGRESS_STATUS", payload);
     },
     validationStatusTrue({ commit }) {
       commit("VALIDATION_STATUS_TRUE");
