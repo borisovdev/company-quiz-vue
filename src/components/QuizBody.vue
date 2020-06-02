@@ -4,7 +4,7 @@
     <!--    <notify-bar :content="getUserData"></notify-bar>-->
     <!-- <notify-bar :content="response"></notify-bar>
     <notify-bar :content="reject"></notify-bar> -->
-    <div class="quiz-fields">
+    <div class="quiz-fields" :class="['quiz-text-' + getTheme + '-color']">
       <transition name="fade" mode="out-in">
         <fieldset v-if="getCounter < isStepsLength" :key="getCounter">
           <component :is="currentScreen"></component>
@@ -30,11 +30,9 @@ export default {
   },
   props: {
     response: {
-      type: String,
       default: ""
     },
     reject: {
-      type: String,
       default: ""
     }
   },
@@ -44,6 +42,7 @@ export default {
       userData: state => state.userData
     }),
     ...mapGetters([
+      "getTheme",
       "getCounter",
       "isStepsLength",
       "getNowItemsType",

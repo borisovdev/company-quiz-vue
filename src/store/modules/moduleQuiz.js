@@ -4,6 +4,7 @@ import axios from "axios";
 const moduleQuiz = {
   namespaced: true,
   state: {
+    theme: "",
     main: {
       brand: {
         name: "",
@@ -40,6 +41,9 @@ const moduleQuiz = {
     validationStatus: "INVALID"
   },
   mutations: {
+    SET_THEME(state, payload) {
+      state.theme = payload.toLowerCase();
+    },
     TRUE_DATA_STATUS(state) {
       state.dataSended = true;
     },
@@ -122,6 +126,7 @@ const moduleQuiz = {
   },
 
   getters: {
+    getTheme: state => state.theme,
     getMain: state => state.main,
     getSteps: state => state.steps,
     getBrand: state => state.brand,
@@ -207,6 +212,9 @@ const moduleQuiz = {
     },
     validationStatusFalse({ commit }) {
       commit("VALIDATION_STATUS_FALSE");
+    },
+    setTheme({ commit }, payload) {
+      commit("SET_THEME", payload);
     },
     initMain({ commit }, payload) {
       axios.get(payload).then(response => {

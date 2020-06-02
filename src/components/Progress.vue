@@ -2,7 +2,7 @@
   <div class="progress">
     <div class="progress_bar">
       <div
-        class="progress__inner"
+        :class="['progress__inner', 'quiz-progress-' + getTheme + '-color']"
         :style="{ width: progressBarWidth + '%' }"
       ></div>
     </div>
@@ -20,7 +20,7 @@ const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   methods: {},
   computed: {
-    ...mapGetters(["isNowStep", "isStepsLength"]),
+    ...mapGetters(["getTheme", "isNowStep", "isStepsLength"]),
     progressBarWidth() {
       return (this.isNowStep / this.isStepsLength) * 100;
     }
@@ -59,7 +59,6 @@ export default {
   border-radius: 5px;
   height: 100%;
   width: calc(0% + 5%);
-  background-color: $info-color;
   transition: 0.4s width linear;
 }
 .progress_text {

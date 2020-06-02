@@ -3,11 +3,10 @@
     <section class="quiz-section">
       <form
         @submit.prevent="sendDataToScenario"
-        ref="formContainer"
         id="quiz"
         class="quiz-container"
       >
-        <div class="quiz-grid quiz-area">
+        <div :class="['quiz-grid', 'quiz-bg-' + theme + '-color']">
           <quiz-header></quiz-header>
           <quiz-body
             :response="serverResponse"
@@ -39,6 +38,10 @@ export default {
   store,
   name: "App",
   props: {
+    theme: {
+      type: String,
+      default: "classic"
+    },
     dataAction: {
       default: "/api/MailEngine.php"
     },
@@ -63,14 +66,15 @@ export default {
   },
   methods: {
     ...mapActions([
+      "setTheme",
       "nextCount",
       "prevCount",
       "initSteps",
       "changeDataStatusToTrue",
       "changeSendProgressStatus"
     ]),
-    sendDataToScenario() {
-      const params = {
+    requestParams() {
+      return {
         method: "POST",
         url: this.dataAction,
         headers: {
@@ -84,7 +88,9 @@ export default {
           this.changeSendProgressStatus(true);
         }
       };
-      axios(params)
+    },
+    sendDataToScenario() {
+      axios(this.requestParams())
         .then(response => {
           this.serverResponse = response;
           this.changeSendProgressStatus(false);
@@ -106,6 +112,7 @@ export default {
     ])
   },
   created() {
+    this.setTheme(this.theme);
     this.initSteps(this.dataSource);
   }
 };
@@ -194,8 +201,55 @@ export default {
   margin: 15px 0 20px;
 }
 
-.quiz-area {
+// Colors
+.quiz-bg-classic-color {
   background-color: #efefef;
+}
+.quiz-bg-amethyst-color {
+  background-color: #1E4970;
+}
+
+.quiz-text-classic-color {
+  color: $dark-text;
+}
+.quiz-text-amethyst-color {
+  color: white;
+}
+
+.quiz-progress-classic-color {
+  background-color: $info-color;
+}
+.quiz-progress-amethyst-color {
+  background-color: #B6247F;
+}
+
+.quiz-btn-classic-next {
+  background: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%);
+  color: white;
+  &:hover {
+    box-shadow: 0 0 15px -3px #d5242c;
+  }
+}
+.quiz-btn-amethyst-next {
+  background: #B6247F;
+  color: white;
+  &:hover {
+    box-shadow: 0 0 15px -3px #B6247F;
+  }
+}
+.quiz-btn-classic-prev {
+  background: #888888;
+  color: white;
+  &:hover {
+    box-shadow: 0 0 15px -3px #888888;
+  }
+}
+.quiz-btn-amethyst-prev {
+  background: #133970;
+  color: white;
+  &:hover {
+    box-shadow: 0 0 15px -3px #133970;
+  }
 }
 
 // Validations

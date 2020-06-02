@@ -1,7 +1,7 @@
 <template>
-  <header class="quiz-grid__header quiz_header">
+  <header :class="['quiz-grid__header', 'quiz-text-' + getTheme + '-color']">
     <transition name="fade" mode="out-in">
-      <p v-for="step in getNowStep" :key="step.id" class="quiz-headtext">
+      <p v-for="step in getNowStep" :key="step.id" :class="['quiz-headtext']">
         {{ step.title }}
       </p>
     </transition>
@@ -28,7 +28,7 @@ export default {
     Progress
   },
   computed: {
-    ...mapGetters(["getCounter", "getNowStep", "isStepsLength"])
+    ...mapGetters(["getTheme", "getCounter", "getNowStep", "isStepsLength"])
   }
 };
 </script>

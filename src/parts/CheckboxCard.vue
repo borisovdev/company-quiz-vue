@@ -1,8 +1,11 @@
 <template>
-  <label class="quiz-card">
+  <label :class="['quiz-card', 'card-' + getTheme + '-theme']">
     <img :src="image" />
-    <div :class="[titleClasses, focusClass]" style="text-align: center;">
-      <span>{{ name }}</span>
+    <div
+      :class="[titleClasses, focusClass]"
+      style="text-align: center;"
+    >
+      <span class="card__name">{{ name }}</span>
     </div>
     <input
       type="checkbox"
@@ -21,36 +24,36 @@ export default {
   data() {
     return {
       focusClass: "",
-      titleClasses: "quiz-card__title quiz-smalltext text-center",
+      titleClasses: "quiz-card__title quiz-smalltext text-center"
     };
   },
   model: {
     prop: "modelValue",
-    event: "change",
+    event: "change"
   },
   props: {
     image: String,
     name: String,
     value: String,
     modelValue: {
-      default: false,
+      default: false
     },
     trueValue: {
-      default: true,
+      default: true
     },
     falseValue: {
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
-    ...mapGetters(["getUserData"]),
+    ...mapGetters(["getTheme", "getUserData"]),
     shouldBeChecked() {
       if (this.modelValue instanceof Array) {
         return this.modelValue.includes(this.value);
       } else {
         return this.modelValue === this.trueValue;
       }
-    },
+    }
   },
   methods: {
     updateInput(evt) {
@@ -71,12 +74,33 @@ export default {
       }
 
       isChecked ? (this.focusClass = "active") : (this.focusClass = "");
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+.card__name {
+  color: $dark-text;
+}
+
+.card-classic-theme {
+  .active {
+    background: $info-color;
+    .card__name {
+      color: white;
+    }
+  }
+}
+.card-amethyst-theme {
+  .active {
+    background: #b6247f;
+    .card__name {
+      color: white;
+    }
+  }
+}
+
 .quiz-card {
   width: 100%;
   height: 140px;
@@ -113,10 +137,6 @@ export default {
     background-color: #ffffff;
     border-radius: 5px;
     transition: inherit;
-  }
-  .active {
-    background: $info-color;
-    color: white;
   }
 }
 

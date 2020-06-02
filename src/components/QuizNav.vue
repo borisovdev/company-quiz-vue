@@ -1,7 +1,12 @@
 <template>
   <transition name="fade" mode="out-in">
     <div v-if="getDataStatus"></div>
-    <div v-else id="quiz_nav" class="quiz-grid__nav">
+    <div
+      v-else
+      id="quiz_nav"
+      class="quiz-grid__nav"
+      :class="['quiz-text-' + getTheme + '-color']"
+    >
       <div
         :class="[
           'quiz__nav-notify',
@@ -21,7 +26,11 @@
       </div>
       <div class="quiz__control">
         <button
-          :class="[prevBtnClasses, turnOff(disabledClass, 'prev')]"
+          :class="[
+            prevBtnClasses,
+            'quiz-btn-' + getTheme + '-prev',
+            turnOff(disabledClass, 'prev')
+          ]"
           :disabled="getCounter === 0"
           @click.prevent="prevCount"
         >
@@ -47,7 +56,11 @@
         </button>
         <button
           v-else
-          :class="[nextBtnClasses, turnOff(disabledClass, 'next')]"
+          :class="[
+            nextBtnClasses,
+            'quiz-btn-' + getTheme + '-next',
+            turnOff(disabledClass, 'next')
+          ]"
           :disabled="getCounter === isStepsLength"
           @click.prevent="nextStep"
         >
@@ -75,22 +88,22 @@ import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
-  data() {
-    return {
-      prevText: "Назад",
-      nextText: "Далее",
-      sendingText: "Отправить заявку",
-      prevBtnClasses: "quiz-button_prev quiz-smalltext",
-      nextBtnClasses: "quiz-button_next quiz-smalltext",
-      disabledClass: "button-disabled",
-      validationMsg: ""
-    };
-  },
   props: {
     requiredStep: {
       type: Boolean,
       default: false
     }
+  },
+  data() {
+    return {
+      prevText: "Назад",
+      nextText: "Далее",
+      sendingText: "Отправить заявку",
+      prevBtnClasses: ["quiz-button_prev", "quiz-smalltext"],
+      nextBtnClasses: ["quiz-button_next", "quiz-smalltext"],
+      disabledClass: "button-disabled",
+      validationMsg: ""
+    };
   },
   methods: {
     nextStep() {
@@ -120,6 +133,7 @@ export default {
   },
   computed: {
     ...mapGetters([
+      "getTheme",
       "isNowStep",
       "getCounter",
       "getDataStatus",
@@ -133,6 +147,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+button {
+  cursor: pointer;
+}
 .quiz-grid__nav {
   grid-area: quiz-nav;
 }
@@ -159,7 +176,7 @@ export default {
   padding: 13px 20px;
   border: none;
   background: transparent;
-  color: $dark-text;
+  color: inherit;
   font-size: 14px;
   cursor: pointer;
   transition: all 0.35s ease;
@@ -186,27 +203,12 @@ export default {
   padding: 15px 5px;
   margin: 5px 10px;
   text-align: center;
-  color: #ffffff;
   border: none;
   transition: all 0.3s ease;
   svg {
     margin: 0 5px;
     width: 12px;
     height: 8px;
-  }
-}
-
-.quiz-button_prev {
-  background: #888888;
-  &:hover {
-    box-shadow: 0 0 15px -3px #888888;
-  }
-}
-
-.quiz-button_next {
-  background: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%);
-  &:hover {
-    box-shadow: 0 0 15px -3px #d5242c;
   }
 }
 

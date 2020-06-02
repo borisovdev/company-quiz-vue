@@ -1,5 +1,5 @@
 <template>
-  <aside class="quiz-grid__sidebar quiz_sidebar">
+  <aside :class="['quiz-grid__sidebar', 'quiz_sidebar', 'quiz-text-' + getTheme + '-color']">
     <header class="quiz_manager">
       <div class="manager__avatar">
         <img :src="getMain.manager.avatar" alt="manager-avatar" />
@@ -53,7 +53,7 @@ export default {
     ...mapActions(["initMain"])
   },
   computed: {
-    ...mapGetters(["getMain", "getBrand", "getManager", "getInfo"]),
+    ...mapGetters(["getTheme", "getMain", "getBrand", "getManager", "getInfo"]),
   },
   created() {
     this.initMain(this.dataMain);
