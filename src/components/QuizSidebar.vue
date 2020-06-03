@@ -1,41 +1,35 @@
 <template>
   <aside
     :class="[
-      'quiz-grid__sidebar',
-      'quiz_sidebar',
+      'quiz__grid-sidebar',
+      'quiz__sidebar',
       'quiz-text-' + getTheme + '-color'
     ]"
   >
-    <header class="quiz_manager">
-      <div class="manager__avatar">
-        <img :src="getMain.manager.avatar" alt="manager-avatar" />
+    <header class="quiz__manager">
+      <div class="quiz__manager-avatar">
+        <img :src="getMain.manager.avatar" :alt="getMain.manager.name" />
       </div>
-      <div class="manager_data">
-        <span id="manager__name" class="quiz-mediumtext">{{
-          getMain.manager.name
-        }}</span>
-        <span id="manager__office" class="quiz-lighttext">{{
-          getMain.manager.position
-        }}</span>
+      <div class="quiz__manager-data">
+        <span class="quiz__text-medium">{{ getMain.manager.name }}</span>
+        <span class="quiz__text-smallest">{{ getMain.manager.position }}</span>
       </div>
     </header>
-    <div class="quiz-separator"></div>
-    <div class="quiz_info">
-      <p id="quiz_info_maintext" class="quiz-smalltext">
+    <div class="quiz__separator"></div>
+    <div class="quiz__info">
+      <p class="quiz__text-small">
         {{ getMain.info.maintext }}
       </p>
-      <p id="quiz_info_desctext" class="quiz-smalltext">
+      <p class="quiz__text-small">
         {{ getMain.info.desctext }}
       </p>
     </div>
-    <div class="quiz-separator"></div>
-    <footer class="quiz_footer">
-      <span id="quiz__orgname" class="quiz-headtext">{{
+    <div class="quiz__separator"></div>
+    <footer class="quiz__footer">
+      <span class="quiz__orgname quiz__text-large">{{
         getMain.brand.name
       }}</span>
-      <span id="quiz__tagline" class="quiz-bigtext">{{
-        getMain.brand.tagline
-      }}</span>
+      <span class="quiz__taglinequiz__text-medium">{{ getMain.brand.tagline }}</span>
     </footer>
   </aside>
 </template>
@@ -68,11 +62,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#quiz__orgname {
-  line-height: 1.2;
-}
-
-.quiz-grid__sidebar {
+.quiz__grid-sidebar {
   padding: 0 10px;
   grid-area: quiz-sidebar;
   display: flex;
@@ -81,14 +71,14 @@ export default {
   align-items: center;
 }
 
-.quiz_sidebar {
+.quiz__sidebar {
   padding-top: 20px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
 
-.quiz_manager {
+.quiz__manager {
   width: 100%;
   flex: 0 0 auto;
   display: flex;
@@ -96,12 +86,12 @@ export default {
   align-items: center;
 }
 
-.manager_data {
+.quiz__manager-data {
   display: inherit;
   flex-direction: column;
 }
 
-.manager__avatar {
+.quiz__manager-avatar {
   height: 85px;
   width: 85px;
   border-radius: 50%;
@@ -114,12 +104,12 @@ export default {
   }
 }
 
-.quiz_info {
+.quiz__info {
   width: 100%;
   flex: 1 0 auto;
 }
 
-.quiz_footer {
+.quiz__footer {
   width: 100%;
   flex: 0 0 auto;
   display: flex;
@@ -133,5 +123,12 @@ export default {
       text-align: right;
     }
   }
+}
+
+.quiz__orgname {
+  line-height: 1.2;
+}
+.quiz__tagline {
+  line-height: 1.2;
 }
 </style>

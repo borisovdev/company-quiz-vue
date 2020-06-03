@@ -1,6 +1,6 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div :class="['quiz__validation--error']" v-if="$v.getUserData.$invalid">
+    <div :class="['quiz__validation--error', 'quiz__text-smallest']" v-if="$v.getUserData.$invalid">
       Выберите вариант
     </div>
     <div class="quiz-subgrid-body__radios">
