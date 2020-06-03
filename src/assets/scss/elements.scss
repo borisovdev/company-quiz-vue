@@ -1,6 +1,6 @@
 // New elements
 .quiz__radio-classic {
-  padding: 7px 10px;
+  padding: 7px 0 7px 10px;
   margin: 5px 0;
   width: 100%;
   display: flex;
@@ -18,9 +18,9 @@
 }
 
 .quiz__input-classic {
-  padding: 8px 7px;
+  padding: 8px 0 8px 7px;
   margin: 10px 0 0;
-  width: 100%;
+  //width: 100%;
   overflow: hidden;
   background: white;
   color: black;
@@ -33,7 +33,7 @@
 }
 
 .quiz__select-classic {
-  padding: 8px 10px;
+  padding: 8px 0 8px 10px;
   width: 100%;
   overflow: hidden;
   background: white;
@@ -43,7 +43,7 @@
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .quiz__select-classic--mini {
-  padding: 8px 10px;
+  padding: 8px 0 8px 10px;
   width: 100%;
   overflow: hidden;
   background: white;

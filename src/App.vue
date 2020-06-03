@@ -214,7 +214,7 @@ export default {
   width: 0;
   opacity: 0;
 }
-.quiz-separator {
+.quiz__separator {
   width: 60%;
   height: 1px;
   background-color: white;
