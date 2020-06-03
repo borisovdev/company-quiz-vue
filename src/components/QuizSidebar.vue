@@ -1,5 +1,11 @@
 <template>
-  <aside :class="['quiz-grid__sidebar', 'quiz_sidebar', 'quiz-text-' + getTheme + '-color']">
+  <aside
+    :class="[
+      'quiz-grid__sidebar',
+      'quiz_sidebar',
+      'quiz-text-' + getTheme + '-color'
+    ]"
+  >
     <header class="quiz_manager">
       <div class="manager__avatar">
         <img :src="getMain.manager.avatar" alt="manager-avatar" />
@@ -43,8 +49,8 @@ export default {
   props: {
     dataMain: {
       type: String,
-      default: "/static/data/quiz_main.json",
-    },
+      default: "/static/data/quiz_main.json"
+    }
   },
   data() {
     return {};
@@ -53,15 +59,19 @@ export default {
     ...mapActions(["initMain"])
   },
   computed: {
-    ...mapGetters(["getTheme", "getMain", "getBrand", "getManager", "getInfo"]),
+    ...mapGetters(["getTheme", "getMain", "getBrand", "getManager", "getInfo"])
   },
   created() {
     this.initMain(this.dataMain);
-  },
+  }
 };
 </script>
 
 <style lang="scss" scoped>
+#quiz__orgname {
+  line-height: 1.2;
+}
+
 .quiz-grid__sidebar {
   padding: 0 10px;
   grid-area: quiz-sidebar;
