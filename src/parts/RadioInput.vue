@@ -1,12 +1,12 @@
 <template>
-  <label :class="labelClasses">
+  <label :class="[labelClasses]">
     <input
       type="radio"
       :checked="shouldBeChecked"
       :value="value"
       @change="updateRadio"
     />
-    <div :class="titleClasses">
+    <div :class="['quiz__radio-name']">
       <span>{{ name }}</span>
     </div>
   </label>
@@ -16,8 +16,8 @@
 export default {
   data() {
     return {
-      labelClasses: "quiz-input_select quiz-smalltext_semibold",
-      titleClasses: "quiz-label-text"
+      focusClass: "",
+      labelClasses: "quiz__radio-classic quiz__text-small quiz__text--medium"
     };
   },
   model: {

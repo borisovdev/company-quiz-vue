@@ -1,0 +1,22 @@
+// fade right
+.fadeRight-enter-active,
+.fadeRight-leave-active {
+  transition: all 0.25s linear;
+}
+.fadeRight-enter,
+.fadeRight-leave-to {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+// fade left
+.fadeLeft-enter-active,
+.fadeLeft-leave-active {
+  transition: all 0.45s ease-out;
+}
+
+.fadeLeft-enter,
+.fadeLeft-leave-to {
+  opacity: 0;
+  transform: translateX(-50px);
+}

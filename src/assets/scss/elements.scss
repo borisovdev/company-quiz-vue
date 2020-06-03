@@ -1,0 +1,54 @@
+// New elements
+.quiz__radio-classic {
+  padding: 7px 10px;
+  margin: 5px 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border: 1px solid rgba(15, 28, 45, 0.2);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.quiz__radio-name {
+  margin-left: 15px;
+}
+
+.quiz__input-classic {
+  padding: 8px 7px;
+  margin: 10px 0 0;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border: 1px solid rgba(15, 28, 45, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  &:focus {
+    box-shadow: 0 1px 1px rgba(133, 200, 79, 0.25);
+  }
+}
+
+.quiz__select-classic {
+  padding: 8px 10px;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border: 1px solid rgba(15, 28, 45, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.quiz__select-classic--mini {
+  padding: 8px 10px;
+  width: 100%;
+  overflow: hidden;
+  background: white;
+  color: black;
+  border: 1px solid rgba(15, 28, 45, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}

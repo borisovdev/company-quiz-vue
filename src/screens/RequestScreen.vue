@@ -1,8 +1,8 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div v-if="getSendProgressStatus" class="notify__loading">
+    <div v-if="getSendProgressStatus" class="quiz__loading">
       <svg
-        class="notify__loading--icon"
+        class="quiz__loading--icon"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px"
@@ -34,10 +34,10 @@
       </div>
       <div v-else :class="layout">
         <div>
-          <p @click="actionAccordion" class="title-chosen unselectable">
+          <p @click="actionAccordion" class="quiz__total-title unselectable">
             Вы выбрали:
             <svg
-              class="icon-accordeon"
+              class="quiz__total--icon"
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               x="0px"
@@ -55,14 +55,14 @@
               </g>
             </svg>
           </p>
-          <ul class="list-chosen hidden-accordeon">
+          <ul class="quiz__total quiz__total--hidden">
             <li
               v-for="(obj, idx) in getObjectData"
               :key="idx"
-              class="list-chosen__item quiz-smalltext"
+              class="quiz__total-item quiz__text-smallest"
             >
-              <span class="list-chosen__title">{{ obj.title }}</span>
-              <p class="list-chosen__description">
+              <span class="quiz__total-item--name">{{ obj.title }}</span>
+              <p class="quiz__total-item--text">
                 {{
                   obj.chosen instanceof Array
                     ? obj.chosen.join(", ")
@@ -109,11 +109,11 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
-      successClass: "text-success",
+      successClass: "quiz__success-msg",
       successMsg:
         "Спасибо за ваш выбор! В ближайшее время с вами свяжется наш менеджер!",
       layout: "",
-      inputTheme: "quiz-input_light",
+      inputTheme: "quiz__input-classic",
       username: "",
       userphone: "",
       useremail: ""
@@ -127,7 +127,7 @@ export default {
       "validationStatusTrue"
     ]),
     actionAccordion(evt) {
-      evt.target.nextElementSibling.classList.toggle("hidden-accordeon");
+      evt.target.nextElementSibling.classList.toggle("quiz__total--hidden");
     }
   },
   computed: {
@@ -144,6 +144,57 @@ export default {
   display: flex;
   flex-direction: column;
 }
+
+.quiz__loading--icon {
+  width: 80px;
+  height: 80px;
+}
+
+.quiz__success-msg {
+  width: 100%;
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+}
+
+.quiz__total {
+  overflow: hidden;
+  &-title {
+    width: 100%;
+    color: $info-color;
+    padding: 8px 0;
+    position: relative;
+    cursor: pointer;
+    &:hover {
+      svg {
+        transform: rotate(90deg);
+      }
+    }
+  }
+  &-item {
+    margin-bottom: 6px;
+    padding: 5px 10px;
+    width: 100%;
+    @include flex(row, flex-start, center);
+    &--name {
+      margin-right: 7px;
+      color: $info-color;
+    }
+    &--text {
+      margin: 0;
+      color: $dark-text;
+    }
+  }
+  &--icon {
+    @include absolute(2px, 10px, 2px, false);
+    @include size(15px, 15px);
+    transition: all 0.3s ease;
+  }
+  &--hidden {
+    height: 0;
+  }
+}
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -152,64 +203,5 @@ export default {
 .fade-enter-active,
 .fade-leave-active {
   transition: all 0.45s ease-out;
-}
-
-.hidden-accordeon {
-  height: 0;
-}
-
-.notify__loading {
-  &--icon {
-    width: 80px;
-    height: 80px;
-    fill: $info-color;
-  }
-}
-
-.list-chosen {
-  overflow: hidden;
-
-  &__item {
-    width: 100%;
-    padding: 5px 10px;
-    margin-bottom: 6px;
-    @include flex(row, flex-start, center);
-  }
-
-  &__title {
-    margin-right: 7px;
-    color: $info-color;
-  }
-
-  &__description {
-    margin: 0;
-    color: $dark-text;
-  }
-}
-
-.title-chosen {
-  width: 100%;
-  color: $info-color;
-  padding: 8px 0;
-  position: relative;
-  cursor: pointer;
-  &:hover {
-    svg {
-      transform: rotate(90deg);
-    }
-  }
-}
-
-.icon-accordeon {
-  @include absolute(2px, 10px, 2px, false);
-  @include size(15px, 15px);
-  transition: all 0.3s ease;
-}
-
-.text-success {
-  width: 100%;
-  font-size: 18px;
-  color: green;
-  font-weight: $bold;
 }
 </style>

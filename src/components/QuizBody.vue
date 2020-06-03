@@ -1,11 +1,11 @@
 <template>
-  <div id="quiz_form" class="quiz-grid__body">
+  <div class="quiz__grid-body">
     <!--    <notify-bar :content="getObjectData"></notify-bar>-->
     <!--    <notify-bar :content="getUserData"></notify-bar>-->
     <!-- <notify-bar :content="response"></notify-bar>
     <notify-bar :content="reject"></notify-bar> -->
-    <div class="quiz-fields" :class="['quiz-text-' + getTheme + '-color']">
-      <transition name="fade" mode="out-in">
+    <div :class="['quiz-text-' + getTheme + '-color']">
+      <transition name="fadeLeft" mode="out-in">
         <fieldset v-if="getCounter < isStepsLength" :key="getCounter">
           <component :is="currentScreen"></component>
         </fieldset>
@@ -19,15 +19,6 @@ import { createNamespacedHelpers } from "vuex";
 const { mapState, mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
-  components: {
-    "notify-bar": () => import("@/parts/NotifyBar"),
-    "cards-screen": () => import("@/screens/CardsScreen"),
-    "radios-screen": () => import("@/screens/RadiosScreen"),
-    "request-screen": () => import("@/screens/RequestScreen"),
-    "text-and-select": () => import("@/parts/TextAndSelect"),
-    "text-simple": () => import("@/parts/TextSimple"),
-    selects: () => import("@/parts/Selects")
-  },
   props: {
     response: {
       default: ""
@@ -35,6 +26,15 @@ export default {
     reject: {
       default: ""
     }
+  },
+  components: {
+    "notify-bar": () => import("@/parts/NotifyBar"),
+    "cards-screen": () => import("@/screens/CardsScreen"),
+    "radios-screen": () => import("@/screens/RadiosScreen"),
+    "request-screen": () => import("@/screens/RequestScreen"),
+    "text-and-select": () => import("@/parts/TextAndSelect"),
+    "text-simple": () => import("@/parts/TextSimple"),
+    "selects-double": () => import("@/parts/SelectsDouble")
   },
   methods: {},
   computed: {
@@ -58,7 +58,7 @@ export default {
         case "text-and-select":
           return "text-and-select";
         case "selects":
-          return "selects";
+          return "selects-double";
         case "text":
           return "text-simple";
         default:
@@ -70,17 +70,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.quiz-grid__body {
+.quiz__grid-body {
   grid-area: quiz-body;
-}
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.45s ease-out;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-  transform: translateX(-50px);
 }
 </style>

@@ -3,14 +3,14 @@
     <div v-if="getDataStatus"></div>
     <div
       v-else
-      id="quiz_nav"
-      class="quiz-grid__nav"
+      class="quiz__grid-nav quiz__nav"
       :class="['quiz-text-' + getTheme + '-color']"
     >
       <div
         :class="[
           'quiz__nav-notify',
-          { 'error-validation': getValidationStatus === 'INVALID' }
+          { 'quiz__validation--error': getValidationStatus === 'INVALID' },
+          'quiz__text-smallest'
         ]"
         v-if="getValidationStatus === 'INVALID'"
       >
@@ -50,7 +50,7 @@
         <button
           v-if="getCounter + 1 === isStepsLength"
           type="submit"
-          :class="nextBtnClasses"
+          :class="[nextBtnClasses, 'quiz-btn-' + getTheme + '-next']"
         >
           {{ sendingText }}
         </button>
@@ -99,9 +99,9 @@ export default {
       prevText: "Назад",
       nextText: "Далее",
       sendingText: "Отправить заявку",
-      prevBtnClasses: ["quiz-button_prev", "quiz-smalltext"],
-      nextBtnClasses: ["quiz-button_next", "quiz-smalltext"],
-      disabledClass: "button-disabled",
+      prevBtnClasses: ["quiz__btn-prev", "quiz__text-smallest"],
+      nextBtnClasses: ["quiz__btn-next", "quiz__text-smallest"],
+      disabledClass: "quiz__btn--disabled",
       validationMsg: ""
     };
   },
@@ -147,17 +147,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-button {
-  cursor: pointer;
-}
-.quiz-grid__nav {
+.quiz__grid-nav {
   grid-area: quiz-nav;
 }
 
-#quiz_nav {
-  width: 100%;
+.quiz__nav {
   padding: 5px 0;
   margin: 15px 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -170,6 +167,21 @@ button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+
+.quiz__btn-next,
+.quiz__btn-prev {
+  padding: 15px 5px;
+  margin: 5px 10px;
+  width: 40%;
+  text-align: center;
+  border: none;
+  transition: all 0.3s ease;
+  svg {
+    margin: 0 5px;
+    width: 12px;
+    height: 8px;
+  }
 }
 
 .quiz__btn-skip {
@@ -185,6 +197,10 @@ button {
   }
 }
 
+.quiz__btn--disabled {
+  opacity: 0.25;
+}
+
 .quiz__control {
   width: 100%;
   display: flex;
@@ -195,25 +211,6 @@ button {
 .quiz__nav-notify {
   width: 100%;
   margin-bottom: 10px;
-}
-
-.quiz-button_next,
-.quiz-button_prev {
-  width: 40%;
-  padding: 15px 5px;
-  margin: 5px 10px;
-  text-align: center;
-  border: none;
-  transition: all 0.3s ease;
-  svg {
-    margin: 0 5px;
-    width: 12px;
-    height: 8px;
-  }
-}
-
-.button-disabled {
-  opacity: 0.25;
 }
 
 .fade-enter-active,

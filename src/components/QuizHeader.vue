@@ -1,13 +1,17 @@
 <template>
-  <header :class="['quiz-grid__header', 'quiz-text-' + getTheme + '-color']">
-    <transition name="fade" mode="out-in">
-      <p v-for="step in getNowStep" :key="step.id" :class="['quiz-headtext']">
+  <header :class="['quiz__grid-header', 'quiz-text-' + getTheme + '-color']">
+    <transition name="fadeRight" mode="out-in">
+      <p
+        v-for="step in getNowStep"
+        :key="step.id"
+        :class="['quiz__text-largest']"
+      >
         {{ step.title }}
       </p>
     </transition>
     <Progress></Progress>
     <transition name="fade" mode="out-in">
-      <p v-for="step in getNowStep" :key="step.id" class="quiz-smalltext">
+      <p v-for="step in getNowStep" :key="step.id" class="quiz__text-smallest">
         {{ step.desc }}
       </p>
     </transition>
@@ -34,18 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.quiz-grid__header {
+.quiz__grid-header {
   grid-area: quiz-header;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.25s linear;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-  transform: translateX(50px);
 }
 </style>

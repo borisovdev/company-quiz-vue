@@ -1,6 +1,9 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
+    <div
+      :class="['quiz__validation--error', 'quiz__text-smallest']"
+      v-if="$v.getUserData.$invalid"
+    >
       Вы должны выбрать не менее
       {{ $v.getUserData.$params.minLength.min }} вариантов
     </div>
