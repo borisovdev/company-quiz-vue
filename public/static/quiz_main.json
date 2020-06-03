@@ -2,11 +2,11 @@
   "main": {
     "brand": {
       "name": "Company name",
-      "tagline": "Границы Для Бизнеса Лишь линии на карте"
+      "tagline": "Слоган вашей прекрасной компании"
     },
     "manager": {
-      "avatar": "https://map-line.ru/wp-content/uploads/2020/02/MUB-jhCSLyc.jpg",
-      "name": "Нина",
+      "avatar": "img/avatar-manager-girl.jpg",
+      "name": "Мария",
       "position": "Старший менеджер"
     },
     "info": {

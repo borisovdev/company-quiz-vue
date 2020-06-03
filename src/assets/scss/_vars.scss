@@ -35,6 +35,26 @@ $black-text: #000000;
 $light-text: #96C0CC;
 $dark-text: #5F6262;
 
+// Themes
+$themes: (
+  classic: (
+    bg: #efefef,
+    progress: $info-color,
+    text: $dark-text,
+    btn-next: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%),
+    btn-prev: #888888,
+    btn-text: white
+  ),
+  amethyst: (
+    bg: #1e4970,
+    progress: #b6247f,
+    text: white,
+    btn-next: #b6247f,
+    btn-prev: #133970,
+    btn-text: white
+  )
+);
+
 
 // // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 // $grid-gutter-width: 30px;

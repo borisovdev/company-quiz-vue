@@ -19,32 +19,32 @@
         {
           "id": 0,
           "name": "Первый Вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         },
         {
           "id": 1,
           "name": "Второй вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         },
         {
           "id": 2,
           "name": "Третий вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         },
         {
           "id": 3,
           "name": "Четвертый вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         },
         {
           "id": 4,
           "name": "Пятый вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         },
         {
           "id": 5,
           "name": "Шестой вариант",
-          "image": "https://map-line.ru/wp-content/uploads/2020/03/Химия.jpg"
+          "image": "img/card-pic-1.jpg"
         }
       ]
     },

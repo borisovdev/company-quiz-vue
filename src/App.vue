@@ -201,54 +201,24 @@ export default {
   margin: 15px 0 20px;
 }
 
-// Colors
-.quiz-bg-classic-color {
-  background-color: #efefef;
-}
-.quiz-bg-amethyst-color {
-  background-color: #1E4970;
-}
-
-.quiz-text-classic-color {
-  color: $dark-text;
-}
-.quiz-text-amethyst-color {
-  color: white;
-}
-
-.quiz-progress-classic-color {
-  background-color: $info-color;
-}
-.quiz-progress-amethyst-color {
-  background-color: #B6247F;
-}
-
-.quiz-btn-classic-next {
-  background: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%);
-  color: white;
-  &:hover {
-    box-shadow: 0 0 15px -3px #d5242c;
+// Themes
+@each $theme-name, $theme-map in $themes {
+  .quiz-bg-#{$theme-name}-color {
+    background: #{map-get($theme-map, bg)};
   }
-}
-.quiz-btn-amethyst-next {
-  background: #B6247F;
-  color: white;
-  &:hover {
-    box-shadow: 0 0 15px -3px #B6247F;
+  .quiz-text-#{$theme-name}-color {
+    color: #{map-get($theme-map, text)};
   }
-}
-.quiz-btn-classic-prev {
-  background: #888888;
-  color: white;
-  &:hover {
-    box-shadow: 0 0 15px -3px #888888;
+  .quiz-progress-#{$theme-name}-color {
+    background: #{map-get($theme-map, progress)};
   }
-}
-.quiz-btn-amethyst-prev {
-  background: #133970;
-  color: white;
-  &:hover {
-    box-shadow: 0 0 15px -3px #133970;
+  .quiz-btn-#{$theme-name}-next {
+    background: #{map-get($theme-map, btn-next)};
+    color: #{map-get($theme-map, btn-text)};
+  }
+  .quiz-btn-#{$theme-name}-prev {
+    background: #{map-get($theme-map, btn-prev)};
+    color: #{map-get($theme-map, btn-text)};
   }
 }
 
