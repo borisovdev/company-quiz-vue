@@ -1,10 +1,10 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
+    <div :class="['quiz__validation--error']" v-if="$v.getUserData.$invalid">
       Выберите вариант
     </div>
     <div class="quiz-subgrid-body__radios">
-      <div :class="layout" v-for="item in getNowItems" :key="item.id">
+      <div :class="['container__radio']" v-for="item in getNowItems" :key="item.id">
         <radio-input
           :value="item.name"
           v-model.lazy="newRadioAction"
@@ -24,9 +24,7 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   data() {
-    return {
-      layout: "container__radio"
-    };
+    return {};
   },
   mixins: [mixinValidationStatus],
   validations: {

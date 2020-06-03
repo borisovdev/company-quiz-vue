@@ -1,29 +1,24 @@
 <template>
   <div>
     <div>
-      <div :class="['error-validation']" v-if="$v.getUserData.$invalid">
+      <div
+        :class="['quiz__validation--error', 'quiz__text-smallest']"
+        v-if="$v.getUserData.$invalid"
+      >
         Вы должны выбрать не менее
         {{ $v.getUserData.$params.minLength.min }} вариантов
       </div>
     </div>
     <div class="quiz-subgrid-body__radios">
-      <div
-        v-for="item in getNowItems"
-        :key="item.id"
-        :class="layout"
-        style="margin: 15px 0;"
-      >
-        <div
-          v-if="item.id === 0"
-          class="container__select"
-        >
-          <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
+      <div v-for="item in getNowItems" :key="item.id" style="margin: 15px 0;">
+        <div v-if="item.id === 0" class="container__select">
+          <label :class="['quiz__text-smallest']" style="margin-bottom: 7px;">{{
             item.label
           }}</label>
           <select
             v-model.lazy="dispathCity"
             @change="newChecked"
-            :class="selectTheme"
+            :class="['quiz__select-classic']"
           >
             <option
               v-for="option in getNowItemsFirstOptions"
@@ -33,19 +28,18 @@
             >
           </select>
         </div>
-        <div
-          v-else
-          class="container__select"
-          style="margin: 15px 0;"
-        >
-          <label for="" :class="labelTheme" style="margin-bottom: 7px;">{{
-            item.label
-          }}</label>
+        <div v-else class="container__select" style="margin: 15px 0;">
+          <label
+            for=""
+            :class="['quiz__text-smallest']"
+            style="margin-bottom: 7px;"
+            >{{ item.label }}</label
+          >
           <select
             v-model.lazy="deliveryCity"
             @change="newChecked"
             id=""
-            :class="selectTheme"
+            :class="['quiz__select-classic']"
           >
             <option
               v-for="option in getNowItemsSecondOptions"
@@ -69,9 +63,6 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
-      selectTheme: "quiz-input_values-fullwidth",
-      labelTheme: "quiz-smalltext",
-      layout: "",
       deliveryCity: "Город доставки: Выберите значение",
       dispathCity: "Город отправки: Выберите значение"
     };

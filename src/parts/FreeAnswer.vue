@@ -1,13 +1,13 @@
 <template>
   <div :class="[layoutClasses]">
-    <label class="quiz-smalltext">{{ title }}</label>
+    <label class="quiz__text-smallest">{{ title }}</label>
     <input
       type="text"
       :value="getText"
       @change="setText"
       :class="[inputTheme, { 'form--error': $v.text.$error }]"
     />
-    <div class="error-validate" v-if="!$v.text.minLength">
+    <div class="quiz__validate--error" v-if="!$v.text.minLength">
       Поле должно содержать не менее
       {{ $v.text.$params.minLength.min }} символов
     </div>
@@ -23,7 +23,7 @@ export default {
     return {
       title: "Ваш вариант ответа",
       layoutClasses: "container__input",
-      inputTheme: "quiz-input_light".toString(),
+      inputTheme: "quiz__input-classic",
       text: ""
     };
   },

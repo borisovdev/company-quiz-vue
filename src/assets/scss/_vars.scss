@@ -6,13 +6,23 @@ $max_width: 1200px;
 $default-font: Avenir, Helvetica, Arial, sans-serif;
 
 // typography styles
-$light: 300;
-$regular: 400;
-$medium: 500;
-$semibold: 600;
-$bold: 700;
-$extrabold: 800;
-$blackbold: 900;
+$typography-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extrabold: 800,
+  blackbold: 900
+);
+$typography-sizes: (
+  smallest: 12px,
+  small: 14px,
+  standard: 16px,
+  medium: 20px,
+  large: 22px,
+  largest: 26px
+);
 
 //breakpoints
 $break-sm: 576px;
@@ -43,7 +53,11 @@ $themes: (
     text: $dark-text,
     btn-next: linear-gradient(270deg, #d5242c 0%, #ff1b25 100%),
     btn-prev: #888888,
-    btn-text: white
+    btn-text: white,
+    card-text: $dark-text,
+    card-bg: white,
+    card-text-active: white,
+    card-bg-active: $info-color
   ),
   amethyst: (
     bg: #1e4970,
@@ -51,10 +65,30 @@ $themes: (
     text: white,
     btn-next: #b6247f,
     btn-prev: #133970,
-    btn-text: white
+    btn-text: white,
+    card-text: $dark-text,
+    card-bg: white,
+    card-text-active: white,
+    card-bg-active: #b6247f
   )
 );
 
+// Notifies
+$notify-colors: (
+  validation: (
+    error: red,
+    info: blue,
+    dump: black
+  ),
+  notify: (
+    error: red,
+    info: blue,
+    dump: black
+  ),
+  loading: (
+    icon: $info-color
+  )
+);
 
 // // Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
 // $grid-gutter-width: 30px;
