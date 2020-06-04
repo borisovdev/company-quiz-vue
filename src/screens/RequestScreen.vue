@@ -1,6 +1,6 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div v-if="true" class="quiz__loading">
+    <div v-if="getSendProgressStatus" class="quiz__loading">
       <svg class="quiz__loading--icon">
         <use xlink:href="sprites/sprite.svg#quiz-loading"></use>
       </svg>
@@ -19,7 +19,7 @@
               <use xlink:href="sprites/sprite.svg#quiz-arrow-down"></use>
             </svg>
           </p>
-          <ul class="quiz__total quiz__total--hidden">
+          <ul class="quiz__total" :style="{ height: accordeonHeight }">
             <li
               v-for="(obj, idx) in getObjectData"
               :key="idx"
@@ -73,6 +73,7 @@ const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   data() {
     return {
+      accordeonHeight: "0px",
       successClass: "quiz__success-msg",
       successMsg:
         "Спасибо за ваш выбор! В ближайшее время с вами свяжется наш менеджер!",
@@ -83,6 +84,12 @@ export default {
       useremail: ""
     };
   },
+  computed: {
+    ...mapGetters(["getObjectData", "getDataStatus", "getSendProgressStatus"])
+  },
+  created() {
+    this.validationStatusTrue();
+  },
   methods: {
     ...mapActions([
       "updateUserName",
@@ -91,14 +98,14 @@ export default {
       "validationStatusTrue"
     ]),
     actionAccordion(evt) {
-      evt.target.nextElementSibling.classList.toggle("quiz__total--hidden");
+      let elBlock = evt.target.nextElementSibling;
+      if (this.accordeonHeight === "0px") {
+        this.accordeonHeight = `${elBlock.scrollHeight}px`;
+      } else {
+        this.accordeonHeight = `${elBlock.scrollHeight}px`;
+        this.accordeonHeight = "0px";
+      }
     }
-  },
-  computed: {
-    ...mapGetters(["getObjectData", "getDataStatus", "getSendProgressStatus"])
-  },
-  created() {
-    this.validationStatusTrue();
   }
 };
 </script>
@@ -124,6 +131,7 @@ export default {
 
 .quiz__total {
   overflow: hidden;
+  transition: height 600ms ease;
   &-title {
     width: 100%;
     color: $info-color;

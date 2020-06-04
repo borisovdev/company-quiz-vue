@@ -9,12 +9,13 @@
     </div>
     <div class="quiz-subgrid-body__cards">
       <div :class="cardsLayout" v-for="item in getNowItems" :key="item.id">
-        <checkbox-card
+        <component
+          :is="currentScreen"
           :value="item.name"
           v-model.lazy="newCheckedAction"
           :image="item.image"
           :name="item.name"
-        ></checkbox-card>
+        ></component>
       </div>
     </div>
     <free-answer></free-answer>
@@ -28,31 +29,34 @@ import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
+  components: {
+    "card-checkbox": () => import("@/parts/CardCheckbox"),
+    "card-radio": () => import("@/parts/CardRadio"),
+    "free-answer": () => import("@/parts/FreeAnswer")
+  },
+  mixins: [mixinValidationStatus],
   data() {
     return {
       cardsLayout: "quiz-subgrid-body__item"
     };
   },
-  mixins: [mixinValidationStatus],
-  components: {
-    "checkbox-card": () => import("@/parts/CheckboxCard"),
-    "free-answer": () => import("@/parts/FreeAnswer")
-  },
-  validations: {
-    getUserData: {
-      required,
-      minLength: minLength(1)
-    }
-  },
-  methods: {
-    ...mapActions([
-      "updateChecked",
-      "validationStatusTrue",
-      "validationStatusFalse"
-    ])
-  },
   computed: {
-    ...mapGetters(["getNowItems", "getUserData", "getValidationStatus"]),
+    ...mapGetters([
+      "getNowItems",
+      "getNowItemsType",
+      "getUserData",
+      "getValidationStatus"
+    ]),
+    currentScreen() {
+      switch (this.getNowItemsType) {
+        case "cards-checkbox":
+          return "card-checkbox";
+        case "cards-radio":
+          return "card-radio";
+        default:
+          return "card-checkbox";
+      }
+    },
     newCheckedAction: {
       get() {
         return this.getUserData;
@@ -62,8 +66,21 @@ export default {
       }
     }
   },
+  validations: {
+    getUserData: {
+      required,
+      minLength: minLength(1)
+    }
+  },
   beforeUpdate() {
     this.changeValidationStatus();
+  },
+  methods: {
+    ...mapActions([
+      "updateChecked",
+      "validationStatusTrue",
+      "validationStatusFalse"
+    ])
   }
 };
 </script>

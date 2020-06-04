@@ -1,14 +1,14 @@
 <template>
   <label :class="['quiz__card', 'quiz-card-' + getTheme + '-theme']">
-    <img :src="image" />
+    <img :src="image" :alt="name" />
     <div :class="['quiz__card-title', 'quiz__text-smallest', focusClass]">
       <span class="card__name">{{ name }}</span>
     </div>
     <input
-      type="checkbox"
-      :checked="shouldBeChecked"
+      type="radio"
+      :checked="$_mixinUpdateRadio_shouldBeChecked"
       :value="value"
-      @change="updateInput"
+      @change="$_mixinUpdateRadio_update"
       class="radiohidden"
     />
   </label>
@@ -16,13 +16,10 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
+import { mixinUpdateRadio } from "../assets/mixins";
 const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
-  data() {
-    return {
-      focusClass: ""
-    };
-  },
+  mixins: [mixinUpdateRadio],
   model: {
     prop: "modelValue",
     event: "change"
@@ -41,36 +38,13 @@ export default {
       default: false
     }
   },
-  computed: {
-    ...mapGetters(["getTheme", "getUserData"]),
-    shouldBeChecked() {
-      if (this.modelValue instanceof Array) {
-        return this.modelValue.includes(this.value);
-      } else {
-        return this.modelValue === this.trueValue;
-      }
-    }
+  data() {
+    return {
+      focusClass: ""
+    };
   },
-  methods: {
-    updateInput(evt) {
-      let isChecked = evt.target.checked;
-
-      if (this.modelValue instanceof Array) {
-        let newValue = [...this.modelValue];
-
-        if (isChecked) {
-          newValue.push(this.value);
-        } else {
-          newValue.splice(newValue.indexOf(this.value), 1);
-        }
-
-        this.$emit("change", newValue);
-      } else {
-        this.$emit("change", isChecked ? this.trueValue : this.falseValue);
-      }
-
-      isChecked ? (this.focusClass = "active") : (this.focusClass = "");
-    }
+  computed: {
+    ...mapGetters(["getTheme", "getUserData"])
   }
 };
 </script>

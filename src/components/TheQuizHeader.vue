@@ -20,7 +20,7 @@
 
 <script>
 // import TweenLite from "gsap/TweenLite";
-import Progress from "./Progress";
+import Progress from "./TheProgress";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 
