@@ -79,8 +79,10 @@ npm run lint
 ### Экраны
 #### Типы оформления экранов:
 * ***text***
-* ***radio***
-* ***card***
+* ***list-radio***
+* ***list-checkbox***
+* ***cards-radio***
+* ***cards-checkbox***
 * ***selects***
 * ***text-and-select***  
 * ***request***
@@ -105,7 +107,7 @@ npm run lint
 }
 ```
 
-#### radio
+#### list-radio and list-checkbox
 ```
 {
   "id": 0,
@@ -130,7 +132,7 @@ npm run lint
 }
 ```
 
-#### card
+#### cards-radio & cards-checkbox
 ```
 {
   "id": 0,
