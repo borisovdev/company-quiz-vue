@@ -56,8 +56,7 @@
           :disabled="getCounter === isStepsLength"
           @click.prevent="nextStep"
         >
-          {{ nextText
-          }}
+          {{ nextText }}
           <svg class="quiz__btn-icon">
             <use xlink:href="sprites/sprite.svg#quiz-nav-arrow-next"></use>
           </svg>
