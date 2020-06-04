@@ -30,12 +30,13 @@ export default {
   components: {
     "notify-bar": () => import("@/parts/NotifyBar"),
     "cards-screen": () => import("@/screens/CardsScreen"),
-    "list-screen": () => import("@/screens/ListScreen"),
+    "radios-screen": () => import("@/screens/RadiosScreen"),
     "request-screen": () => import("@/screens/RequestScreen"),
     "text-and-select": () => import("@/parts/TextAndSelect"),
     "text-simple": () => import("@/parts/TextSimple"),
     "selects-double": () => import("@/parts/SelectsDouble")
   },
+  methods: {},
   computed: {
     ...mapState({
       userData: state => state.userData
@@ -50,24 +51,18 @@ export default {
     ]),
     currentScreen() {
       switch (this.getNowItemsType) {
-        case "cards-checkbox":
+        case "card":
           return "cards-screen";
-        case "cards-radio":
-          return "cards-screen";
-        case "list-radio":
-          return "list-screen";
-        case "list-checkbox":
-          return "list-screen";
+        case "request":
+          return "request-screen";
         case "text-and-select":
           return "text-and-select";
         case "selects":
           return "selects-double";
         case "text":
           return "text-simple";
-        case "request":
-          return "request-screen";
         default:
-          return "list-screen";
+          return "radios-screen";
       }
     }
   }

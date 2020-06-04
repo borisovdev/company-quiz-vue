@@ -1,23 +1,15 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div
-      :class="['quiz__validation--error', 'quiz__text-smallest']"
-      v-if="$v.getUserData.$invalid"
-    >
+    <div :class="['quiz__validation--error', 'quiz__text-smallest']" v-if="$v.getUserData.$invalid">
       Выберите вариант
     </div>
     <div class="quiz-subgrid-body__radios">
-      <div
-        :class="['container__radio']"
-        v-for="item in getNowItems"
-        :key="item.id"
-      >
-        <component
-          :is="currentScreen"
-          v-model.lazy="inputedData"
+      <div :class="['container__radio']" v-for="item in getNowItems" :key="item.id">
+        <radio-input
           :value="item.name"
+          v-model.lazy="newRadioAction"
           :name="item.name"
-        ></component>
+        ></radio-input>
       </div>
     </div>
     <free-answer></free-answer>
@@ -42,8 +34,7 @@ export default {
     }
   },
   components: {
-    "list-item-radio": () => import("@/parts/ListItemRadio"),
-    "list-item-checkbox": () => import("@/parts/ListItemCheckbox"),
+    "radio-input": () => import("@/parts/RadioInput"),
     "free-answer": () => import("@/parts/FreeAnswer")
   },
   methods: {
@@ -54,18 +45,8 @@ export default {
     ])
   },
   computed: {
-    ...mapGetters(["getNowItemsType", "getUserData", "getNowItems"]),
-    currentScreen() {
-      switch (this.getNowItemsType) {
-        case "list-radio":
-          return "list-item-radio";
-        case "list-checkbox":
-          return "list-item-checkbox";
-        default:
-          return "list-item-radio";
-      }
-    },
-    inputedData: {
+    ...mapGetters(["getUserData", "getNowItems"]),
+    newRadioAction: {
       get() {
         return this.getUserData;
       },

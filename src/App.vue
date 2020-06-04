@@ -25,10 +25,10 @@ import Vue from "vue";
 import store from "./store";
 import axios from "axios";
 import Vuelidate from "vuelidate";
-import QuizHeader from "./components/TheQuizHeader";
-import QuizBody from "./components/TheQuizBody";
-import QuizNav from "./components/TheQuizNav";
-import QuizSidebar from "./components/TheQuizSidebar";
+import QuizHeader from "./components/QuizHeader";
+import QuizBody from "./components/QuizBody";
+import QuizNav from "./components/QuizNav";
+import QuizSidebar from "./components/QuizSidebar";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
