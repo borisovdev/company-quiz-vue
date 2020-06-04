@@ -6,7 +6,7 @@
       "desc": "Выберите подходящий вариант или укажите свой",
       "legend": "Здесь находиться уникальное описание вопроса",
       "required": false,
-      "items_type": "card",
+      "items_type": "cards-radio",
       "items": [
         {
           "id": 0,
@@ -54,7 +54,7 @@
       "desc": "Выберите подходящий вариант или укажите свой",
       "legend": "Здесь находиться уникальное описание вопроса",
       "required": true,
-      "items_type": "radio",
+      "items_type": "list-checkbox",
       "items": [
         {
           "id": 0,
@@ -293,7 +293,7 @@
       "desc": "Укажите объём Вашего груза в м3, если не знаете  - можете пропустить",
       "legend": "Здесь находиться уникальное описание вопроса",
       "required": false,
-      "items_type": "radio",
+      "items_type": "list-radio",
       "items": [
         {
           "id": 0,
@@ -322,7 +322,7 @@
       "title": "Откуда и куда доставляем?",
       "desc": "Выберите подходящий вариант или укажите свой",
       "legend": "Здесь находиться уникальное описание вопроса",
-      "items_type": "radio",
+      "items_type": "list-radio",
       "required": false,
       "items": [
         {
