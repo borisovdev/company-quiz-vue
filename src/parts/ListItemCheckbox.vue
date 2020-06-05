@@ -1,15 +1,17 @@
 <template>
-  <label :class="[labelClasses, focusClass]">
-    <input
-      type="checkbox"
-      :checked="$_mixinUpdateCheckbox_shouldBeChecked"
-      :value="value"
-      @change="$_mixinUpdateCheckbox_update"
-    />
-    <div :class="['quiz__radio-name']">
-      <span>{{ name }}</span>
-    </div>
-  </label>
+  <div :class="[labelClasses, focusClass]">
+    <div :class="['quiz__listItem-classic--customCheckbox', focusClass]"></div>
+    <label>
+      <input
+        type="checkbox"
+        class="radiohidden"
+        :checked="$_mixinUpdateCheckbox_shouldBeChecked"
+        :value="value"
+        @change="$_mixinUpdateCheckbox_update"
+      />
+      <span :class="['quiz__listItem-classic--name']">{{ name }}</span>
+    </label>
+  </div>
 </template>
 
 <script>
@@ -31,7 +33,7 @@ export default {
   data() {
     return {
       focusClass: "",
-      labelClasses: "quiz__radio-classic quiz__text-small quiz__text--medium"
+      labelClasses: "quiz__listItem-classic quiz__text-small quiz__text--medium"
     };
   }
 };

@@ -1,6 +1,5 @@
 // Imputs
-.quiz__radio-classic {
-  padding: 7px 0 7px 10px;
+.quiz__listItem-classic {
   margin: 5px 0;
   width: 100%;
   display: flex;
@@ -12,9 +11,45 @@
   border: 1px solid rgba(15, 28, 45, 0.2);
   border-radius: 5px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-.quiz__radio-name {
-  margin-left: 15px;
+  transition: all 0.35s ease;
+  &.active:not(.quiz__listItem-classic--customCheckbox),
+  &.active:not(.quiz__listItem-classic--customRadio) {
+    border: none;
+    box-shadow: 0px 0px 15px -3px #d5242c;
+  }
+  label {
+    padding: 7px 0 7px 10px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+  &--customCheckbox,
+  &--customRadio {
+    margin-right: 5px;
+    margin-left: 10px;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    border: 1px solid gray;
+    transition: all 0.35s ease;
+    &.active {
+      border: none;
+      background-color: $info-color;
+    }
+  }
+  &--customCheckbox {
+    border-radius: 2px;
+  }
+  &--customRadio {
+    border-radius: 50%;
+  }
+  &--name {
+    margin-left: 15px;
+  }
 }
 
 .quiz__input-classic {
