@@ -16,7 +16,7 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-const { mapState, mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
+const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 
 export default {
   props: {
@@ -37,9 +37,6 @@ export default {
     "selects-double": () => import("@/parts/SelectsDouble")
   },
   computed: {
-    ...mapState({
-      userData: state => state.userData
-    }),
     ...mapGetters([
       "getTheme",
       "getCounter",

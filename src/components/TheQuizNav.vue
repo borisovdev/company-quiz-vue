@@ -88,7 +88,20 @@ export default {
       validationMsg: ""
     };
   },
+  computed: {
+    ...mapGetters([
+      "getTheme",
+      "isNowStep",
+      "getCounter",
+      "getDataStatus",
+      "isStepsLength",
+      "getUser",
+      "getObjectData",
+      "getValidationStatus"
+    ])
+  },
   methods: {
+    ...mapActions(["nextCount", "prevCount"]),
     nextStep() {
       if (this.getValidationStatus === "INVALID") {
         this.validationMsg = "Проверьте правильность заполненных данных";
@@ -111,20 +124,7 @@ export default {
       } else {
         // console.log('[QUIZ_NAV] Аргументы должны быть строкой!')
       }
-    },
-    ...mapActions(["nextCount", "prevCount"])
-  },
-  computed: {
-    ...mapGetters([
-      "getTheme",
-      "isNowStep",
-      "getCounter",
-      "getDataStatus",
-      "isStepsLength",
-      "getUser",
-      "getObjectData",
-      "getValidationStatus"
-    ])
+    }
   }
 };
 </script>

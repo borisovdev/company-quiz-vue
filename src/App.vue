@@ -12,7 +12,7 @@
             :response="serverResponse"
             :reject="serverReject"
           ></quiz-body>
-          <quiz-nav :requiredStep="getNowStep[0].required"></quiz-nav>
+          <quiz-nav :requiredStep="getNowStep.required"></quiz-nav>
           <quiz-sidebar :data-main="dataMain"></quiz-sidebar>
         </div>
       </form>

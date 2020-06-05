@@ -140,40 +140,15 @@ const moduleQuiz = {
     getUser: state => state.user,
     getValidationStatus: state => state.validationStatus,
     isStepsLength: state => state.steps.length,
+    isNowStep: state => state.counter + 1,
     getSendProgressStatus: state => state.sendOnProgress,
-    isNowStep: state => {
-      return state.counter + 1;
-    },
-    getNowUserData: state =>
-      state.userData.filter((item, idx) => {
-        return idx === state.counter;
-      }),
-    getNowStep: state =>
-      state.steps.filter((item, idx) => {
-        return idx === state.counter;
-      }),
-    getNowItems: (state, getters) => {
-      for (let i = 0; i < getters.getNowStep.length; i++) {
-        return getters.getNowStep[i].items;
-      }
-    },
-    getNowItemsFirstOptions: (state, getters) => {
-      let mainLength = getters.getNowStep.length;
-      for (let i = 0; i < mainLength; i++) {
-        return getters.getNowStep[i].items[0].options;
-      }
-    },
-    getNowItemsSecondOptions: (state, getters) => {
-      let mainLength = getters.getNowStep.length;
-      for (let i = 0; i < mainLength; i++) {
-        return getters.getNowStep[i].items[1].options;
-      }
-    },
-    getNowItemsType: (state, getters) => {
-      for (let i = 0; i < getters.getNowStep.length; i++) {
-        return getters.getNowStep[i].items_type;
-      }
-    }
+    getNowStep: state => state.steps.find((item, idx) => idx === state.counter),
+    getNowItemsType: (state, getters) => getters.getNowStep.items_type,
+    getNowItems: (state, getters) => getters.getNowStep.items,
+    getNowItemsFirstOptions: (state, getters) =>
+      getters.getNowStep.items[0].options,
+    getNowItemsSecondOptions: (state, getters) =>
+      getters.getNowStep.items[1].options
   },
 
   actions: {

@@ -1,20 +1,8 @@
 <template>
   <header :class="['quiz__grid-header', 'quiz-text-' + getTheme + '-color']">
-    <transition name="fadeRight" mode="out-in">
-      <p
-        v-for="step in getNowStep"
-        :key="step.id"
-        :class="['quiz__text-largest']"
-      >
-        {{ step.title }}
-      </p>
-    </transition>
+    <p :class="['quiz__text-largest']">{{ getNowStep.title }}</p>
     <Progress></Progress>
-    <transition name="fadeRight" mode="out-in">
-      <p v-for="step in getNowStep" :key="step.id" class="quiz__text-smallest">
-        {{ step.desc }}
-      </p>
-    </transition>
+    <p :class="['quiz__text-smallest']">{{ getNowStep.desc }}</p>
   </header>
 </template>
 
