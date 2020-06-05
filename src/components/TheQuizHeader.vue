@@ -10,7 +10,7 @@
       </p>
     </transition>
     <Progress></Progress>
-    <transition name="fade" mode="out-in">
+    <transition name="fadeRight" mode="out-in">
       <p v-for="step in getNowStep" :key="step.id" class="quiz__text-smallest">
         {{ step.desc }}
       </p>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-// import TweenLite from "gsap/TweenLite";
 import Progress from "./TheProgress";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
