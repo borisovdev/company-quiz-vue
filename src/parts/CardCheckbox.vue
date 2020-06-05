@@ -1,22 +1,30 @@
 <template>
-  <label :class="['quiz__card', 'quiz-card-' + getTheme + '-theme']">
-    <img :src="image" :alt="name" />
-    <div :class="['quiz__card-title', 'quiz__text-smallest', focusClass]">
-      <span class="card__name">{{ name }}</span>
-    </div>
-    <input
-      type="checkbox"
-      :checked="$_mixinUpdateCheckbox_shouldBeChecked"
-      :value="value"
-      @change="$_mixinUpdateCheckbox_update"
-      class="radiohidden"
-    />
-  </label>
+  <div class="quiz__card-container" ref="cardContainer">
+    <label
+      :class="['quiz__card', 'quiz-card-' + getTheme + '-theme']"
+      ref="cardItem"
+      @mousemove="rotateIt"
+      @mouseout="disableRotate"
+    >
+      <img :src="image" :alt="name" />
+      <div :class="['quiz__card-title', 'quiz__text-smallest', focusClass]">
+        <span class="card__name">{{ name }}</span>
+      </div>
+      <input
+        type="checkbox"
+        :checked="$_mixinUpdateCheckbox_shouldBeChecked"
+        :value="value"
+        @change="$_mixinUpdateCheckbox_update"
+        class="radiohidden"
+      />
+    </label>
+  </div>
 </template>
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-import {mixinUpdateCheckbox} from "../assets/mixins";
+import { mixinUpdateCheckbox } from "../assets/mixins";
+import { gsap } from "gsap";
 const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 export default {
   mixins: [mixinUpdateCheckbox],
@@ -44,54 +52,56 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getTheme", "getUserData"]),
+    ...mapGetters(["getTheme", "getUserData"])
+  },
+  methods: {
+    parallaxIt(evt) {
+      let container = this.$refs.cardContainer;
+      let relX = evt.pageX - container.getBoundingClientRect().left;
+      let relY = evt.pageY - container.getBoundingClientRect().top;
+
+      gsap.to(container, {
+        x: ((relX - container.offsetWidth / 2) / container.offsetWidth) * -10,
+        y: ((relY - container.offsetWidth / 2) / container.offsetWidth) * -10,
+        scale: 1.05,
+        duration: 0.35
+      });
+    },
+    rotateIt(evt) {
+      let container = this.$refs.cardContainer;
+      let el = this.$refs.cardItem;
+      let height = container.clientHeight;
+      let width = container.clientWidth;
+      let xVal = evt.offsetX === undefined ? evt.layerX : evt.offsetX;
+      let yVal = evt.offsetY === undefined ? evt.layerY : evt.offsetY;
+      let yRotation = 20 * ((xVal - width / 2) / width);
+      let xRotation = -20 * ((yVal - height / 2) / height);
+
+      gsap.to(el, {
+        rotationX: xRotation + "deg",
+        rotationY: yRotation + "deg",
+        scale: 1.06,
+        duration: 0.15
+      });
+    },
+    disableParallax() {
+      gsap.to(this.$refs.cardIten, {
+        x: 0,
+        y: 0,
+        scale: 1,
+        duration: 0.35
+      });
+    },
+    disableRotate() {
+      gsap.to(this.$refs.cardItem, {
+        transform: "none",
+        scale: 1,
+        duration: 0.35
+      });
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-.quiz__card {
-  width: 100%;
-  height: 140px;
-  margin: 15px auto;
-  position: relative;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  transition: all 0.3s ease;
-  &:hover {
-    .quiz__card-title {
-      box-shadow: 0px 0px 15px -3px #d5242c;
-    }
-  }
-  img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  &-title {
-    position: absolute;
-    width: 85%;
-    bottom: -10px;
-    padding: 7px 15px;
-    text-align: center;
-    border-radius: 5px;
-    transition: inherit;
-  }
-}
-
-@media (max-width: 576px) {
-  .quiz__card {
-    height: 120px;
-    width: 100%;
-    margin: 7px auto;
-    overflow: hidden;
-    &-title {
-      width: 100%;
-      bottom: 0;
-      font-size: 8pt;
-    }
-  }
-}
 </style>
