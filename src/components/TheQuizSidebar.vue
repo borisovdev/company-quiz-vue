@@ -16,7 +16,18 @@
       </div>
     </header>
     <div class="quiz__separator"></div>
-    <div class="quiz__info">
+    <div :class="['quiz__help-' + getTheme]">
+      <svg :class="['quiz__help-' + getTheme + '-icon']">
+        <use xlink:href="sprites/sprite.svg#quiz-question-help"></use>
+      </svg>
+      <p class="quiz__text-small">
+        {{ getNowStep.legend }}
+      </p>
+    </div>
+    <div :class="['quiz__info-' + getTheme]">
+      <svg :class="['quiz__info-' + getTheme + '-icon']">
+        <use xlink:href="sprites/sprite.svg#quiz-company-info"></use>
+      </svg>
       <p class="quiz__text-small">
         {{ getMain.info.maintext }}
       </p>
@@ -29,7 +40,9 @@
       <span class="quiz__orgname quiz__text-large">{{
         getMain.brand.name
       }}</span>
-      <span class="quiz__taglinequiz__text-medium">{{ getMain.brand.tagline }}</span>
+      <span class="quiz__taglinequiz__text-medium">{{
+        getMain.brand.tagline
+      }}</span>
     </footer>
   </aside>
 </template>
@@ -53,7 +66,14 @@ export default {
     ...mapActions(["initMain"])
   },
   computed: {
-    ...mapGetters(["getTheme", "getMain", "getBrand", "getManager", "getInfo"])
+    ...mapGetters([
+      "getTheme",
+      "getMain",
+      "getBrand",
+      "getManager",
+      "getInfo",
+      "getNowStep"
+    ])
   },
   created() {
     this.initMain(this.dataMain);
@@ -102,11 +122,6 @@ export default {
     height: 100%;
     object-fit: cover;
   }
-}
-
-.quiz__info {
-  width: 100%;
-  flex: 1 0 auto;
 }
 
 .quiz__footer {
