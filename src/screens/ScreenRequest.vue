@@ -5,7 +5,7 @@
         <use xlink:href="sprites/sprite.svg#quiz-loading"></use>
       </svg>
     </div>
-    <transition name="fade" mode="out-in">
+    <transition name="fadeRight" mode="out-in">
       <div v-if="getDataStatus" :class="layout">
         <p :class="successClass">
           {{ successMsg }}
@@ -13,9 +13,12 @@
       </div>
       <div v-else :class="layout">
         <div>
-          <p @click="actionAccordion" class="quiz__total-title unselectable">
+          <p
+            @click="actionAccordion"
+            :class="['quiz__total-' + getTheme + '-title']"
+          >
             Вы выбрали:
-            <svg class="quiz__total--icon">
+            <svg :class="['quiz__total--icon']">
               <use xlink:href="sprites/sprite.svg#quiz-arrow-down"></use>
             </svg>
           </p>
@@ -23,10 +26,12 @@
             <li
               v-for="(obj, idx) in getObjectData"
               :key="idx"
-              class="quiz__total-item quiz__text-smallest"
+              :class="['quiz__totalItem', 'quiz__text-smallest']"
             >
-              <span class="quiz__total-item--name">{{ obj.title }}</span>
-              <p class="quiz__total-item--text">
+              <span :class="['quiz__totalItem-' + getTheme + '--name']">{{
+                obj.title
+              }}</span>
+              <p :class="['quiz__totalItem-' + getTheme + '--text']">
                 {{
                   obj.chosen instanceof Array
                     ? obj.chosen.join(", ")
@@ -85,7 +90,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getObjectData", "getDataStatus", "getSendProgressStatus"])
+    ...mapGetters([
+      "getTheme",
+      "getObjectData",
+      "getDataStatus",
+      "getSendProgressStatus"
+    ])
   },
   created() {
     this.validationStatusTrue();
@@ -112,6 +122,7 @@ export default {
 
 <style lang="scss" scoped>
 .container__input {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -127,55 +138,6 @@ export default {
   font-size: 18px;
   color: green;
   font-weight: bold;
-}
-
-.quiz__total {
-  overflow: hidden;
-  transition: height 600ms ease;
-  &-title {
-    width: 100%;
-    color: $info-color;
-    padding: 8px 0;
-    position: relative;
-    cursor: pointer;
-    &:hover {
-      svg {
-        transform: rotate(90deg);
-      }
-    }
-  }
-  &-item {
-    margin-bottom: 6px;
-    padding: 5px 10px;
-    width: 100%;
-    @include flex(row, flex-start, center);
-    &--name {
-      margin-right: 7px;
-      color: $info-color;
-    }
-    &--text {
-      margin: 0;
-      color: $dark-text;
-    }
-  }
-  &--icon {
-    @include absolute(2px, 10px, 2px, false);
-    @include size(15px, 15px);
-    transition: all 0.3s ease;
-  }
-  &--hidden {
-    height: 0;
-  }
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: all 0.45s ease-out;
 }
 
 @keyframes rotating {

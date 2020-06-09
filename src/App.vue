@@ -43,7 +43,7 @@ export default {
       default: "classic"
     },
     dataAction: {
-      default: "/api/MailEngine.php"
+      default: "/web-components/company-quiz-vue/api/QuizMail.php"
     },
     dataMain: {
       default: "/data/quiz_main.json"
@@ -123,10 +123,12 @@ export default {
 @import "./assets/scss/normalize.scss";
 // Layout
 @import "./assets/scss/grid.scss";
-// Animations
-@import "./assets/scss/animations.scss";
+//Typography
+@import "./assets/scss/typography.scss";
 // Elements
 @import "./assets/scss/elements.scss";
+// Animations
+@import "./assets/scss/animations.scss";
 
 // Main
 #app {
@@ -144,64 +146,6 @@ export default {
   overflow: hidden;
   box-shadow: 0 0 15px -2px rgba(0, 0, 0, 0.5);
   transition: all 0.5s ease;
-}
-
-// Themes
-@each $theme-name, $theme-map in $themes {
-  .quiz-bg-#{$theme-name}-color {
-    background: #{map-get($theme-map, bg)};
-  }
-  .quiz-text-#{$theme-name}-color {
-    color: #{map-get($theme-map, text)};
-  }
-  .quiz-progress-#{$theme-name}-color {
-    background: #{map-get($theme-map, progress)};
-  }
-  .quiz-btn-#{$theme-name}-next {
-    background: #{map-get($theme-map, btn-next)};
-    color: #{map-get($theme-map, btn-text)};
-  }
-  .quiz-btn-#{$theme-name}-prev {
-    background: #{map-get($theme-map, btn-prev)};
-    color: #{map-get($theme-map, btn-text)};
-  }
-  .quiz-card-#{$theme-name}-theme {
-    .card__name {
-      color: #{map-get($theme-map, card-text)};
-    }
-    .quiz__card-title {
-      background: #{map-get($theme-map, card-bg)};
-    }
-    .active {
-      background: #{map-get($theme-map, card-bg-active)};
-      .card__name {
-        color: #{map-get($theme-map, card-text-active)};
-      }
-    }
-  }
-}
-
-// Notifications
-@each $notify-key, $notify-map in $notify-colors {
-  @each $notify-map-name, $notify-map-value in $notify-map {
-    .quiz__#{$notify-key}--#{$notify-map-name} {
-      color: #{$notify-map-value};
-      fill: #{$notify-map-value};
-    }
-  }
-}
-
-// Typograpohy
-@each $size-key, $size-value in $typography-sizes {
-  .quiz__text-#{$size-key} {
-    font-size: #{$size-value};
-  }
-}
-
-@each $weight-key, $weight-value in $typography-weights {
-  .quiz__text--#{$weight-key} {
-    font-weight: #{$weight-value};
-  }
 }
 
 // Additional

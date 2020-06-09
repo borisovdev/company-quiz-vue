@@ -1,6 +1,13 @@
 <template>
-  <div :class="[labelClasses, focusClass]">
-    <div :class="['quiz__listItem-classic--customRadio', focusClass]"></div>
+  <div
+    :class="['quiz__listItem-classic-' + getTheme, labelClasses, focusClass]"
+  >
+    <div
+      :class="[
+        'quiz__listItem-classic-' + getTheme + '--customRadio',
+        focusClass
+      ]"
+    ></div>
     <label>
       <input
         type="radio"
@@ -9,16 +16,20 @@
         :value="value"
         @change="$_mixinUpdateRadio_update"
       />
-      <span :class="['quiz__listItem-classic--name']">{{ name }}</span>
+      <span :class="['quiz__listItem-classic' + getTheme + '--name']">{{
+        name
+      }}</span>
     </label>
   </div>
 </template>
 
 <script>
-import { mixinUpdateRadio } from "../assets/mixins";
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
+import { mixinUpdateRadio, mixinFunHelpers } from "../assets/mixins";
 
 export default {
-  mixins: [mixinUpdateRadio],
+  mixins: [mixinUpdateRadio, mixinFunHelpers],
   model: {
     prop: "modelValue",
     event: "change"
@@ -33,8 +44,11 @@ export default {
   data() {
     return {
       focusClass: "",
-      labelClasses: "quiz__listItem-classic quiz__text-small quiz__text--medium"
+      labelClasses: "quiz__text-small quiz__text--medium"
     };
+  },
+  computed: {
+    ...mapGetters(["getTheme"])
   }
 };
 </script>

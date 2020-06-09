@@ -1,57 +1,133 @@
-// Imputs
-.quiz__listItem-classic {
-  margin: 5px 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  background: white;
-  color: black;
-  border: 1px solid rgba(15, 28, 45, 0.2);
-  border-radius: 5px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-  transition: all 0.35s ease;
-  &.active:not(.quiz__listItem-classic--customCheckbox),
-  &.active:not(.quiz__listItem-classic--customRadio) {
-    border: none;
-    box-shadow: 0px 0px 15px -3px #d5242c;
+// Themes parts
+@each $theme-name, $theme-map in $themes {
+  .quiz-bg-#{$theme-name}-color {
+    background: #{map-get($theme-map, bg)};
   }
-  label {
-    padding: 7px 0 7px 10px;
-    height: 100%;
+  .quiz-text-#{$theme-name}-color {
+    color: #{map-get($theme-map, text)};
+  }
+  .quiz-progress-#{$theme-name}-color {
+    background: #{map-get($theme-map, progress)};
+  }
+  .quiz-btn-#{$theme-name}-next {
+    background: #{map-get($theme-map, btn-next)};
+    color: #{map-get($theme-map, btn-text)};
+  }
+  .quiz-btn-#{$theme-name}-prev {
+    background: #{map-get($theme-map, btn-prev)};
+    color: #{map-get($theme-map, btn-text)};
+  }
+  .quiz-card-#{$theme-name}-theme {
+    .card__name {
+      color: #{map-get($theme-map, card-text)};
+    }
+    .quiz__card-title {
+      background: #{map-get($theme-map, card-bg)};
+    }
+    .active {
+      background: #{map-get($theme-map, card-bg-active)};
+      .card__name {
+        color: #{map-get($theme-map, card-text-active)};
+      }
+    }
+  }
+  .quiz__listItem-classic-#{$theme-name} {
+    margin: 5px 0;
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    cursor: pointer;
-  }
-  &--customCheckbox,
-  &--customRadio {
-    margin-right: 5px;
-    margin-left: 10px;
-    width: 10px;
-    height: 10px;
-    position: relative;
-    border: 1px solid gray;
+    overflow: hidden;
+    background: white;
+    color: black;
+    border: 1px solid rgba(15, 28, 45, 0.2);
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
     transition: all 0.35s ease;
-    &.active {
+    &.active:not(.quiz__listItem-classic-#{$theme-name}--customCheckbox),
+    &.active:not(.quiz__listItem-classic-#{$theme-name}--customRadio) {
       border: none;
-      background-color: $info-color;
+      box-shadow: 0px 0px 15px -3px #{map-get($theme-map, list-item-active)};
+    }
+    label {
+      padding: 7px 0 7px 10px;
+      height: 100%;
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      cursor: pointer;
+    }
+    &--customCheckbox,
+    &--customRadio {
+      margin-right: 5px;
+      margin-left: 10px;
+      width: 10px;
+      height: 10px;
+      position: relative;
+      border: 1px solid gray;
+      transition: all 0.35s ease;
+      &.active {
+        border: none;
+        background-color: #{map-get($theme-map, list-item-active)};
+      }
+    }
+    &--customCheckbox {
+      border-radius: 2px;
+    }
+    &--customRadio {
+      border-radius: 50%;
+    }
+    &--name {
+      margin-left: 15px;
     }
   }
-  &--customCheckbox {
-    border-radius: 2px;
-  }
-  &--customRadio {
-    border-radius: 50%;
-  }
-  &--name {
-    margin-left: 15px;
+  .quiz__total {
+    overflow: hidden;
+    transition: height 600ms ease;
+    &--icon {
+      @include absolute(2px, 10px, 2px, false);
+      @include size(15px, 15px);
+      transition: all 0.3s ease;
+    }
+    &--hidden {
+      height: 0;
+    }
+    &Item {
+      margin-bottom: 6px;
+      padding: 5px 10px;
+      width: 100%;
+      @include flex(row, flex-start, center);
+      &-#{$theme-name} {
+        &--name {
+          margin-right: 7px;
+          color: #{map-get($theme-map, request-title)};
+        }
+        &--text {
+          margin: 0;
+          color: #{map-get($theme-map, request-text)};
+        }
+      }
+    }
+    &-#{$theme-name} {
+      &-title {
+        width: 100%;
+        color: #{map-get($theme-map, request-title)};
+        padding: 8px 0;
+        position: relative;
+        cursor: pointer;
+        &:hover {
+          svg {
+            transform: rotate(90deg);
+          }
+        }
+      }
+    }
   }
 }
 
+// Elements
 .quiz__input-classic {
   padding: 8px 0 8px 7px;
   margin: 10px 0 0;
@@ -138,6 +214,16 @@
       width: 100%;
       bottom: 0;
       font-size: 8pt;
+    }
+  }
+}
+
+// Notifications
+@each $notify-key, $notify-map in $notify-colors {
+  @each $notify-map-name, $notify-map-value in $notify-map {
+    .quiz__#{$notify-key}--#{$notify-map-name} {
+      color: #{$notify-map-value};
+      fill: #{$notify-map-value};
     }
   }
 }

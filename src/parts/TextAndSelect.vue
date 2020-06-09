@@ -107,7 +107,7 @@ export default {
 }
 .container__select {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
 }
 </style>
