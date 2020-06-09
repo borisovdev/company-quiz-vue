@@ -57,7 +57,10 @@ $themes: (
     card-text: $dark-text,
     card-bg: white,
     card-text-active: white,
-    card-bg-active: $info-color
+    card-bg-active: $info-color,
+    list-item-active: $info-color,
+    request-title: $info-color,
+    request-text: $dark-text
   ),
   amethyst: (
     bg: #1e4970,
@@ -69,7 +72,10 @@ $themes: (
     card-text: $dark-text,
     card-bg: white,
     card-text-active: white,
-    card-bg-active: #b6247f
+    card-bg-active: #b6247f,
+    list-item-active: #b6247f,
+    request-title: #b6247f,
+    request-text: white
   )
 );
 

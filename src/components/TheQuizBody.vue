@@ -1,9 +1,9 @@
 <template>
   <div class="quiz__grid-body">
-    <!--    <notify-bar :content="getObjectData"></notify-bar>-->
-    <!--    <notify-bar :content="getUserData"></notify-bar>-->
-    <!-- <notify-bar :content="response"></notify-bar>
-    <notify-bar :content="reject"></notify-bar> -->
+    <!-- <notify-bar :content="getObjectData"></notify-bar> -->
+    <!-- <notify-bar :content="getUserData"></notify-bar> -->
+    <!-- <notify-bar :content="response"></notify-bar> -->
+    <!-- <notify-bar :content="reject"></notify-bar> -->
     <div :class="['quiz-text-' + getTheme + '-color']">
       <transition name="fadeLeft" mode="out-in">
         <fieldset v-if="getCounter < isStepsLength" :key="getCounter">
@@ -29,12 +29,15 @@ export default {
   },
   components: {
     "notify-bar": () => import("@/parts/NotifyBar"),
-    "cards-screen": () => import("@/screens/CardsScreen"),
-    "list-screen": () => import("@/screens/ListScreen"),
-    "request-screen": () => import("@/screens/RequestScreen"),
+    "screen-cards": () => import("@/screens/ScreenCards"),
+    "screen-list": () => import("@/screens/ScreenList"),
+    "screen-request": () => import("@/screens/ScreenRequest"),
     "text-and-select": () => import("@/parts/TextAndSelect"),
     "text-simple": () => import("@/parts/TextSimple"),
     "selects-double": () => import("@/parts/SelectsDouble")
+  },
+  data() {
+    return {};
   },
   computed: {
     ...mapGetters([
@@ -48,13 +51,13 @@ export default {
     currentScreen() {
       switch (this.getNowItemsType) {
         case "cards-checkbox":
-          return "cards-screen";
+          return "screen-cards";
         case "cards-radio":
-          return "cards-screen";
+          return "screen-cards";
         case "list-radio":
-          return "list-screen";
+          return "screen-list";
         case "list-checkbox":
-          return "list-screen";
+          return "screen-list";
         case "text-and-select":
           return "text-and-select";
         case "selects":
@@ -62,10 +65,15 @@ export default {
         case "text":
           return "text-simple";
         case "request":
-          return "request-screen";
+          return "screen-request";
         default:
-          return "list-screen";
+          return "screen-list";
       }
+    }
+  },
+  methods: {
+    changeStarterStatus(x) {
+      this.starterVisible = x;
     }
   }
 };

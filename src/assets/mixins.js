@@ -59,3 +59,11 @@ export const mixinUpdateRadio = {
     }
   }
 };
+
+export const mixinFunHelpers = {
+  computed: {
+    $_mixinFunHelpers_capitalize(word) {
+      return word[0].toUpperCase() + word.slice(1).toLowerCase();
+    }
+  }
+};

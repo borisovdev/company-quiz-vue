@@ -3,15 +3,19 @@
 class QuizMail
 {
 
-    private $from = "local@host.com";
-    private $to_admin = "admin@host.ru";
-    private $to_developer = "dev@host.ru";
-    private $subject = "Новая заявка с Квиза";
+    private $from = "postmaster@your-company.com";
+    private $to_admin = "admin@your-company.ru";
+    private $to_user;
+    private $to_developer = "dev@your-company.ru";
     private $company_info = [
       'name' => 'Your Company',
       'email' => 'info@your-company.com',
       'phone' => '+7 (000) 000-00-00',
       'website_url' =>  'https://your-company.com'
+    ];
+    public $subject = [
+        'admin' => 'Новая заявка с Квиза',
+        'user' => 'Спасибо, что выбрали нас'
     ];
     public $error_message;
 
@@ -24,7 +28,10 @@ class QuizMail
 
     private function send_mail()
     {
-        $mail = mail( $this->to_admin, $this->subject, $this->converted_message( $this->set_message($this->json), 'utf-8' ), $this->converted_headers( $this->set_headers(), 'utf-8' ) );
+        $this->to_user = $this->json['userFullinfo']['email'];
+
+        $mail = mail($this->to_admin, $this->subject['admin'], $this->converted_message( $this->set_message_admin($this->json), 'utf-8' ), $this->converted_headers( $this->set_headers(), 'utf-8' ) );
+        $mail .= mail($this->to_user, $this->subject['user'], $this->converted_message( $this->set_message_user($this->json), 'utf-8' ), $this->converted_headers( $this->set_headers(), 'utf-8' ) );
 
         if (!$mail) {
             $this->error_message = error_get_last()['message'];
@@ -36,18 +43,25 @@ class QuizMail
         die();
     }
 
-    private function dump_json()
-    {
-        var_dump($this->json);
-    }
-
-    public function set_message($data)
+    public function set_message_admin($data)
     {
         return '
             <table style="width: 602px; border: 0; border-collapse: collapse; font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;">
             ' . $this->html_message_header() . ' ' .
             $this->html_message_footer() . ' ' .
-            $this->html_message_body($data)
+            $this->html_message_body_admin($data)
+            . '
+            </table>
+        ';
+    }
+
+    public function set_message_user($data)
+    {
+        return '
+            <table style="width: 602px; border: 0; border-collapse: collapse; font-family: Montserrat, Roboto, Helvetica, Arial, sans-serif;">
+            ' . $this->html_message_header() . ' ' .
+            $this->html_message_footer() . ' ' .
+            $this->html_message_body_user($data)
             . '
             </table>
         ';
@@ -60,7 +74,7 @@ class QuizMail
 
     public function set_headers()
     {
-        return "From: $this->from" . PHP_EOL .
+        return "From: " . $this->company_info['name'] . " <$this->from>" . PHP_EOL .
             "MIME-Version: 1.0" . PHP_EOL .
             "Content-type: text/html; charset=utf-8" . PHP_EOL;
     }
@@ -101,12 +115,12 @@ class QuizMail
         ';
     }
 
-    public function html_message_body($data)
+    public function html_message_body_admin($data)
     {
         return '
               <tbody style="width: 100%; color: #0F1C2D;" bgcolor="#ffffff">
                 <tr>
-                  <td width="300" bgcolor="#E4EDF2" style="padding: 35px 0 35px 10px; color: #0F1C2D; font-size: 32px;">Новая заявка</td>
+                  <td width="300" bgcolor="#E4EDF2" style="padding: 35px 0 35px 10px; color: #0F1C2D; font-size: 32px;">' . $this->subject['admin'] . '</td>
                   <td bgcolor="#E4EDF2"></td>
                 </tr>
                 <tr>
@@ -123,6 +137,26 @@ class QuizMail
                 ' .
             $this->html_user_data($data)
             . '
+              </tbody>
+        ';
+    }
+
+    public function html_message_body_user($data)
+    {
+        return '
+              <tbody style="width: 100%; color: #0F1C2D;" bgcolor="#ffffff">
+                <tr>
+                  <td width="300" bgcolor="#E4EDF2" style="padding: 35px 0 35px 10px; color: #0F1C2D; font-size: 32px;">' . $this->subject["user"] . ', ' . $data["userFullinfo"]["name"] . '</td>
+                  <td bgcolor="#E4EDF2"></td>
+                </tr>
+                <tr>
+                    <th style="text-align: left; color: #D5242C; padding: 15px 0 10px 10px; font-size: 20px;" width="300">Вы сделали правильный выбор!</th>
+                    <th width="300"></th>
+                </tr>
+                <tr>
+                    <td width="300" style="padding: 10px 10px;">Менеджер уже обрабатывает заявку и свяжется с Вами в ближайшее время</td>
+                    <td width="300"></td>
+                </tr>
               </tbody>
         ';
     }

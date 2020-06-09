@@ -1,6 +1,13 @@
 <template>
-  <div :class="[labelClasses, focusClass]">
-    <div :class="['quiz__listItem-classic--customCheckbox', focusClass]"></div>
+  <div
+    :class="['quiz__listItem-classic-' + getTheme, labelClasses, focusClass]"
+  >
+    <div
+      :class="[
+        'quiz__listItem-classic-' + getTheme + '--customCheckbox' + '',
+        focusClass
+      ]"
+    ></div>
     <label>
       <input
         type="checkbox"
@@ -9,12 +16,16 @@
         :value="value"
         @change="$_mixinUpdateCheckbox_update"
       />
-      <span :class="['quiz__listItem-classic--name']">{{ name }}</span>
+      <span :class="['quiz__listItem-classic-' + getTheme + '--name']">{{
+        name
+      }}</span>
     </label>
   </div>
 </template>
 
 <script>
+import { createNamespacedHelpers } from "vuex";
+const { mapGetters } = createNamespacedHelpers("moduleCompanyQuiz");
 import { mixinUpdateCheckbox } from "../assets/mixins";
 
 export default {
@@ -33,8 +44,11 @@ export default {
   data() {
     return {
       focusClass: "",
-      labelClasses: "quiz__listItem-classic quiz__text-small quiz__text--medium"
+      labelClasses: "quiz__text-small quiz__text--medium"
     };
+  },
+  computed: {
+    ...mapGetters(["getTheme"])
   }
 };
 </script>
