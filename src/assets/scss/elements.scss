@@ -125,6 +125,26 @@
       }
     }
   }
+  .quiz__help-#{$theme-name} {
+    width: 100%;
+    flex: 1 0 auto;
+    color: #{map-get($theme-map, text)};
+    &-icon {
+      width: 35px;
+      height: 35px;
+      fill: #{map-get($theme-map, icon-helpers)};
+    }
+  }
+  .quiz__info-#{$theme-name} {
+    width: 100%;
+    flex: 0 1 auto;
+    color: #{map-get($theme-map, text)};
+    &-icon {
+      width: 35px;
+      height: 35px;
+      fill: #{map-get($theme-map, icon-helpers)};
+    }
+  }
 }
 
 // Elements
