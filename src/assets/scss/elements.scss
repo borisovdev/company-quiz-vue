@@ -130,8 +130,8 @@
     flex: 1 0 auto;
     color: #{map-get($theme-map, text)};
     &-icon {
-      width: 35px;
-      height: 35px;
+      width: 25px;
+      height: 25px;
       fill: #{map-get($theme-map, icon-helpers)};
     }
   }
@@ -140,8 +140,8 @@
     flex: 0 1 auto;
     color: #{map-get($theme-map, text)};
     &-icon {
-      width: 35px;
-      height: 35px;
+      width: 25px;
+      height: 25px;
       fill: #{map-get($theme-map, icon-helpers)};
     }
   }
