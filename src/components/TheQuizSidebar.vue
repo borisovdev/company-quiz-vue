@@ -20,7 +20,7 @@
       <svg :class="['quiz__help-' + getTheme + '-icon']">
         <use xlink:href="sprites/sprite.svg#quiz-question-help"></use>
       </svg>
-      <p class="quiz__text-small">
+      <p class="quiz__text-smallest">
         {{ getNowStep.legend }}
       </p>
     </div>
@@ -28,10 +28,10 @@
       <svg :class="['quiz__info-' + getTheme + '-icon']">
         <use xlink:href="sprites/sprite.svg#quiz-company-info"></use>
       </svg>
-      <p class="quiz__text-small">
+      <p class="quiz__text-smallest">
         {{ getMain.info.maintext }}
       </p>
-      <p class="quiz__text-small">
+      <p class="quiz__text-smallest">
         {{ getMain.info.desctext }}
       </p>
     </div>
@@ -40,7 +40,7 @@
       <span class="quiz__orgname quiz__text-large">{{
         getMain.brand.name
       }}</span>
-      <span class="quiz__taglinequiz__text-medium">{{
+      <span class="quiz__tagline quiz__text-standard">{{
         getMain.brand.tagline
       }}</span>
     </footer>

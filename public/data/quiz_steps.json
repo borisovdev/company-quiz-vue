@@ -6,7 +6,7 @@
       "desc": "Выберите подходящий вариант или укажите свой",
       "legend": "Подсказка к вопросу первому",
       "required": false,
-      "items_type": "cards-radio",
+      "items_type": "cards-checkbox",
       "items": [
         {
           "id": 0,
