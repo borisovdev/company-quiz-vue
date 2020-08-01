@@ -119,16 +119,11 @@ export default {
 </script>
 
 <style lang="scss">
-// Base
-@import "./assets/scss/normalize.scss";
-// Layout
-@import "./assets/scss/grid.scss";
-//Typography
-@import "./assets/scss/typography.scss";
-// Elements
-@import "./assets/scss/elements.scss";
-// Animations
-@import "./assets/scss/animations.scss";
+@import "./assets/scss/normalize.scss"; // Base
+@import "./assets/scss/grid.scss"; // Layout
+@import "./assets/scss/typography.scss"; //Typography
+@import "./assets/scss/elements.scss"; // Elements
+@import "./assets/scss/animations.scss"; // Animations
 
 // Main
 #app {
@@ -136,7 +131,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $dark-text;
-  margin-top: 60px;
+  // margin-top: 60px;
 }
 
 .quiz__container {

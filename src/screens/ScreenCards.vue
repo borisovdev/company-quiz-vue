@@ -18,7 +18,7 @@
         ></component>
       </div>
     </div>
-    <free-answer></free-answer>
+    <!-- <free-answer></free-answer> -->
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
   components: {
     "card-checkbox": () => import("@/parts/CardCheckbox"),
     "card-radio": () => import("@/parts/CardRadio"),
-    "free-answer": () => import("@/parts/FreeAnswer")
+    // "free-answer": () => import("@/parts/FreeAnswer")
   },
   mixins: [mixinValidationStatus],
   data() {

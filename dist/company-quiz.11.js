@@ -7,12 +7,12 @@
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/parts/CardRadio.vue?vue&type=template&id=da1e51c2&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/parts/CardRadio.vue?vue&type=template&id=85ea4eae&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:"cardContainer",staticClass:"quiz__card-container"},[_c('label',{ref:"cardItem",class:['quiz__card', 'quiz-card-' + _vm.getTheme + '-theme'],on:{"mousemove":_vm.rotateIt,"mouseout":_vm.disableRotate}},[_c('img',{attrs:{"src":_vm.image,"alt":_vm.name}}),_c('div',{class:['quiz__card-title', 'quiz__text-smallest', _vm.focusClass]},[_c('span',{staticClass:"card__name"},[_vm._v(_vm._s(_vm.name))])]),_c('input',{staticClass:"radiohidden",attrs:{"type":"radio"},domProps:{"checked":_vm.$_mixinUpdateRadio_shouldBeChecked,"value":_vm.value},on:{"change":_vm.$_mixinUpdateRadio_update}})])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/parts/CardRadio.vue?vue&type=template&id=da1e51c2&scoped=true&
+// CONCATENATED MODULE: ./src/parts/CardRadio.vue?vue&type=template&id=85ea4eae&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/vuex/dist/vuex.esm.js
 var vuex_esm = __webpack_require__("2f62");
@@ -87,9 +87,11 @@ const {
       let container = this.$refs.cardContainer;
       let relX = evt.pageX - container.getBoundingClientRect().left;
       let relY = evt.pageY - container.getBoundingClientRect().top;
+      let posX = (relX - container.offsetWidth / 2) / container.offsetWidth * -10;
+      let posY = (relY - container.offsetWidth / 2) / container.offsetWidth * -10;
       gsap["a" /* gsap */].to(container, {
-        x: (relX - container.offsetWidth / 2) / container.offsetWidth * -10,
-        y: (relY - container.offsetWidth / 2) / container.offsetWidth * -10,
+        x: posX,
+        y: posY,
         scale: 1.05,
         duration: 0.35
       });
@@ -153,7 +155,7 @@ var component = Object(componentNormalizer["a" /* default */])(
   staticRenderFns,
   false,
   injectStyles,
-  "da1e51c2",
+  "85ea4eae",
   null
   ,true
 )

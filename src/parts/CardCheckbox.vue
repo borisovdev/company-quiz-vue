@@ -30,41 +30,45 @@ export default {
   mixins: [mixinUpdateCheckbox],
   model: {
     prop: "modelValue",
-    event: "change"
+    event: "change",
   },
   props: {
     image: String,
     name: String,
     value: String,
     modelValue: {
-      default: false
+      default: false,
     },
     trueValue: {
-      default: true
+      default: true,
     },
     falseValue: {
-      default: false
-    }
+      default: false,
+    },
   },
   data() {
     return {
-      focusClass: ""
+      focusClass: "",
     };
   },
   computed: {
-    ...mapGetters(["getTheme", "getUserData"])
+    ...mapGetters(["getTheme", "getUserData"]),
   },
   methods: {
     parallaxIt(evt) {
       let container = this.$refs.cardContainer;
       let relX = evt.pageX - container.getBoundingClientRect().left;
       let relY = evt.pageY - container.getBoundingClientRect().top;
+      let posX =
+        ((relX - container.offsetWidth / 2) / container.offsetWidth) * -10;
+      let posY =
+        ((relY - container.offsetWidth / 2) / container.offsetWidth) * -10;
 
       gsap.to(container, {
-        x: ((relX - container.offsetWidth / 2) / container.offsetWidth) * -10,
-        y: ((relY - container.offsetWidth / 2) / container.offsetWidth) * -10,
+        x: posX,
+        y: posY,
         scale: 1.05,
-        duration: 0.35
+        duration: 0.35,
       });
     },
     rotateIt(evt) {
@@ -81,7 +85,7 @@ export default {
         rotationX: xRotation + "deg",
         rotationY: yRotation + "deg",
         scale: 1.06,
-        duration: 0.15
+        duration: 0.15,
       });
     },
     disableParallax() {
@@ -89,19 +93,18 @@ export default {
         x: 0,
         y: 0,
         scale: 1,
-        duration: 0.35
+        duration: 0.35,
       });
     },
     disableRotate() {
       gsap.to(this.$refs.cardItem, {
         transform: "none",
         scale: 1,
-        duration: 0.35
+        duration: 0.35,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

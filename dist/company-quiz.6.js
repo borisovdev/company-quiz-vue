@@ -1,150 +1,5 @@
 (window["companyQuiz_jsonp"] = window["companyQuiz_jsonp"] || []).push([[6],{
 
-/***/ "0dd9":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenList.vue?vue&type=template&id=39dd92a1&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"quiz-subgrid-body"},[(_vm.$v.getUserData.$invalid)?_c('div',{class:['quiz__validation--error', 'quiz__text-smallest']},[_vm._v(" Выберите вариант ")]):_vm._e(),_c('div',{staticClass:"quiz-subgrid-body__radios"},_vm._l((_vm.getNowItems),function(item){return _c('div',{key:item.id,class:['container__radio']},[_c(_vm.currentScreen,{tag:"component",attrs:{"value":item.name,"name":item.name},model:{value:(_vm.inputedData),callback:function ($$v) {_vm.inputedData=$$v},expression:"inputedData"}})],1)}),0),_c('free-answer')],1)}
-var staticRenderFns = []
-
-
-// CONCATENATED MODULE: ./src/screens/ScreenList.vue?vue&type=template&id=39dd92a1&scoped=true&
-
-// EXTERNAL MODULE: ./src/assets/mixins.js
-var mixins = __webpack_require__("6f2e");
-
-// EXTERNAL MODULE: ./node_modules/vuelidate/lib/validators/index.js
-var validators = __webpack_require__("b5ae");
-
-// EXTERNAL MODULE: ./node_modules/vuex/dist/vuex.esm.js
-var vuex_esm = __webpack_require__("2f62");
-
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenList.vue?vue&type=script&lang=js&
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-const {
-  mapGetters,
-  mapActions
-} = Object(vuex_esm["a" /* createNamespacedHelpers */])("moduleCompanyQuiz");
-/* harmony default export */ var ScreenListvue_type_script_lang_js_ = ({
-  data() {
-    return {};
-  },
-
-  mixins: [mixins["d" /* mixinValidationStatus */]],
-  validations: {
-    getUserData: {
-      required: validators["required"],
-      minLength: Object(validators["minLength"])(1)
-    }
-  },
-  components: {
-    "list-item-radio": () => __webpack_require__.e(/* import() */ 13).then(__webpack_require__.bind(null, "f57d")),
-    "list-item-checkbox": () => __webpack_require__.e(/* import() */ 12).then(__webpack_require__.bind(null, "3507")),
-    "free-answer": () => __webpack_require__.e(/* import() */ 0).then(__webpack_require__.bind(null, "3cbe"))
-  },
-  methods: { ...mapActions(["updateChecked", "validationStatusFalse", "validationStatusTrue"])
-  },
-  computed: { ...mapGetters(["getNowItemsType", "getUserData", "getNowItems"]),
-
-    currentScreen() {
-      switch (this.getNowItemsType) {
-        case "list-radio":
-          return "list-item-radio";
-
-        case "list-checkbox":
-          return "list-item-checkbox";
-
-        default:
-          return "list-item-radio";
-      }
-    },
-
-    inputedData: {
-      get() {
-        return this.getUserData;
-      },
-
-      set(value) {
-        this.updateChecked(value);
-      }
-
-    }
-  },
-
-  created() {
-    this.changeValidationStatus();
-  },
-
-  beforeUpdate() {
-    this.changeValidationStatus();
-  }
-
-});
-// CONCATENATED MODULE: ./src/screens/ScreenList.vue?vue&type=script&lang=js&
- /* harmony default export */ var screens_ScreenListvue_type_script_lang_js_ = (ScreenListvue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
-var componentNormalizer = __webpack_require__("2877");
-
-// CONCATENATED MODULE: ./src/screens/ScreenList.vue
-
-
-
-function injectStyles (context) {
-  
-  var style0 = __webpack_require__("47dd")
-if (style0.__inject__) style0.__inject__(context)
-
-}
-
-/* normalize component */
-
-var component = Object(componentNormalizer["a" /* default */])(
-  screens_ScreenListvue_type_script_lang_js_,
-  render,
-  staticRenderFns,
-  false,
-  injectStyles,
-  "39dd92a1",
-  null
-  ,true
-)
-
-/* harmony default export */ var ScreenList = __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
 /***/ "1331":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -227,20 +82,6 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "3942":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".container__radio[data-v-39dd92a1]{display:-webkit-box;display:-ms-flexbox;display:flex}", ""]);
-// Exports
-module.exports = exports;
-
-
-/***/ }),
-
 /***/ "3a54":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -302,18 +143,6 @@ var _default = function _default(max) {
 };
 
 exports.default = _default;
-
-/***/ }),
-
-/***/ "47dd":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ba35");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ScreenList_vue_vue_type_style_index_0_id_39dd92a1_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -607,6 +436,143 @@ exports.default = _default;
 
 /***/ }),
 
+/***/ "8e3e":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenCards.vue?vue&type=template&id=572d685e&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"quiz-subgrid-body"},[(_vm.$v.getUserData.$invalid)?_c('div',{class:['quiz__validation--error', 'quiz__text-smallest']},[_vm._v(" Вы должны выбрать не менее "+_vm._s(_vm.$v.getUserData.$params.minLength.min)+" вариантов ")]):_vm._e(),_c('div',{staticClass:"quiz-subgrid-body__cards"},_vm._l((_vm.getNowItems),function(item){return _c('div',{key:item.id,class:_vm.cardsLayout},[_c(_vm.currentScreen,{tag:"component",attrs:{"value":item.name,"image":item.image,"name":item.name},model:{value:(_vm.newCheckedAction),callback:function ($$v) {_vm.newCheckedAction=$$v},expression:"newCheckedAction"}})],1)}),0)])}
+var staticRenderFns = []
+
+
+// CONCATENATED MODULE: ./src/screens/ScreenCards.vue?vue&type=template&id=572d685e&
+
+// EXTERNAL MODULE: ./src/assets/mixins.js
+var mixins = __webpack_require__("6f2e");
+
+// EXTERNAL MODULE: ./node_modules/vuelidate/lib/validators/index.js
+var validators = __webpack_require__("b5ae");
+
+// EXTERNAL MODULE: ./node_modules/vuex/dist/vuex.esm.js
+var vuex_esm = __webpack_require__("2f62");
+
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenCards.vue?vue&type=script&lang=js&
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+const {
+  mapGetters,
+  mapActions
+} = Object(vuex_esm["a" /* createNamespacedHelpers */])("moduleCompanyQuiz");
+/* harmony default export */ var ScreenCardsvue_type_script_lang_js_ = ({
+  components: {
+    "card-checkbox": () => Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(10)]).then(__webpack_require__.bind(null, "dfd1")),
+    "card-radio": () => Promise.all(/* import() */[__webpack_require__.e(0), __webpack_require__.e(11)]).then(__webpack_require__.bind(null, "34d3")) // "free-answer": () => import("@/parts/FreeAnswer")
+
+  },
+  mixins: [mixins["d" /* mixinValidationStatus */]],
+
+  data() {
+    return {
+      cardsLayout: "quiz-subgrid-body__item"
+    };
+  },
+
+  computed: { ...mapGetters(["getNowItems", "getNowItemsType", "getUserData", "getValidationStatus"]),
+
+    currentScreen() {
+      switch (this.getNowItemsType) {
+        case "cards-checkbox":
+          return "card-checkbox";
+
+        case "cards-radio":
+          return "card-radio";
+
+        default:
+          return "card-checkbox";
+      }
+    },
+
+    newCheckedAction: {
+      get() {
+        return this.getUserData;
+      },
+
+      set(value) {
+        this.updateChecked(value);
+      }
+
+    }
+  },
+  validations: {
+    getUserData: {
+      required: validators["required"],
+      minLength: Object(validators["minLength"])(1)
+    }
+  },
+
+  beforeUpdate() {
+    this.changeValidationStatus();
+  },
+
+  methods: { ...mapActions(["updateChecked", "validationStatusTrue", "validationStatusFalse"])
+  }
+});
+// CONCATENATED MODULE: ./src/screens/ScreenCards.vue?vue&type=script&lang=js&
+ /* harmony default export */ var screens_ScreenCardsvue_type_script_lang_js_ = (ScreenCardsvue_type_script_lang_js_); 
+// EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
+var componentNormalizer = __webpack_require__("2877");
+
+// CONCATENATED MODULE: ./src/screens/ScreenCards.vue
+
+
+
+
+
+/* normalize component */
+
+var component = Object(componentNormalizer["a" /* default */])(
+  screens_ScreenCardsvue_type_script_lang_js_,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  ,true
+)
+
+/* harmony default export */ var ScreenCards = __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "91d3":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -888,23 +854,6 @@ var _default = function _default(equalTo) {
 };
 
 exports.default = _default;
-
-/***/ }),
-
-/***/ "ba35":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("3942");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to Shadow Root
-var add = __webpack_require__("35d6").default
-module.exports.__inject__ = function (shadowRoot) {
-  add("3c907069", content, shadowRoot)
-};
 
 /***/ }),
 
