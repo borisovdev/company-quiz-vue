@@ -39,6 +39,9 @@ npm run lint
 ```
 
 ## Атрибуты
+```
+<company-quiz theme="classic">
+```
 Компонент принимает следующие атрибуты:
 * ***theme***  
 По умолчанию - *classic*  
@@ -49,16 +52,16 @@ npm run lint
   
   
 * ***data-main***  
-По умолчанию - */static/quiz_main.json*  
+По умолчанию - */data/quiz_main.json*  
 Принимает строку, содержащую ссылку на json-файл главной информации о компании
 
 
 * ***data-source***  
-По умолчанию - */static/quiz_steps.json*  
+По умолчанию - */data/quiz_steps.json*  
 Принимает строку, содержащую ссылку на json-файл из которого будут формироваться экраны.
 
 * ***data-action***
-По умолчанию - */api/MailEngine.php*  
+По умолчанию - */web-components/company-quiz-vue/api/QuizMail.php*  
 Принимает строку, значение которой будет передано в качестве атрибута *action*.
 
 ## Добавление информации о компании
@@ -79,8 +82,10 @@ npm run lint
 ### Экраны
 #### Типы оформления экранов:
 * ***text***
-* ***radio***
-* ***card***
+* ***list-radio***
+* ***list-checkbox***
+* ***cards-radio***
+* ***cards-checkbox***
 * ***selects***
 * ***text-and-select***  
 * ***request***
@@ -90,6 +95,7 @@ npm run lint
 * ***id*** - Уникальный идентификатор экрана
 * ***title*** - Заголовок экрана
 * ***desc*** - Краткое пояснение к экрану.
+* ***legend*** - Подсказка к вопросу. Отображается в сайдбаре
 * ***required*** - Обязательный ли экран. Если значение *false*, отображает кнопку пропуска экрана
 * ***items_type*** - Тип экрана.
 
@@ -100,17 +106,19 @@ npm run lint
   "id": 0,
   "title": "Заголовок экрана",
   "desc": "Краткое пояснение к вопросу",
+  "legend": "Подсказка к вопросу",
   "required": false,
   "items_type": "text"
 }
 ```
 
-#### radio
+#### list-checkbox & list-radio
 ```
 {
   "id": 0,
   "title": "Заголовок экрана",
   "desc": "Краткое пояснение к вопросу",
+  "legend": "Подсказка к вопросу",
   "required": true,
   "items_type": "radio",
   "items": [
@@ -130,12 +138,13 @@ npm run lint
 }
 ```
 
-#### card
+#### cards-radio & cards-checkbox
 ```
 {
   "id": 0,
   "title": "Заголовок экрана",
   "desc": "Краткое пояснение к вопросу",
+  "legend": "Подсказка к вопросу",
   "required": false,
   "items_type": "card",
   "items": [
@@ -159,6 +168,7 @@ npm run lint
   "id": 0,
   "title": "Заголовок экрана",
   "desc": "Краткое пояснение к вопросу",
+  "legend": "Подсказка к вопросу",
   "required": true,
   "items_type": "selects",
   "items": [
@@ -210,6 +220,7 @@ npm run lint
   "id": 0,
   "title": "Заголовок экрана",
   "desc": "Краткое пояснение к вопросу",
+  "legend": "Подсказка к вопросу",
   "required": false,
   "items_type": "text-and-select",
   "items": [

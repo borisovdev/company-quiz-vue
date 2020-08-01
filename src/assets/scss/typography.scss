@@ -1,0 +1,13 @@
+// Sizes
+@each $size-key, $size-value in $typography-sizes {
+  .quiz__text-#{$size-key} {
+    font-size: #{$size-value};
+  }
+}
+
+// Weights
+@each $weight-key, $weight-value in $typography-weights {
+  .quiz__text--#{$weight-key} {
+    font-weight: #{$weight-value};
+  }
+}

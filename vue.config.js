@@ -1,7 +1,7 @@
 module.exports = {
   devServer: {
     proxy: {
-      "^/api/": {
+      "^/web-components/company-quiz-vue/api/": {
         target: "http://test.workplace",
         changeOrigin: true
       }
