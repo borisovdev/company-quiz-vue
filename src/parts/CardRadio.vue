@@ -59,16 +59,14 @@ export default {
       let container = this.$refs.cardContainer;
       let relX = evt.pageX - container.getBoundingClientRect().left;
       let relY = evt.pageY - container.getBoundingClientRect().top;
+      let posX =
+        ((relX - container.offsetWidth / 2) / container.offsetWidth) * -10;
+      let posY =
+        ((relY - container.offsetWidth / 2) / container.offsetWidth) * -10;
 
       gsap.to(container, {
-        x:
-          ((relX - container.offsetWidth / 2) /
-            container.offsetWidth) *
-          -10,
-        y:
-          ((relY - container.offsetWidth / 2) /
-            container.offsetWidth) *
-          -10,
+        x: posX,
+        y: posY,
         scale: 1.05,
         duration: 0.35
       });
