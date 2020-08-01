@@ -66,11 +66,11 @@ npm run lint
 
 ## Добавление информации о компании
 Информация добавляется на основе данных из json-файла, полученного из атрибута *data-main*  
-[Пример json-файла для добавления информации о компании](https://github.com/burninghills/company-quiz-vue/blob/master/public/static/quiz_main.json)
+[Пример json-файла для добавления информации о компании](https://github.com/burninghills/company-quiz-vue/blob/master/data/quiz_main.json)
 
 ## Создание экранов
 Экраны создаются на основе информации в json-файле, полученном из атрибута *data-source*  
-[Пример json-файла для создания экранов](https://github.com/burninghills/company-quiz-vue/blob/master/public/static/quiz_steps.json)
+[Пример json-файла для создания экранов](https://github.com/burninghills/company-quiz-vue/blob/master/data/quiz_steps.json)
 ### Базовая структура
 ```
 {
