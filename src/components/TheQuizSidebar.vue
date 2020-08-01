@@ -18,7 +18,7 @@
     <div class="quiz__separator"></div>
     <div :class="['quiz__help-' + getTheme]">
       <svg :class="['quiz__help-' + getTheme + '-icon']">
-        <use xlink:href="sprites/sprite.svg#quiz-question-help"></use>
+        <use :xlink:href="this.getSpritesFolder + '#quiz-question-help'"></use>
       </svg>
       <p class="quiz__text-smallest">
         {{ getNowStep.legend }}
@@ -26,7 +26,7 @@
     </div>
     <div :class="['quiz__info-' + getTheme]">
       <svg :class="['quiz__info-' + getTheme + '-icon']">
-        <use xlink:href="sprites/sprite.svg#quiz-company-info"></use>
+        <use :xlink:href="this.getSpritesFolder + '#quiz-company-info'"></use>
       </svg>
       <p class="quiz__text-smallest">
         {{ getMain.info.maintext }}
@@ -48,7 +48,6 @@
 </template>
 
 <script>
-// import { mapGetters } from "vuex";
 import { createNamespacedHelpers } from "vuex";
 const { mapGetters, mapActions } = createNamespacedHelpers("moduleCompanyQuiz");
 
@@ -68,6 +67,7 @@ export default {
   computed: {
     ...mapGetters([
       "getTheme",
+      "getSpritesFolder",
       "getMain",
       "getBrand",
       "getManager",

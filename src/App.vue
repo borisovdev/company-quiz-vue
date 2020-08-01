@@ -50,6 +50,9 @@ export default {
     },
     dataSource: {
       default: "/data/quiz_steps.json"
+    },
+    dataSprites: {
+      default: "/sprites/sprite.svg"
     }
   },
   data() {
@@ -67,6 +70,7 @@ export default {
   methods: {
     ...mapActions([
       "setTheme",
+      "setSpritesFolder",
       "nextCount",
       "prevCount",
       "initSteps",
@@ -112,6 +116,7 @@ export default {
     ])
   },
   created() {
+    this.setSpritesFolder(this.dataSprites);
     this.setTheme(this.theme);
     this.initSteps(this.dataSource);
   }

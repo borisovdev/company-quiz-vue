@@ -2,7 +2,7 @@
   <div class="quiz-subgrid-body">
     <div v-if="getSendProgressStatus" class="quiz__loading">
       <svg class="quiz__loading--icon">
-        <use xlink:href="sprites/sprite.svg#quiz-loading"></use>
+        <use :xlink:href="this.getSpritesFolder + '#quiz-loading'"></use>
       </svg>
     </div>
     <transition name="fadeRight" mode="out-in">
@@ -19,7 +19,7 @@
           >
             Вы выбрали:
             <svg :class="['quiz__total--icon']">
-              <use xlink:href="sprites/sprite.svg#quiz-arrow-down"></use>
+              <use :xlink:href="this.getSpritesFolder + '#quiz-arrow-down'"></use>
             </svg>
           </p>
           <ul class="quiz__total" :style="{ height: accordeonHeight }">
@@ -92,6 +92,7 @@ export default {
   computed: {
     ...mapGetters([
       "getTheme",
+      "getSpritesFolder",
       "getObjectData",
       "getDataStatus",
       "getSendProgressStatus"

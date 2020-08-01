@@ -35,7 +35,7 @@
           @click.prevent="prevCount"
         >
           <svg class="quiz__btn-icon">
-            <use xlink:href="sprites/sprite.svg#quiz-nav-arrow-prev"></use>
+            <use :xlink:href="this.getSpritesFolder + '#quiz-nav-arrow-prev'"></use>
           </svg>
           {{ prevText }}
         </button>
@@ -58,7 +58,7 @@
         >
           {{ nextText }}
           <svg class="quiz__btn-icon">
-            <use xlink:href="sprites/sprite.svg#quiz-nav-arrow-next"></use>
+            <use :xlink:href="this.getSpritesFolder + '#quiz-nav-arrow-next'"></use>
           </svg>
         </button>
       </div>
@@ -91,6 +91,7 @@ export default {
   computed: {
     ...mapGetters([
       "getTheme",
+      "getSpritesFolder",
       "isNowStep",
       "getCounter",
       "getDataStatus",

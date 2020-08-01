@@ -305,20 +305,15 @@ function withParams(paramsOrClosure, maybeValidator) {
 
 /***/ }),
 
-/***/ "0a05":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ "07cd":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("53fe");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to Shadow Root
-var add = __webpack_require__("35d6").default
-module.exports.__inject__ = function (shadowRoot) {
-  add("9f443c56", content, shadowRoot)
-};
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("95d8");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1b325410_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -2728,18 +2723,6 @@ function addStyle (obj /* StyleObjectPart */, shadowRoot) {
 
 /***/ }),
 
-/***/ "368f":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("d9dc");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_49eb5a34_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "387f":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2940,18 +2923,6 @@ module.exports = function settle(resolve, reject, response) {
 
 /***/ }),
 
-/***/ "4978":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("0a05");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizNav_vue_vue_type_style_index_0_id_1374a905_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "4a7b":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3029,20 +3000,6 @@ module.exports = function mergeConfig(config1, config2) {
 
   return config;
 };
-
-
-/***/ }),
-
-/***/ "4afb":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".quiz__grid-sidebar[data-v-49eb5a34]{padding:0 10px;grid-area:quiz-sidebar;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__grid-sidebar[data-v-49eb5a34],.quiz__sidebar[data-v-49eb5a34]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.quiz__sidebar[data-v-49eb5a34]{padding-top:20px;padding-bottom:20px}.quiz__manager[data-v-49eb5a34]{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__manager-data[data-v-49eb5a34]{display:inherit;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.quiz__manager-avatar[data-v-49eb5a34]{height:85px;width:85px;border-radius:50%;overflow:hidden;background-color:#e4edf2}.quiz__manager-avatar img[data-v-49eb5a34]{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}.quiz__footer[data-v-49eb5a34]{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__footer span[data-v-49eb5a34]:first-child{margin-right:15px}.quiz__footer span[data-v-49eb5a34]:nth-child(2){text-align:right}.quiz__orgname[data-v-49eb5a34],.quiz__tagline[data-v-49eb5a34]{line-height:1.2}", ""]);
-// Exports
-module.exports = exports;
 
 
 /***/ }),
@@ -3130,20 +3087,6 @@ module.exports = function dispatchRequest(config) {
     return Promise.reject(reason);
   });
 };
-
-
-/***/ }),
-
-/***/ "53fe":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".quiz__grid-nav[data-v-1374a905]{grid-area:quiz-nav}.quiz__nav[data-v-1374a905]{padding:5px 0;margin:15px 0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.quiz__nav[data-v-1374a905],.quiz__nav-skip[data-v-1374a905]{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex}.quiz__nav-skip[data-v-1374a905]{margin-bottom:10px;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__btn-next[data-v-1374a905],.quiz__btn-prev[data-v-1374a905]{padding:15px 5px;margin:5px 10px;width:40%;text-align:center;border:none;-webkit-transition:all .3s ease;transition:all .3s ease}.quiz__btn-next svg[data-v-1374a905],.quiz__btn-prev svg[data-v-1374a905]{margin:0 5px;width:12px;height:8px}.quiz__btn-skip[data-v-1374a905]{padding:13px 20px;border:none;background:transparent;color:inherit;font-size:14px;cursor:pointer;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__btn-skip[data-v-1374a905]:hover{letter-spacing:.1em}.quiz__btn-icon[data-v-1374a905]{fill:#fff}.quiz__btn--disabled[data-v-1374a905]{opacity:.25}.quiz__control[data-v-1374a905]{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__nav-notify[data-v-1374a905]{width:100%;margin-bottom:10px}.fade-enter-active[data-v-1374a905],.fade-leave-active[data-v-1374a905]{-webkit-transition:all .45s ease-out;transition:all .45s ease-out}.fade-enter[data-v-1374a905],.fade-leave-to[data-v-1374a905]{opacity:0;-webkit-transform:translateX(-50px);transform:translateX(-50px)}", ""]);
-// Exports
-module.exports = exports;
 
 
 /***/ }),
@@ -3466,12 +3409,12 @@ var addStylesShadow = __webpack_require__("35d6");
 // EXTERNAL MODULE: ./node_modules/vue-loader/lib/runtime/componentNormalizer.js
 var componentNormalizer = __webpack_require__("2877");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=0866a692&shadow
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/App.vue?vue&type=template&id=25b92048&shadow
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"app"}},[_c('section',{staticStyle:{"padding":"0 7px","margin":"15px 0 20px"}},[_c('form',{staticClass:"quiz__container",attrs:{"id":"quiz"},on:{"submit":function($event){$event.preventDefault();return _vm.sendDataToScenario($event)}}},[_c('div',{class:['quiz-grid', 'quiz-bg-' + _vm.theme + '-color']},[_c('quiz-header'),_c('quiz-body',{attrs:{"response":_vm.serverResponse,"reject":_vm.serverReject}}),_c('quiz-nav',{attrs:{"requiredStep":_vm.getNowStep.required}}),_c('quiz-sidebar',{attrs:{"data-main":_vm.dataMain}})],1)])])])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=0866a692&shadow
+// CONCATENATED MODULE: ./src/App.vue?vue&type=template&id=25b92048&shadow
 
 // EXTERNAL MODULE: ./node_modules/vuex/dist/vuex.esm.js
 var vuex_esm = __webpack_require__("2f62");
@@ -3517,6 +3460,7 @@ const moduleQuiz = {
     },
     counter: 0,
     userData: [],
+    spritesFolder: "",
     freeMessage: "",
     dataSended: false,
     sendOnProgress: false,
@@ -3525,6 +3469,10 @@ const moduleQuiz = {
   mutations: {
     SET_THEME(state, payload) {
       state.theme = payload.toLowerCase();
+    },
+
+    SET_SPRITES_FOLDER(state, payload) {
+      state.spritesFolder = payload;
     },
 
     TRUE_DATA_STATUS(state) {
@@ -3609,6 +3557,7 @@ const moduleQuiz = {
   },
   getters: {
     getTheme: state => state.theme,
+    getSpritesFolder: state => state.spritesFolder,
     getMain: state => state.main,
     getSteps: state => state.steps,
     getBrand: state => state.brand,
@@ -3707,6 +3656,12 @@ const moduleQuiz = {
       commit
     }, payload) {
       commit("SET_THEME", payload);
+    },
+
+    setSpritesFolder({
+      commit
+    }, payload) {
+      commit("SET_SPRITES_FOLDER", payload);
     },
 
     initMain({
@@ -3984,8 +3939,8 @@ var TheQuizBody_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var TheQuizBody = (TheQuizBody_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizNav.vue?vue&type=template&id=1374a905&scoped=true&
-var TheQuizNavvue_type_template_id_1374a905_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade","mode":"out-in"}},[(_vm.getDataStatus)?_c('div'):_c('div',{staticClass:"quiz__grid-nav quiz__nav",class:['quiz-text-' + _vm.getTheme + '-color']},[(_vm.getValidationStatus === 'INVALID')?_c('div',{class:[
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizNav.vue?vue&type=template&id=1b325410&scoped=true&
+var TheQuizNavvue_type_template_id_1b325410_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('transition',{attrs:{"name":"fade","mode":"out-in"}},[(_vm.getDataStatus)?_c('div'):_c('div',{staticClass:"quiz__grid-nav quiz__nav",class:['quiz-text-' + _vm.getTheme + '-color']},[(_vm.getValidationStatus === 'INVALID')?_c('div',{class:[
         'quiz__nav-notify',
         { 'quiz__validation--error': _vm.getValidationStatus === 'INVALID' },
         'quiz__text-smallest'
@@ -3993,15 +3948,15 @@ var TheQuizNavvue_type_template_id_1374a905_scoped_true_render = function () {va
           _vm.prevBtnClasses,
           'quiz-btn-' + _vm.getTheme + '-prev',
           _vm.turnOff(_vm.disabledClass, 'prev')
-        ],attrs:{"disabled":_vm.getCounter === 0},on:{"click":function($event){$event.preventDefault();return _vm.prevCount($event)}}},[_c('svg',{staticClass:"quiz__btn-icon"},[_c('use',{attrs:{"xlink:href":"sprites/sprite.svg#quiz-nav-arrow-prev"}})]),_vm._v(" "+_vm._s(_vm.prevText)+" ")]),(_vm.getCounter + 1 === _vm.isStepsLength)?_c('button',{class:[_vm.nextBtnClasses, 'quiz-btn-' + _vm.getTheme + '-next'],attrs:{"type":"submit"}},[_vm._v(" "+_vm._s(_vm.sendingText)+" ")]):_c('button',{class:[
+        ],attrs:{"disabled":_vm.getCounter === 0},on:{"click":function($event){$event.preventDefault();return _vm.prevCount($event)}}},[_c('svg',{staticClass:"quiz__btn-icon"},[_c('use',{attrs:{"xlink:href":this.getSpritesFolder + '#quiz-nav-arrow-prev'}})]),_vm._v(" "+_vm._s(_vm.prevText)+" ")]),(_vm.getCounter + 1 === _vm.isStepsLength)?_c('button',{class:[_vm.nextBtnClasses, 'quiz-btn-' + _vm.getTheme + '-next'],attrs:{"type":"submit"}},[_vm._v(" "+_vm._s(_vm.sendingText)+" ")]):_c('button',{class:[
           _vm.nextBtnClasses,
           'quiz-btn-' + _vm.getTheme + '-next',
           _vm.turnOff(_vm.disabledClass, 'next')
-        ],attrs:{"disabled":_vm.getCounter === _vm.isStepsLength},on:{"click":function($event){$event.preventDefault();return _vm.nextStep($event)}}},[_vm._v(" "+_vm._s(_vm.nextText)+" "),_c('svg',{staticClass:"quiz__btn-icon"},[_c('use',{attrs:{"xlink:href":"sprites/sprite.svg#quiz-nav-arrow-next"}})])])])])])}
-var TheQuizNavvue_type_template_id_1374a905_scoped_true_staticRenderFns = []
+        ],attrs:{"disabled":_vm.getCounter === _vm.isStepsLength},on:{"click":function($event){$event.preventDefault();return _vm.nextStep($event)}}},[_vm._v(" "+_vm._s(_vm.nextText)+" "),_c('svg',{staticClass:"quiz__btn-icon"},[_c('use',{attrs:{"xlink:href":this.getSpritesFolder + '#quiz-nav-arrow-next'}})])])])])])}
+var TheQuizNavvue_type_template_id_1b325410_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/TheQuizNav.vue?vue&type=template&id=1374a905&scoped=true&
+// CONCATENATED MODULE: ./src/components/TheQuizNav.vue?vue&type=template&id=1b325410&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizNav.vue?vue&type=script&lang=js&
 //
@@ -4097,7 +4052,7 @@ const {
     };
   },
 
-  computed: { ...TheQuizNavvue_type_script_lang_js_mapGetters(["getTheme", "isNowStep", "getCounter", "getDataStatus", "isStepsLength", "getUser", "getObjectData", "getValidationStatus"])
+  computed: { ...TheQuizNavvue_type_script_lang_js_mapGetters(["getTheme", "getSpritesFolder", "isNowStep", "getCounter", "getDataStatus", "isStepsLength", "getUser", "getObjectData", "getValidationStatus"])
   },
   methods: { ...mapActions(["nextCount", "prevCount"]),
 
@@ -4133,7 +4088,7 @@ const {
 
 function TheQuizNav_injectStyles (context) {
   
-  var style0 = __webpack_require__("4978")
+  var style0 = __webpack_require__("07cd")
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -4142,26 +4097,26 @@ if (style0.__inject__) style0.__inject__(context)
 
 var TheQuizNav_component = Object(componentNormalizer["a" /* default */])(
   components_TheQuizNavvue_type_script_lang_js_,
-  TheQuizNavvue_type_template_id_1374a905_scoped_true_render,
-  TheQuizNavvue_type_template_id_1374a905_scoped_true_staticRenderFns,
+  TheQuizNavvue_type_template_id_1b325410_scoped_true_render,
+  TheQuizNavvue_type_template_id_1b325410_scoped_true_staticRenderFns,
   false,
   TheQuizNav_injectStyles,
-  "1374a905",
+  "1b325410",
   null
   ,true
 )
 
 /* harmony default export */ var TheQuizNav = (TheQuizNav_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizSidebar.vue?vue&type=template&id=49eb5a34&scoped=true&
-var TheQuizSidebarvue_type_template_id_49eb5a34_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('aside',{class:[
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizSidebar.vue?vue&type=template&id=9c858734&scoped=true&
+var TheQuizSidebarvue_type_template_id_9c858734_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('aside',{class:[
     'quiz__grid-sidebar',
     'quiz__sidebar',
     'quiz-text-' + _vm.getTheme + '-color'
-  ]},[_c('header',{staticClass:"quiz__manager"},[_c('div',{staticClass:"quiz__manager-avatar"},[_c('img',{attrs:{"src":_vm.getMain.manager.avatar,"alt":_vm.getMain.manager.name}})]),_c('div',{staticClass:"quiz__manager-data"},[_c('span',{staticClass:"quiz__text-medium"},[_vm._v(_vm._s(_vm.getMain.manager.name))]),_c('span',{staticClass:"quiz__text-smallest"},[_vm._v(_vm._s(_vm.getMain.manager.position))])])]),_c('div',{staticClass:"quiz__separator"}),_c('div',{class:['quiz__help-' + _vm.getTheme]},[_c('svg',{class:['quiz__help-' + _vm.getTheme + '-icon']},[_c('use',{attrs:{"xlink:href":"sprites/sprite.svg#quiz-question-help"}})]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getNowStep.legend)+" ")])]),_c('div',{class:['quiz__info-' + _vm.getTheme]},[_c('svg',{class:['quiz__info-' + _vm.getTheme + '-icon']},[_c('use',{attrs:{"xlink:href":"sprites/sprite.svg#quiz-company-info"}})]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getMain.info.maintext)+" ")]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getMain.info.desctext)+" ")])]),_c('div',{staticClass:"quiz__separator"}),_c('footer',{staticClass:"quiz__footer"},[_c('span',{staticClass:"quiz__orgname quiz__text-large"},[_vm._v(_vm._s(_vm.getMain.brand.name))]),_c('span',{staticClass:"quiz__tagline quiz__text-standard"},[_vm._v(_vm._s(_vm.getMain.brand.tagline))])])])}
-var TheQuizSidebarvue_type_template_id_49eb5a34_scoped_true_staticRenderFns = []
+  ]},[_c('header',{staticClass:"quiz__manager"},[_c('div',{staticClass:"quiz__manager-avatar"},[_c('img',{attrs:{"src":_vm.getMain.manager.avatar,"alt":_vm.getMain.manager.name}})]),_c('div',{staticClass:"quiz__manager-data"},[_c('span',{staticClass:"quiz__text-medium"},[_vm._v(_vm._s(_vm.getMain.manager.name))]),_c('span',{staticClass:"quiz__text-smallest"},[_vm._v(_vm._s(_vm.getMain.manager.position))])])]),_c('div',{staticClass:"quiz__separator"}),_c('div',{class:['quiz__help-' + _vm.getTheme]},[_c('svg',{class:['quiz__help-' + _vm.getTheme + '-icon']},[_c('use',{attrs:{"xlink:href":this.getSpritesFolder + '#quiz-question-help'}})]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getNowStep.legend)+" ")])]),_c('div',{class:['quiz__info-' + _vm.getTheme]},[_c('svg',{class:['quiz__info-' + _vm.getTheme + '-icon']},[_c('use',{attrs:{"xlink:href":this.getSpritesFolder + '#quiz-company-info'}})]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getMain.info.maintext)+" ")]),_c('p',{staticClass:"quiz__text-smallest"},[_vm._v(" "+_vm._s(_vm.getMain.info.desctext)+" ")])]),_c('div',{staticClass:"quiz__separator"}),_c('footer',{staticClass:"quiz__footer"},[_c('span',{staticClass:"quiz__orgname quiz__text-large"},[_vm._v(_vm._s(_vm.getMain.brand.name))]),_c('span',{staticClass:"quiz__tagline quiz__text-standard"},[_vm._v(_vm._s(_vm.getMain.brand.tagline))])])])}
+var TheQuizSidebarvue_type_template_id_9c858734_scoped_true_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/TheQuizSidebar.vue?vue&type=template&id=49eb5a34&scoped=true&
+// CONCATENATED MODULE: ./src/components/TheQuizSidebar.vue?vue&type=template&id=9c858734&scoped=true&
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/TheQuizSidebar.vue?vue&type=script&lang=js&
 //
@@ -4213,7 +4168,6 @@ var TheQuizSidebarvue_type_template_id_49eb5a34_scoped_true_staticRenderFns = []
 //
 //
 //
-// import { mapGetters } from "vuex";
 
 const {
   mapGetters: TheQuizSidebarvue_type_script_lang_js_mapGetters,
@@ -4233,7 +4187,7 @@ const {
 
   methods: { ...TheQuizSidebarvue_type_script_lang_js_mapActions(["initMain"])
   },
-  computed: { ...TheQuizSidebarvue_type_script_lang_js_mapGetters(["getTheme", "getMain", "getBrand", "getManager", "getInfo", "getNowStep"])
+  computed: { ...TheQuizSidebarvue_type_script_lang_js_mapGetters(["getTheme", "getSpritesFolder", "getMain", "getBrand", "getManager", "getInfo", "getNowStep"])
   },
 
   created() {
@@ -4249,7 +4203,7 @@ const {
 
 function TheQuizSidebar_injectStyles (context) {
   
-  var style0 = __webpack_require__("368f")
+  var style0 = __webpack_require__("b863")
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -4258,11 +4212,11 @@ if (style0.__inject__) style0.__inject__(context)
 
 var TheQuizSidebar_component = Object(componentNormalizer["a" /* default */])(
   components_TheQuizSidebarvue_type_script_lang_js_,
-  TheQuizSidebarvue_type_template_id_49eb5a34_scoped_true_render,
-  TheQuizSidebarvue_type_template_id_49eb5a34_scoped_true_staticRenderFns,
+  TheQuizSidebarvue_type_template_id_9c858734_scoped_true_render,
+  TheQuizSidebarvue_type_template_id_9c858734_scoped_true_staticRenderFns,
   false,
   TheQuizSidebar_injectStyles,
-  "49eb5a34",
+  "9c858734",
   null
   ,true
 )
@@ -4321,6 +4275,9 @@ external_Vue_default.a.use(lib_default.a);
     },
     dataSource: {
       default: "/data/quiz_steps.json"
+    },
+    dataSprites: {
+      default: "/sprites/sprite.svg"
     }
   },
 
@@ -4337,7 +4294,7 @@ external_Vue_default.a.use(lib_default.a);
     QuizNav: TheQuizNav,
     QuizSidebar: TheQuizSidebar
   },
-  methods: { ...Appvue_type_script_lang_js_shadow_mapActions(["setTheme", "nextCount", "prevCount", "initSteps", "changeDataStatusToTrue", "changeSendProgressStatus"]),
+  methods: { ...Appvue_type_script_lang_js_shadow_mapActions(["setTheme", "setSpritesFolder", "nextCount", "prevCount", "initSteps", "changeDataStatusToTrue", "changeSendProgressStatus"]),
 
     requestParams() {
       return {
@@ -4374,6 +4331,7 @@ external_Vue_default.a.use(lib_default.a);
   },
 
   created() {
+    this.setSpritesFolder(this.dataSprites);
     this.setTheme(this.theme);
     this.initSteps(this.dataSource);
   }
@@ -4429,6 +4387,20 @@ var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
 exports.push([module.i, ":focus{border:none;outline:none}.container{max-width:1200px}.container .row{margin:0}body,html{padding:0;margin:0!important}body{height:100%;min-width:320px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;position:relative;overflow-x:hidden;line-height:1.65;font-family:Avenir,Helvetica,Arial,sans-serif;font-size:16px;color:#000;background:#fff}header{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}main{-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto}footer{-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto}a,a:focus,a:hover{text-decoration:none;outline:none}li,ul{padding:0;list-style:none}figure,li,ul{margin:0}b,strong{font-weight:700}pre{margin:7px 0}fieldset{border:none;margin:0;padding:0}button{cursor:pointer}.quiz-grid{width:100%;padding:10px 15px;display:grid;grid-template-areas:\"quiz-header quiz-sidebar\" \"quiz-body quiz-sidebar\" \"quiz-nav quiz-sidebar\";grid-template-rows:auto 1fr auto;grid-template-columns:3fr 1fr;grid-gap:10px}@media (max-width:768px){.quiz-grid{grid-template-areas:\"quiz-header\" \"quiz-body\" \"quiz-nav\" \"quiz-sidebar\";grid-template-columns:1fr;grid-template-rows:1fr}}.quiz-subgrid-body{display:grid;grid-template-rows:auto 1fr auto;grid-template-columns:1fr;grid-gap:10px}.quiz-subgrid-body__cards{display:grid;grid-template-rows:repeat(2,1fr);grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr;grid-auto-columns:1fr;grid-gap:10px}@media (max-width:576px){.quiz-subgrid-body__cards{grid-template-columns:repeat(2,1fr)}}.quiz-subgrid-body__radios{display:grid;grid-template-rows:repeat(2,1fr);grid-template-columns:1fr;grid-auto-rows:1fr;grid-gap:10px}.quiz-subgrid-body__double{display:grid;grid-template-rows:1fr;grid-template-columns:2fr 1fr;grid-gap:10px;place-items:end end}@media (max-width:576px){.quiz-subgrid-body__double{grid-template-columns:1fr}}.quiz__text-smallest{font-size:12px}.quiz__text-small{font-size:14px}.quiz__text-standard{font-size:16px}.quiz__text-medium{font-size:20px}.quiz__text-large{font-size:22px}.quiz__text-largest{font-size:26px}.quiz__text--light{font-weight:300}.quiz__text--regular{font-weight:400}.quiz__text--medium{font-weight:500}.quiz__text--semibold{font-weight:600}.quiz__text--bold{font-weight:700}.quiz__text--extrabold{font-weight:800}.quiz__text--blackbold{font-weight:900}.quiz-bg-classic-color{background:#efefef}.quiz-text-classic-color{color:#5f6262}.quiz-progress-classic-color{background:#d5242c}.quiz-btn-classic-next{background:-webkit-gradient(linear,right top,left top,from(#d5242c),to(#ff1b25));background:linear-gradient(270deg,#d5242c,#ff1b25);color:#fff}.quiz-btn-classic-prev{background:#888;color:#fff}.quiz-card-classic-theme .card__name{color:#5f6262}.quiz-card-classic-theme .quiz__card-title{background:#fff}.quiz-card-classic-theme .active{background:#d5242c}.quiz-card-classic-theme .active .card__name{color:#fff}.quiz__listItem-classic-classic{margin:5px 0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;overflow:hidden;background:#fff;color:#000;border:1px solid rgba(15,28,45,.2);border-radius:5px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05);-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__listItem-classic-classic.active:not(.quiz__listItem-classic-classic--customCheckbox),.quiz__listItem-classic-classic.active:not(.quiz__listItem-classic-classic--customRadio){border:none;-webkit-box-shadow:0 0 15px -3px #d5242c;box-shadow:0 0 15px -3px #d5242c}.quiz__listItem-classic-classic label{padding:7px 0 7px 10px;height:100%;width:100%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer}.quiz__listItem-classic-classic--customCheckbox,.quiz__listItem-classic-classic--customRadio{margin-right:5px;margin-left:10px;width:10px;height:10px;position:relative;border:1px solid grey;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__listItem-classic-classic--customCheckbox.active,.quiz__listItem-classic-classic--customRadio.active{border:none;background-color:#d5242c}.quiz__listItem-classic-classic--customCheckbox{border-radius:2px}.quiz__listItem-classic-classic--customRadio{border-radius:50%}.quiz__listItem-classic-classic--name{margin-left:15px}.quiz__totalItem-classic--name{margin-right:7px;color:#d5242c}.quiz__totalItem-classic--text{margin:0;color:#5f6262}.quiz__total-classic-title{width:100%;color:#d5242c;padding:8px 0;position:relative;cursor:pointer}.quiz__total-classic-title:hover svg{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.quiz__help-classic{width:100%;-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto;color:#5f6262}.quiz__help-classic-icon{width:25px;height:25px;fill:#d5242c}.quiz__info-classic{width:100%;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;color:#5f6262}.quiz__info-classic-icon{width:25px;height:25px;fill:#d5242c}.quiz-bg-amethyst-color{background:#1e4970}.quiz-text-amethyst-color{color:#fff}.quiz-progress-amethyst-color{background:#b6247f}.quiz-btn-amethyst-next{background:#b6247f;color:#fff}.quiz-btn-amethyst-prev{background:#133970;color:#fff}.quiz-card-amethyst-theme .card__name{color:#5f6262}.quiz-card-amethyst-theme .quiz__card-title{background:#fff}.quiz-card-amethyst-theme .active{background:#b6247f}.quiz-card-amethyst-theme .active .card__name{color:#fff}.quiz__listItem-classic-amethyst{margin:5px 0;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;overflow:hidden;background:#fff;color:#000;border:1px solid rgba(15,28,45,.2);border-radius:5px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05);-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__listItem-classic-amethyst.active:not(.quiz__listItem-classic-amethyst--customCheckbox),.quiz__listItem-classic-amethyst.active:not(.quiz__listItem-classic-amethyst--customRadio){border:none;-webkit-box-shadow:0 0 15px -3px #b6247f;box-shadow:0 0 15px -3px #b6247f}.quiz__listItem-classic-amethyst label{padding:7px 0 7px 10px;height:100%;width:100%;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center;cursor:pointer}.quiz__listItem-classic-amethyst--customCheckbox,.quiz__listItem-classic-amethyst--customRadio{margin-right:5px;margin-left:10px;width:10px;height:10px;position:relative;border:1px solid grey;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__listItem-classic-amethyst--customCheckbox.active,.quiz__listItem-classic-amethyst--customRadio.active{border:none;background-color:#b6247f}.quiz__listItem-classic-amethyst--customCheckbox{border-radius:2px}.quiz__listItem-classic-amethyst--customRadio{border-radius:50%}.quiz__listItem-classic-amethyst--name{margin-left:15px}.quiz__total{overflow:hidden;-webkit-transition:height .6s ease;transition:height .6s ease}.quiz__total--icon{position:absolute;top:2px;right:10px;bottom:2px;height:15px;width:15px;-webkit-transition:all .3s ease;transition:all .3s ease}.quiz__total--hidden{height:0}.quiz__totalItem{margin-bottom:6px;padding:5px 10px;width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__totalItem-amethyst--name{margin-right:7px;color:#b6247f}.quiz__totalItem-amethyst--text{margin:0;color:#fff}.quiz__total-amethyst-title{width:100%;color:#b6247f;padding:8px 0;position:relative;cursor:pointer}.quiz__total-amethyst-title:hover svg{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.quiz__help-amethyst{width:100%;-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto;color:#fff}.quiz__help-amethyst-icon{width:25px;height:25px;fill:#b6247f}.quiz__info-amethyst{width:100%;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;color:#fff}.quiz__info-amethyst-icon{width:25px;height:25px;fill:#b6247f}.quiz__input-classic{padding:8px 0 8px 7px;margin:10px 0 0;overflow:hidden;background:#fff;color:#000;border:1px solid rgba(15,28,45,.1);border-radius:5px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.quiz__input-classic:focus{-webkit-box-shadow:0 1px 1px rgba(133,200,79,.25);box-shadow:0 1px 1px rgba(133,200,79,.25)}.quiz__select-classic,.quiz__select-classic--mini{padding:8px 0 8px 10px;width:100%;overflow:hidden;background:#fff;color:#000;border:1px solid rgba(15,28,45,.1);border-radius:5px;-webkit-box-shadow:0 1px 1px rgba(0,0,0,.05);box-shadow:0 1px 1px rgba(0,0,0,.05)}.quiz__card-container{-webkit-perspective:600px;perspective:600px;-webkit-perspective-origin:50%;perspective-origin:50%;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__card{width:100%;height:140px;margin:15px auto;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;-webkit-transition:all .3s ease;transition:all .3s ease;cursor:pointer}.quiz__card:hover .quiz__card-title{-webkit-box-shadow:0 0 15px -3px #d5242c;box-shadow:0 0 15px -3px #d5242c}.quiz__card img{height:100%;width:100%;-o-object-fit:cover;object-fit:cover;border-radius:5px;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__card-title{position:absolute;width:85%;bottom:-10px;padding:7px 15px;text-align:center;border-radius:5px;-webkit-transition:inherit;transition:inherit}@media (max-width:576px){.quiz__card{height:120px;width:100%;margin:7px auto;overflow:hidden}.quiz__card-title{width:100%;bottom:0;font-size:8pt}}.quiz__validation--error{color:red;fill:red}.quiz__validation--info{color:#00f;fill:#00f}.quiz__validation--dump{color:#000;fill:#000}.quiz__notify--error{color:red;fill:red}.quiz__notify--info{color:#00f;fill:#00f}.quiz__notify--dump{color:#000;fill:#000}.quiz__loading--icon{color:#d5242c;fill:#d5242c}.fadeRight-enter-active,.fadeRight-leave-active{-webkit-transition:all .25s linear;transition:all .25s linear}.fadeRight-enter,.fadeRight-leave-to{opacity:0;-webkit-transform:translateX(50px);transform:translateX(50px)}.fadeLeft-enter-active,.fadeLeft-leave-active{-webkit-transition:all .45s ease-out;transition:all .45s ease-out}.fadeLeft-enter,.fadeLeft-leave-to{opacity:0;-webkit-transform:translateX(-50px);transform:translateX(-50px)}#app{font-family:Avenir,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#5f6262}.quiz__container{background-color:transparent;display:-webkit-box;display:-ms-flexbox;display:flex;border-radius:10px;overflow:hidden;-webkit-box-shadow:0 0 15px -2px rgba(0,0,0,.5);box-shadow:0 0 15px -2px rgba(0,0,0,.5);-webkit-transition:all .5s ease;transition:all .5s ease}.form--error{border-color:red}.radiohidden{position:absolute;height:0;width:0;opacity:0}.quiz__separator{width:60%;height:1px;background-color:#fff;margin:15px 0}", ""]);
+// Exports
+module.exports = exports;
+
+
+/***/ }),
+
+/***/ "68e2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".quiz__grid-sidebar[data-v-9c858734]{padding:0 10px;grid-area:quiz-sidebar;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__grid-sidebar[data-v-9c858734],.quiz__sidebar[data-v-9c858734]{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.quiz__sidebar[data-v-9c858734]{padding-top:20px;padding-bottom:20px}.quiz__manager[data-v-9c858734]{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__manager-data[data-v-9c858734]{display:inherit;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.quiz__manager-avatar[data-v-9c858734]{height:85px;width:85px;border-radius:50%;overflow:hidden;background-color:#e4edf2}.quiz__manager-avatar img[data-v-9c858734]{width:100%;height:100%;-o-object-fit:cover;object-fit:cover}.quiz__footer[data-v-9c858734]{width:100%;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-pack:distribute;justify-content:space-around;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__footer span[data-v-9c858734]:first-child{margin-right:15px}.quiz__footer span[data-v-9c858734]:nth-child(2){text-align:right}.quiz__orgname[data-v-9c858734],.quiz__tagline[data-v-9c858734]{line-height:1.2}", ""]);
 // Exports
 module.exports = exports;
 
@@ -4669,6 +4641,40 @@ module.exports = CancelToken;
 
 /***/ }),
 
+/***/ "95d8":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("ea7e");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to Shadow Root
+var add = __webpack_require__("35d6").default
+module.exports.__inject__ = function (shadowRoot) {
+  add("545093ba", content, shadowRoot)
+};
+
+/***/ }),
+
+/***/ "9e11":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("68e2");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add CSS to Shadow Root
+var add = __webpack_require__("35d6").default
+module.exports.__inject__ = function (shadowRoot) {
+  add("4a57b53c", content, shadowRoot)
+};
+
+/***/ }),
+
 /***/ "a7a6":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4885,6 +4891,18 @@ module.exports = function xhrAdapter(config) {
   });
 };
 
+
+/***/ }),
+
+/***/ "b863":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9e11");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_vue_style_loader_index_js_ref_8_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_8_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_8_oneOf_1_3_node_modules_sass_loader_dist_cjs_js_ref_8_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TheQuizSidebar_vue_vue_type_style_index_0_id_9c858734_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -5478,23 +5496,6 @@ module.exports = function isAbsoluteURL(url) {
 
 /***/ }),
 
-/***/ "d9dc":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("4afb");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add CSS to Shadow Root
-var add = __webpack_require__("35d6").default
-module.exports.__inject__ = function (shadowRoot) {
-  add("48e0d314", content, shadowRoot)
-};
-
-/***/ }),
-
 /***/ "df7c":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5823,6 +5824,20 @@ module.exports = function combineURLs(baseURL, relativeURL) {
     ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
     : baseURL;
 };
+
+
+/***/ }),
+
+/***/ "ea7e":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".quiz__grid-nav[data-v-1b325410]{grid-area:quiz-nav}.quiz__nav[data-v-1b325410]{padding:5px 0;margin:15px 0;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;-webkit-box-align:start;-ms-flex-align:start;align-items:flex-start}.quiz__nav[data-v-1b325410],.quiz__nav-skip[data-v-1b325410]{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex}.quiz__nav-skip[data-v-1b325410]{margin-bottom:10px;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__btn-next[data-v-1b325410],.quiz__btn-prev[data-v-1b325410]{padding:15px 5px;margin:5px 10px;width:40%;text-align:center;border:none;-webkit-transition:all .3s ease;transition:all .3s ease}.quiz__btn-next svg[data-v-1b325410],.quiz__btn-prev svg[data-v-1b325410]{margin:0 5px;width:12px;height:8px}.quiz__btn-skip[data-v-1b325410]{padding:13px 20px;border:none;background:transparent;color:inherit;font-size:14px;cursor:pointer;-webkit-transition:all .35s ease;transition:all .35s ease}.quiz__btn-skip[data-v-1b325410]:hover{letter-spacing:.1em}.quiz__btn-icon[data-v-1b325410]{fill:#fff}.quiz__btn--disabled[data-v-1b325410]{opacity:.25}.quiz__control[data-v-1b325410]{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.quiz__nav-notify[data-v-1b325410]{width:100%;margin-bottom:10px}.fade-enter-active[data-v-1b325410],.fade-leave-active[data-v-1b325410]{-webkit-transition:all .45s ease-out;transition:all .45s ease-out}.fade-enter[data-v-1b325410],.fade-leave-to[data-v-1b325410]{opacity:0;-webkit-transform:translateX(-50px);transform:translateX(-50px)}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),

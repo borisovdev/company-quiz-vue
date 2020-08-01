@@ -35,6 +35,7 @@ const moduleQuiz = {
     },
     counter: 0,
     userData: [],
+    spritesFolder: "",
     freeMessage: "",
     dataSended: false,
     sendOnProgress: false,
@@ -43,6 +44,9 @@ const moduleQuiz = {
   mutations: {
     SET_THEME(state, payload) {
       state.theme = payload.toLowerCase();
+    },
+    SET_SPRITES_FOLDER(state, payload) {
+      state.spritesFolder = payload;
     },
     TRUE_DATA_STATUS(state) {
       state.dataSended = true;
@@ -127,6 +131,7 @@ const moduleQuiz = {
 
   getters: {
     getTheme: state => state.theme,
+    getSpritesFolder: state => state.spritesFolder,
     getMain: state => state.main,
     getSteps: state => state.steps,
     getBrand: state => state.brand,
@@ -190,6 +195,9 @@ const moduleQuiz = {
     },
     setTheme({ commit }, payload) {
       commit("SET_THEME", payload);
+    },
+    setSpritesFolder({ commit }, payload) {
+      commit("SET_SPRITES_FOLDER", payload);
     },
     initMain({ commit }, payload) {
       axios.get(payload).then(response => {
