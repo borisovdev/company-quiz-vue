@@ -4,7 +4,7 @@
       :class="['quiz__card', 'quiz-card-' + getTheme + '-theme']"
       ref="cardItem"
       @mousemove="rotateIt"
-      @mouseout="disableRotate"
+      @mouseleave="disableRotate"
     >
       <img :src="image" :alt="name" />
       <div :class="['quiz__card-title', 'quiz__text-smallest', focusClass]">

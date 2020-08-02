@@ -21,7 +21,7 @@
 }
 .quiz-subgrid-body {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 20px minmax(auto, 210px) auto;
   grid-template-columns: 1fr;
   grid-gap: 10px;
 }

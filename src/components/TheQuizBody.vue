@@ -82,5 +82,21 @@ export default {
 <style lang="scss" scoped>
 .quiz__grid-body {
   grid-area: quiz-body;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+ 
+  &::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); 
+      border-radius: 10px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+  }
 }
 </style>

@@ -443,12 +443,12 @@ exports.default = _default;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenCards.vue?vue&type=template&id=57aced28&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"quiz-subgrid-body"},[(_vm.$v.getUserData.$invalid)?_c('div',{class:['quiz__validation--error', 'quiz__text-smallest']},[_vm._v(" Вы должны выбрать не менее "+_vm._s(_vm.$v.getUserData.$params.minLength.min)+" вариантов ")]):_vm._e(),_c('div',{staticClass:"quiz-subgrid-body__cards"},_vm._l((_vm.getNowItems),function(item){return _c('div',{key:item.id,class:_vm.cardsLayout},[_c(_vm.currentScreen,{tag:"component",attrs:{"value":item.name,"image":item.image,"name":item.name},model:{value:(_vm.newCheckedAction),callback:function ($$v) {_vm.newCheckedAction=$$v},expression:"newCheckedAction"}})],1)}),0)])}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e36b822a-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenCards.vue?vue&type=template&id=8c6cb644&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"quiz-subgrid-body"},[_c('div',{class:['quiz__validation--error', 'quiz__text-smallest']},[(_vm.$v.getUserData.$invalid)?_c('p',[_vm._v(" Вы должны выбрать не менее "+_vm._s(_vm.$v.getUserData.$params.minLength.min)+" вариантов ")]):_vm._e()]),_c('div',{staticClass:"quiz-subgrid-body__cards"},_vm._l((_vm.getNowItems),function(item){return _c('div',{key:item.id,class:_vm.cardsLayout},[_c(_vm.currentScreen,{tag:"component",attrs:{"value":item.name,"image":item.image,"name":item.name},model:{value:(_vm.newCheckedAction),callback:function ($$v) {_vm.newCheckedAction=$$v},expression:"newCheckedAction"}})],1)}),0)])}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/screens/ScreenCards.vue?vue&type=template&id=57aced28&
+// CONCATENATED MODULE: ./src/screens/ScreenCards.vue?vue&type=template&id=8c6cb644&
 
 // EXTERNAL MODULE: ./src/assets/mixins.js
 var mixins = __webpack_require__("6f2e");
@@ -460,6 +460,7 @@ var validators = __webpack_require__("b5ae");
 var vuex_esm = __webpack_require__("2f62");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/screens/ScreenCards.vue?vue&type=script&lang=js&
+//
 //
 //
 //

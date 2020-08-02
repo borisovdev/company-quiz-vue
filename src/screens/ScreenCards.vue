@@ -2,10 +2,11 @@
   <div class="quiz-subgrid-body">
     <div
       :class="['quiz__validation--error', 'quiz__text-smallest']"
-      v-if="$v.getUserData.$invalid"
     >
-      Вы должны выбрать не менее
+      <p       v-if="$v.getUserData.$invalid">
+              Вы должны выбрать не менее
       {{ $v.getUserData.$params.minLength.min }} вариантов
+      </p>
     </div>
     <div class="quiz-subgrid-body__cards">
       <div :class="cardsLayout" v-for="item in getNowItems" :key="item.id">

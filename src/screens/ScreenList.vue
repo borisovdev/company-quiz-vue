@@ -1,10 +1,9 @@
 <template>
   <div class="quiz-subgrid-body">
-    <div
-      :class="['quiz__validation--error', 'quiz__text-smallest']"
-      v-if="$v.getUserData.$invalid"
-    >
-      Выберите вариант
+    <div :class="['quiz__validation--error', 'quiz__text-smallest']">
+      <p v-if="$v.getUserData.$invalid">
+        Выберите вариант
+      </p>
     </div>
     <div class="quiz-subgrid-body__radios">
       <div
@@ -38,20 +37,20 @@ export default {
   validations: {
     getUserData: {
       required,
-      minLength: minLength(1)
-    }
+      minLength: minLength(1),
+    },
   },
   components: {
     "list-item-radio": () => import("@/parts/ListItemRadio"),
     "list-item-checkbox": () => import("@/parts/ListItemCheckbox"),
-    "free-answer": () => import("@/parts/FreeAnswer")
+    "free-answer": () => import("@/parts/FreeAnswer"),
   },
   methods: {
     ...mapActions([
       "updateChecked",
       "validationStatusFalse",
-      "validationStatusTrue"
-    ])
+      "validationStatusTrue",
+    ]),
   },
   computed: {
     ...mapGetters(["getNowItemsType", "getUserData", "getNowItems"]),
@@ -71,15 +70,15 @@ export default {
       },
       set(value) {
         this.updateChecked(value);
-      }
-    }
+      },
+    },
   },
   created() {
     this.changeValidationStatus();
   },
   beforeUpdate() {
     this.changeValidationStatus();
-  }
+  },
 };
 </script>
 
